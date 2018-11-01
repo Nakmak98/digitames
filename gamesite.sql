@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.8
+-- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 08, 2018 at 01:15 AM
--- Server version: 10.0.34-MariaDB
--- PHP Version: 5.6.36
+-- Хост: 127.0.0.1:3307
+-- Время создания: Окт 31 2018 г., 12:04
+-- Версия сервера: 5.6.38
+-- Версия PHP: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,12 +19,12 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gamesite`
+-- База данных: `gamesite`
 --
 
 DELIMITER $$
 --
--- Procedures
+-- Процедуры
 --
 CREATE DEFINER=`root`@`localhost` PROCEDURE `delete_project` (IN `p_id` INT(11) UNSIGNED)  NO SQL
 BEGIN
@@ -45,7 +45,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game_page`
+-- Структура таблицы `game_page`
 --
 
 CREATE TABLE `game_page` (
@@ -57,18 +57,18 @@ CREATE TABLE `game_page` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `game_page`
+-- Дамп данных таблицы `game_page`
 --
 
 INSERT INTO `game_page` (`id`, `proj_id`, `img`, `video`, `about`) VALUES
-(1, 14, '/gamesite/img/hearthstone.jpg', 'https://www.youtube.com/embed/vPguoeYTvMI', 'Some text about this game should be placed here!'),
-(2, 16, '/gamesite/img/hex.jpg', 'https://www.youtube.com/embed/5Ivz9MWhrHM', 'Some text about Hex game should be placed here!'),
-(4, 18, '/gamesite/img/gwint.jpg', 'https://www.youtube.com/embed/5yu7FVZOyAo', 'Some text about Gwint gonna be placed here soon!');
+(1, 14, 'img/hearthstone.jpg', 'https://www.youtube.com/embed/vPguoeYTvMI', 'Some text about this game should be placed here!'),
+(2, 16, 'img/hex.jpg', 'https://www.youtube.com/embed/5Ivz9MWhrHM', 'Some text about Hex game should be placed here!'),
+(4, 18, 'img/gwint.jpg', 'https://www.youtube.com/embed/5yu7FVZOyAo', 'Some text about Gwint gonna be placed here soon!');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game_page_carousel`
+-- Структура таблицы `game_page_carousel`
 --
 
 CREATE TABLE `game_page_carousel` (
@@ -80,7 +80,7 @@ CREATE TABLE `game_page_carousel` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `game_page_carousel`
+-- Дамп данных таблицы `game_page_carousel`
 --
 
 INSERT INTO `game_page_carousel` (`id`, `proj_id`, `carousel`, `carousel_title`, `carousel_info`) VALUES
@@ -91,7 +91,7 @@ INSERT INTO `game_page_carousel` (`id`, `proj_id`, `carousel`, `carousel_title`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `game_project`
+-- Структура таблицы `game_project`
 --
 
 CREATE TABLE `game_project` (
@@ -104,14 +104,14 @@ CREATE TABLE `game_project` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `game_project`
+-- Дамп данных таблицы `game_project`
 --
 
 INSERT INTO `game_project` (`id`, `proj_name`, `proj_url`, `proj_img`, `proj_desc`, `is_featured`) VALUES
-(14, 'Hearthstone', 'https://playhearthstone.com/ru-ru/', '/gamesite/img/hearthstone.jpg', 'Best TCG game... ', b'1'),
-(16, 'Hex ', 'http://www.hextcg.com/', '/gamesite/img/hex.jpg', 'Cool tcg with nice UI...', b'1'),
-(18, 'gwint', 'https://www.playgwent.com', '/gamesite/img/gwint.jpg', 'You know that stuff', b'0'),
-(19, 'Star Worlds', 'http://starworlds.ru/', '/gamesite/img/star_worlds.jpg', 'Coming soon', b'0'),
+(14, 'Hearthstone', 'https://playhearthstone.com/ru-ru/', 'img/hearthstone.jpg', 'Best TCG game... ', b'1'),
+(16, 'Hex ', 'http://www.hextcg.com/', 'img/hex.jpg', 'Cool tcg with nice UI...', b'1'),
+(18, 'gwint', 'https://www.playgwent.com', 'img/gwint.jpg', 'You know that stuff', b'0'),
+(19, 'Star Worlds', 'http://starworlds.ru/', 'img/star_worlds.jpg', 'Coming soon', b'0'),
 (20, 'Game 1', 'http://via.placeholder.com/1920x1080?text=Game+1', 'http://via.placeholder.com/1920x1080?text=Game+1', 'Game 1 description', b'0'),
 (21, 'Game 2', 'http://via.placeholder.com/1920x1080?text=Game+2', 'http://via.placeholder.com/1920x1080?text=Game+2', 'Game 2 description', b'0'),
 (22, 'Game 3', 'http://via.placeholder.com/1920x1080?text=Game+3', 'http://via.placeholder.com/1920x1080?text=Game+3', 'Game 3 description', b'0'),
@@ -121,7 +121,7 @@ INSERT INTO `game_project` (`id`, `proj_name`, `proj_url`, `proj_img`, `proj_des
 -- --------------------------------------------------------
 
 --
--- Table structure for table `proj_platform`
+-- Структура таблицы `proj_platform`
 --
 
 CREATE TABLE `proj_platform` (
@@ -135,7 +135,7 @@ CREATE TABLE `proj_platform` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `proj_platform`
+-- Дамп данных таблицы `proj_platform`
 --
 
 INSERT INTO `proj_platform` (`id`, `proj_id`, `pc`, `android`, `ios`, `ps`, `xbox`) VALUES
@@ -144,7 +144,7 @@ INSERT INTO `proj_platform` (`id`, `proj_id`, `pc`, `android`, `ios`, `ps`, `xbo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `proj_service`
+-- Структура таблицы `proj_service`
 --
 
 CREATE TABLE `proj_service` (
@@ -160,7 +160,7 @@ CREATE TABLE `proj_service` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `proj_service`
+-- Дамп данных таблицы `proj_service`
 --
 
 INSERT INTO `proj_service` (`id`, `proj_id`, `steam`, `gog`, `origin`, `ps_store`, `microsoft_xbox`, `google_play`, `app_store`) VALUES
@@ -169,7 +169,7 @@ INSERT INTO `proj_service` (`id`, `proj_id`, `steam`, `gog`, `origin`, `ps_store
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Структура таблицы `users`
 --
 
 CREATE TABLE `users` (
@@ -179,7 +179,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Дамп данных таблицы `users`
 --
 
 INSERT INTO `users` (`id`, `email`, `password`) VALUES
@@ -187,12 +187,13 @@ INSERT INTO `users` (`id`, `email`, `password`) VALUES
 (4, 'tetradochka1488@gmail.com', '$2y$10$Qf6E9SxUbU8BjBeUHucqyuI/258th3WFhc6klfav147pY/qiIN5fO'),
 (7, 'g@gmail.com', '$2y$10$L4nfHVyqlID7U06x5Nej5uTI3rjZyfMEh7zkbBxAUgRU/CtKS3GGu'),
 (8, 'd@mail.ru', '$2y$10$GIHInfjWJWH51UdVKKHTSeS6zo/55wB31cQFhHQ66xe7WLK0pftoa'),
-(9, 'sdfdsf@gadf.sfsdf', '$2y$10$6IlMr3c3zDqXYsAayRRxouL95/I2tgPMa1YNqVJbTmhC2uy7ifgpC');
+(9, 'sdfdsf@gadf.sfsdf', '$2y$10$6IlMr3c3zDqXYsAayRRxouL95/I2tgPMa1YNqVJbTmhC2uy7ifgpC'),
+(10, 'nakmak1998@gmail.com', '$2y$10$NelsS902GWPWY3B63v1rE.5/Kt8zHcfNn6WG5Th2ChPsF7y/kRATK');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_data`
+-- Структура таблицы `user_data`
 --
 
 CREATE TABLE `user_data` (
@@ -205,7 +206,7 @@ CREATE TABLE `user_data` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_data`
+-- Дамп данных таблицы `user_data`
 --
 
 INSERT INTO `user_data` (`id`, `user_id`, `nickname`, `age`, `region`, `session_id`) VALUES
@@ -213,12 +214,13 @@ INSERT INTO `user_data` (`id`, `user_id`, `nickname`, `age`, `region`, `session_
 (2, 4, NULL, 18, 'eu', NULL),
 (5, 7, NULL, 12, 'eu', NULL),
 (6, 8, NULL, 18, 'eu', NULL),
-(7, 9, NULL, 18, 'eu', NULL);
+(7, 9, NULL, 18, 'eu', NULL),
+(8, 10, NULL, 18, 'eu', NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Структура таблицы `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -228,7 +230,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_role`
+-- Дамп данных таблицы `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `user_id`, `role`) VALUES
@@ -236,154 +238,155 @@ INSERT INTO `user_role` (`id`, `user_id`, `role`) VALUES
 (2, 4, 'subscriber'),
 (5, 7, 'subscriber'),
 (6, 8, 'subscriber'),
-(7, 9, 'subscriber');
+(7, 9, 'subscriber'),
+(8, 10, 'subscriber');
 
 --
--- Indexes for dumped tables
+-- Индексы сохранённых таблиц
 --
 
 --
--- Indexes for table `game_page`
+-- Индексы таблицы `game_page`
 --
 ALTER TABLE `game_page`
   ADD PRIMARY KEY (`id`),
   ADD KEY `gamePageFK1` (`proj_id`);
 
 --
--- Indexes for table `game_page_carousel`
+-- Индексы таблицы `game_page_carousel`
 --
 ALTER TABLE `game_page_carousel`
   ADD PRIMARY KEY (`id`),
   ADD KEY `gamePageCarouselFK1` (`proj_id`);
 
 --
--- Indexes for table `game_project`
+-- Индексы таблицы `game_project`
 --
 ALTER TABLE `game_project`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `proj_platform`
+-- Индексы таблицы `proj_platform`
 --
 ALTER TABLE `proj_platform`
   ADD PRIMARY KEY (`id`),
   ADD KEY `projPlatformFK1` (`proj_id`);
 
 --
--- Indexes for table `proj_service`
+-- Индексы таблицы `proj_service`
 --
 ALTER TABLE `proj_service`
   ADD PRIMARY KEY (`id`),
   ADD KEY `projServiceFK1` (`proj_id`);
 
 --
--- Indexes for table `users`
+-- Индексы таблицы `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_data`
+-- Индексы таблицы `user_data`
 --
 ALTER TABLE `user_data`
   ADD PRIMARY KEY (`id`),
   ADD KEY `userDataFK1` (`user_id`);
 
 --
--- Indexes for table `user_role`
+-- Индексы таблицы `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id`),
   ADD KEY `userRoleFK1` (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для сохранённых таблиц
 --
 
 --
--- AUTO_INCREMENT for table `game_page`
+-- AUTO_INCREMENT для таблицы `game_page`
 --
 ALTER TABLE `game_page`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `game_page_carousel`
+-- AUTO_INCREMENT для таблицы `game_page_carousel`
 --
 ALTER TABLE `game_page_carousel`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT for table `game_project`
+-- AUTO_INCREMENT для таблицы `game_project`
 --
 ALTER TABLE `game_project`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `proj_platform`
+-- AUTO_INCREMENT для таблицы `proj_platform`
 --
 ALTER TABLE `proj_platform`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `proj_service`
+-- AUTO_INCREMENT для таблицы `proj_service`
 --
 ALTER TABLE `proj_service`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT для таблицы `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `user_data`
+-- AUTO_INCREMENT для таблицы `user_data`
 --
 ALTER TABLE `user_data`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT для таблицы `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- Constraints for dumped tables
+-- Ограничения внешнего ключа сохраненных таблиц
 --
 
 --
--- Constraints for table `game_page`
+-- Ограничения внешнего ключа таблицы `game_page`
 --
 ALTER TABLE `game_page`
   ADD CONSTRAINT `gamePageFK1` FOREIGN KEY (`proj_id`) REFERENCES `game_project` (`id`);
 
 --
--- Constraints for table `game_page_carousel`
+-- Ограничения внешнего ключа таблицы `game_page_carousel`
 --
 ALTER TABLE `game_page_carousel`
   ADD CONSTRAINT `gamePageCarouselFK1` FOREIGN KEY (`proj_id`) REFERENCES `game_project` (`id`);
 
 --
--- Constraints for table `proj_platform`
+-- Ограничения внешнего ключа таблицы `proj_platform`
 --
 ALTER TABLE `proj_platform`
   ADD CONSTRAINT `projPlatformFK1` FOREIGN KEY (`proj_id`) REFERENCES `game_project` (`id`);
 
 --
--- Constraints for table `proj_service`
+-- Ограничения внешнего ключа таблицы `proj_service`
 --
 ALTER TABLE `proj_service`
   ADD CONSTRAINT `projServiceFK1` FOREIGN KEY (`proj_id`) REFERENCES `game_project` (`id`);
 
 --
--- Constraints for table `user_data`
+-- Ограничения внешнего ключа таблицы `user_data`
 --
 ALTER TABLE `user_data`
   ADD CONSTRAINT `userDataFK1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Constraints for table `user_role`
+-- Ограничения внешнего ключа таблицы `user_role`
 --
 ALTER TABLE `user_role`
   ADD CONSTRAINT `userRoleFK1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
