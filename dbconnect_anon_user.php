@@ -1,11 +1,11 @@
 <?php
 function dbconnect() {
-    $db = "cy45195_gamesite";
+    $db = "gamesite";
     $host = "localhost";
-    $login = "cy45195_gamesite";
-    $password = "ps43WhAf";
+    $login = "root";
+    $password = "";
 
-    $conn = new mysqli($host, $login, $password, $db, 3307);
+    $conn = new mysqli($host, $login, $password, $db, 3306);
 	
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
