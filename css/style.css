@@ -16,7 +16,13 @@ footer {
     justify-content: space-between;
 }
 
+.social-media {
+    display: flex;
+}
 
+.social-media > li {
+    margin-right: auto;
+}
 /*css card boxes*/
 #card-body-top {
     border-top-right-radius: 4px;
@@ -342,7 +348,7 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 780px) {
     .login .col {
         width: 100%;
         margin-top: 0;
@@ -355,6 +361,10 @@ input[type=submit]:hover {
     .hide-md-lg {
         display: block;
         text-align: center;
+    }
+
+    .social-media > li {
+        margin: 0 auto;
     }
 }
 /*login-end*/

@@ -48,7 +48,7 @@
                 <!-- Links -->
                 <h5 class="text-uppercase">Social media</h5>
 
-                <ul class="list-unstyled">
+                <ul class="list-unstyled social-media">
                     <li>
                         <a href="#!"><i class="fab fa-facebook fa-3x text-white"></i></a>
                     </li>
