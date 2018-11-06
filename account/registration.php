@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $sql = "INSERT INTO user_role (user_id, role) VALUES ('".$user_id['id']."', '".$role."')";
                         if (mysqli_query($mysqli, $sql)) {
                             //setcookie("user_id", $user_id, time() + (86400 * 30), "/gamesite");
-                            setcookie("email", $email, time() + (86400 * 30), "/gamesite");
+                            //setcookie("email", $email, time() + (86400 * 30), "/gamesite");
                             unset($sql);
                             unset($user_id);
                             unset($email);

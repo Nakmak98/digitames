@@ -89,13 +89,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputEmail4">Email</p></label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="<?php echo $_COOKIE['email']; ?>" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputPassword4">Password</p></label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="<?php echo $_COOKIE['password']; ?>" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                         </div>
                     </div>
                     <br>
@@ -116,20 +116,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <br>
         <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
                 <p>Don't have an account? Create now!</p>
                 <a href="account/registration.php" method="post">
                     <button class="btn btn-primary" id="sup">Create account</button>
                 </a>
             </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4" >
+            <div class="col-sm-3">
                 <a href="#" method="post" class="text-white" style="align: right">
                     Forgot your password?
                 </a>
             </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
 
