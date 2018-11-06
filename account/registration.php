@@ -125,11 +125,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <label for="inputAddress">Select your age*</label>
                             <select class="custom-select" id="age" name="age" required>
                                 <option selected disabled value=''>Select your age</option>
-                                <option value="3">Older than 3</option>
+                                <option value="3">3-6</option>
                                 <option value="7">7-11</option>
                                 <option value="12">12-15</option>
                                 <option value="16">16-17</option>
-                                <option value="18">18 or above</option>
+                                <option value="18">18+</option>
                             </select>
                         </div>
                     </div>
