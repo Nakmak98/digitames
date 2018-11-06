@@ -3,7 +3,7 @@ function dbconnect() {
     $db = "gamesite";
     $host = "localhost";
     $login = "root";
-    $password = "";
+    $password = "root";
 
     $conn = new mysqli($host, $login, $password, $db, 3306);
 	

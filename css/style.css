@@ -134,36 +134,48 @@ footer {
     transition-delay:.2s;
 }*/
 .ihover {
-    position: relative;
+    //position: relative;
+    overflow:hidden;
     /*width: 50%;*/
 }
+.ihover img {
+    -moz-transition: all 1s ease-out;
+    -o-transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
 
-.ihover .image {
-    display: block;
-    width: 100%;
-    height: auto;
 }
+
+.ihover img:hover{
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.ihover:hover{
+    transition: 2s;
+}
+
 .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    opacity: 0;
     height: 100%;
     width: 100%;
-    opacity: 0;
     transition: .5s ease;
     background-color:rgba(0,0,0,0.7);
 }
 
 .ihover:hover .overlay {
     opacity: 1;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 40%);
+}
+
+.ihover:hover .overlay p{
+    top: 70%;
 }
 
 .overlay p {
+    transition: 1s;
     font-size: 20px;
     position: absolute;
-    top: 50%;
+    top: 80%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
