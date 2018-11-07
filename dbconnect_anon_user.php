@@ -16,4 +16,3 @@ function dbconnect() {
 function show_db_error($conn) {
     echo "Error: ".$conn->connect_error."\n";
 }
-?>
