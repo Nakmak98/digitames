@@ -4,7 +4,6 @@ function dbconnect() {
     $host = "localhost";
     $login = "gamesite";
     $password = "1qaz2wsx3edc";
-
     $conn = new mysqli($host, $login, $password, $db, 3306);
     
     if ($conn->connect_error) {

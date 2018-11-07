@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                         $sql = "INSERT INTO user_role (user_id, role) VALUES ('".$user_id['id']."', '".$role."')";
                         if (mysqli_query($mysqli, $sql)) {
                             //setcookie("user_id", $user_id, time() + (86400 * 30), "/gamesite");
-                            setcookie("email", $email, time() + (86400 * 30), "/gamesite");
+                            //setcookie("email", $email, time() + (86400 * 30), "/gamesite");
                             unset($sql);
                             unset($user_id);
                             unset($email);
@@ -125,11 +125,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <label for="inputAddress">Select your age*</label>
                             <select class="custom-select" id="age" name="age" required>
                                 <option selected disabled value=''>Select your age</option>
-                                <option value="3">Older than 3</option>
+                                <option value="3">3-6</option>
                                 <option value="7">7-11</option>
                                 <option value="12">12-15</option>
                                 <option value="16">16-17</option>
-                                <option value="18">18 or above</option>
+                                <option value="18">18+</option>
                             </select>
                         </div>
                     </div>
@@ -183,6 +183,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 <!--JS-->
-
 </body>
 </html>
+

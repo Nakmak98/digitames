@@ -75,36 +75,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="login h-100">
     <div class="container text-white">
-        <h2 style="text-align:center">Login with Social Media or Manually</h2>
         <br>
         <div class="dropdown-divider"></div>
         <br>
         <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
-                <h3 class="text-center">Login with social media</h3>
-                <br><br>
-                <a href="#" class="twitter btn text-white">
-                    <i class="fab fa-twitter fa-fw"></i> Login with Twitter
-                </a>
-                <a href="#" class="google btn text-white"><i class="fab fa-google fa-fw">
-                    </i> Login with Google+
-                </a>
-                <a href="#" class="steam btn text-white"><i class="fab fa-steam fa-fw">
-                    </i> Login with Steam
-                </a>
-            </div>
-            <div class="col-sm-2">
-                <br><br>
-                <div class="vl">
-                    <span class="vl-innertext">or</span>
-                </div>
-                <div class="hide-md-lg">
-                    <br>
-                    <p>Or sign in manually:</p>
-                </div>
-            </div>
-            <div class="col-sm-4 rt-col">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6 rt-col">
                 <form method="POST" action="account/login.php">
                     <h3 class="text-center">Sign in</h3>
                     <div class="alert alert-error"><?php
@@ -113,13 +89,13 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputEmail4">Email</p></label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" value="<?php echo $_COOKIE['email']; ?>" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputPassword4">Password</p></label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" value="<?php echo $_COOKIE['password']; ?>" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
                         </div>
                     </div>
                     <br>
@@ -136,24 +112,23 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <br><br>
                 </form>
             </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-3"></div>
         </div>
         <br>
         <div class="row">
-            <div class="col-sm-1"></div>
-            <div class="col-sm-4">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-3">
                 <p>Don't have an account? Create now!</p>
                 <a href="account/registration.php" method="post">
                     <button class="btn btn-primary" id="sup">Create account</button>
                 </a>
             </div>
-            <div class="col-sm-2"></div>
-            <div class="col-sm-4" >
+            <div class="col-sm-3">
                 <a href="#" method="post" class="text-white" style="align: right">
                     Forgot your password?
                 </a>
             </div>
-            <div class="col-sm-1"></div>
+            <div class="col-sm-3"></div>
         </div>
     </div>
 
@@ -171,6 +146,5 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 <!--JS-->
-
 </body>
 </html>
