@@ -24,11 +24,17 @@ class Db
             $this->conn = new mysqli($this->host, $this->login, $this->password, $this->db, 3306);
         } catch (mysqli_sql_exception $e) {
             echo $e;
+            exit;
         }
     }
 
     function getQuery($sql) {
-        $stmt = $this->conn->query($sql);
+        try {
+            $stmt = $this->conn->query($sql);
+        } catch (mysqli_sql_exception $e) {
+            echo $e;
+            exit;
+        }
         return $stmt->fetch_assoc();
     }
 }
