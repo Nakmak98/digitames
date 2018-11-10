@@ -13,7 +13,9 @@ class Db
     private $login;
     private $password;
     public $conn;
-    function __construct() {
+
+    function __construct()
+    {
         $this->db = "gamesite";
         $this->host = "localhost";
         $this->login = "gamesite";
@@ -23,5 +25,10 @@ class Db
         } catch (mysqli_sql_exception $e) {
             echo $e;
         }
+    }
+
+    function getQuery($sql) {
+        $stmt = $this->conn->query($sql);
+        return $stmt->fetch_assoc();
     }
 }
