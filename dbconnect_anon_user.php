@@ -1,9 +1,9 @@
 <?php
 function dbconnect() {
     $db = "gamesite";
-    $host = "localhost";
-    $login = "root";
-    $password = "";
+    $host = "5.23.54.233";
+    $login = "gamesite";
+    $password = "1qaz2wsx3edc";
 
     $conn = new mysqli($host, $login, $password, $db, 3306);
 	
