@@ -1,3 +1,110 @@
+.menu_back{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: #363d49;
+    z-index: 5;
+}
+.scroll{
+    opacity: 0.5;
+}
+
+.menu_back:hover{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+    background: #363d49;
+    opacity: 1;
+    z-index: 5;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-self: center;
+
+}
+
+#container1{
+    display: flex;
+    flex-direction: row;
+    justify-items: start;
+}
+
+#container2{
+    display: flex;
+    flex-direction: row;
+    justify-items: end;
+}
+
+.menu_back .icon{
+    height: 50px;
+
+}
+
+.menu_back a{
+    color: azure;
+    width: 50px;
+}
+
+.menu_back a:hover{
+    color: azure;
+}
+
+.menu_back input{
+    justify-self: end;
+    align-self: center;
+    border-radius: 5px;
+    height: 40px;
+    margin-right: 2%;
+    border: 0px solid;
+}
+
+.menu_back .nav_but {
+    text-align: center;
+    width: 100px;
+    align-self: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .social-media {
     display: flex;
