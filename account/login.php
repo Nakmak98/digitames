@@ -119,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-sm-3"></div>
             <div class="col-sm-3">
                 <p>Don't have an account? Create now!</p>
-                <a href="account/registration.php" method="post">
+                <a href="registration.php" method="post">
                     <button class="btn btn-primary" id="sup">Create account</button>
                 </a>
             </div>
