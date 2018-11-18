@@ -46,12 +46,12 @@
                 },
                 {
                     type: 'Аналитика',
-                    value: 'analytics',
+                    value: 'Аналитика',
                     description: 'Cookies related to site visits, browser types, etc.'
                 },
                 {
                     type: 'Маркетинг',
-                    value: 'marketing',
+                    value: 'Маркетинг',
                     description: 'Cookies related to marketing, e.g. newsletters, social media, etc'
                 }
             ],
