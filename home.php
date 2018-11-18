@@ -17,7 +17,7 @@
                 message: 'На этом сайте не используются файлы cookie, соглашаясь вы предоставите возможность принимать файли куки, или можете их настроить самостоятельно',
                 delay: 600,
                 expires: -1,
-                link: '#privacy',
+                link: 'cookies_rules.php',
                 onAccept: function(){
                     var myPreferences = $.fn.ihavecookies.cookie();
                     console.log('Yay! The following preferences were saved...');
