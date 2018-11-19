@@ -86,7 +86,7 @@
 }
 #gdpr-cookie-message button {
     border: none;
-    background: var(--red);
+    background: grey;
     color: #e7e9ed;
     font-family: 'Quicksand', sans-serif;
     font-size: 15px;
@@ -97,13 +97,13 @@
     transition: all 0.3s ease-in;
 }
 #gdpr-cookie-message button:hover {
-    background: #e7e9ed;
+    background: #212121;
     color: var(--red);
     transition: all 0.3s ease-in;
 }
 button#gdpr-cookie-advanced {
-    background: white;
-    color: var(--red);
+    background: #747171;
+    color: white;
 }
 #gdpr-cookie-message button:disabled {
     opacity: 0.3;
