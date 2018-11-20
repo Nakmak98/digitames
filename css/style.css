@@ -1,22 +1,25 @@
-
+*{
+    padding: 0;
+    margin: 0;
+}
 .social-media {
     display: flex;
 }
-
 .social-media > li {
     margin-right: auto;
 }
 
-/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 780px) {
     .login .col {
         width: 100%;
         margin-top: 0;
     }
+
     /* hide the vertical line */
     .vl {
         display: none;
     }
+
     /* show the hidden text on small screens */
     .hide-md-lg {
         display: block;
@@ -28,7 +31,116 @@
     }
 }
 
-/* Remove the navbar's default margin-bottom and rounded borders */
+.about_cookies {
+    background: #343a40;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.25);
+    margin-top:20px;
+    margin-bottom: 20px;
+    width: 375px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.head_cookies {
+    font-size: 24px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.text_cookies {
+    text-align: left;
+    font-size:16px;
+    padding-left: 30px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+}
+
+#gdpr-cookie-message {
+    --purple: #343a40;
+    --red: #c3bba7;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    max-width: 390px;
+    background-color: var(--purple);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 6px 6px rgba(0,0,0,0.25);
+    margin-left: 30px;
+    font-family: system-ui;
+}
+#gdpr-cookie-message h4 {
+    color: var(--red);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#gdpr-cookie-message h5 {
+    color: var(--red);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+#gdpr-cookie-message p, #gdpr-cookie-message ul {
+    color: #e7e9ed;
+    font-size: 15px;
+    line-height: 1.5em;
+    margin-bottom: 20px;
+}
+#gdpr-cookie-message p:last-child {
+    margin-bottom: 0;
+    text-align: right;
+}
+#gdpr-cookie-message li {
+    width: 49%;
+    display: inline-block;
+}
+#gdpr-cookie-message a {
+    color: var(--red);
+    text-decoration: none;
+    font-size: 15px;
+    padding-bottom: 2px;
+    border-bottom: 1px dotted rgba(255,255,255,0.75);
+    transition: all 0.3s ease-in;
+}
+#gdpr-cookie-message a:hover {
+    color: #e7e9ed;
+    border-bottom-color: var(--red);
+    transition: all 0.3s ease-in;
+}
+#gdpr-cookie-message button {
+    border: none;
+    background: grey;
+    color: #e7e9ed;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 15px;
+    padding: 7px;
+    border-radius: 3px;
+    margin-left: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+}
+#gdpr-cookie-message button:hover {
+    background: #212121;
+    color: var(--red);
+    transition: all 0.3s ease-in;
+}
+button#gdpr-cookie-advanced {
+    background: #747171;
+    color: white;
+}
+#gdpr-cookie-message button:disabled {
+    opacity: 0.3;
+}
+#gdpr-cookie-message input[type="checkbox"] {
+    float: none;
+    margin-top: 0;
+    margin-right: 5px;
+}
+
 .navbar {
     margin-bottom: 0;
     background-color: #1a1a1a;
@@ -38,7 +150,7 @@
 html {
     font-family: sans-serif;
 }
-/* Add a gray background color and some padding to the footer */
+
 footer {
     background-color: #1a1a1a;
     padding: 35px;
@@ -46,8 +158,6 @@ footer {
     justify-content: space-between;
 }
 
-
-/*css card boxes*/
 #card-body-top {
     border-top-right-radius: 4px;
     border-top-left-radius: 4px;
@@ -58,9 +168,6 @@ footer {
     border-bottom-left-radius: 4px;
     padding: 0px;
 }
-/*css card boxes*/
-
-/* Style the images inside the grid */
 
 .row img {
     opacity: 0.8;
@@ -75,94 +182,7 @@ footer {
 .main {
     background-color: #222;
 }
-/* CSS for container imgs ------------------BEGiN*/
-/*.hovereffect {
-    width:100%;
-    height:100%;
-    float:left;
-    overflow:hidden;
-    position:relative;
-    text-align:center;
-    cursor:default;
-}
 
-.hovereffect .overlay {
-    width:100%;
-    height:100%;
-    position:absolute;
-    overflow:hidden;
-    top:0;
-    left:0;
-    opacity:0;
-    background-color:rgba(0,0,0,0.5);
-    -webkit-transition:all .4s ease-in-out;
-    transition:all .4s ease-in-out
-}
-
-.hovereffect img {
-    display:block;
-    position:relative;
-    -webkit-transition:all .4s linear;
-    transition:all .4s linear;
-}
-
-.hovereffect h2 {
-    text-transform:uppercase;
-    color:#fff;
-    text-align:center;
-    position:relative;
-    font-size:17px;
-    background:rgba(0,0,0,0.6);
-    -webkit-transform:translatey(-100px);
-    -ms-transform:translatey(-100px);
-    transform:translatey(-100px);
-    -webkit-transition:all .2s ease-in-out;
-    transition:all .2s ease-in-out;
-    padding:10px;
-}
-
-.hovereffect a.info {
-    text-decoration:none;
-    display:inline-block;
-    text-transform:uppercase;
-    color:#fff;
-    border:1px solid #fff;
-    background-color:transparent;
-    opacity:0;
-    filter:alpha(opacity=0);
-    -webkit-transition:all .2s ease-in-out;
-    transition:all .2s ease-in-out;
-    margin:50px 0 0;
-    padding:7px 14px;
-}
-
-.hovereffect a.info:hover {
-    box-shadow:0 0 5px #fff;
-}
-
-.hovereffect:hover img {
-    -ms-transform:scale(1.2);
-    -webkit-transform:scale(1.2);
-    transform:scale(1.2);
-}
-
-.hovereffect:hover .overlay {
-    opacity:1;
-    filter:alpha(opacity=100);
-}
-
-.hovereffect:hover h2,.hovereffect:hover a.info {
-    opacity:1;
-    filter:alpha(opacity=100);
-    -ms-transform:translatey(0);
-    -webkit-transform:translatey(0);
-    transform:translatey(0);
-}
-
-.hovereffect:hover a.info {
-    -webkit-transition-delay:.2s;
-    transition-delay:.2s;
-}*/
 .ihover {
     //position: relative;
     overflow:hidden;
@@ -212,19 +232,15 @@ footer {
     transform: translate(-50%, -50%);
     text-align: center;
 }
-/* CSS for container imgs*  -----------------END*/
-
-/* CSS for FEATURED PROJECTS ---------------BEGIN*/
 
 .carousel-inner img {
     display: flex;
     height: auto;
-    max-width: 100%; /* Set width to 100% */
+    max-width: 100%; /
     margin: auto;
     width: 100%;
 }
 
-/* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
     .carousel-caption {
         display: none;
@@ -232,7 +248,7 @@ footer {
 }
 
 .slider-size {
-    height: 400px; /* This is your slider height */
+    height: 400px;
 }
 
 .content {
@@ -253,9 +269,7 @@ myCarousel {
     margin: 0 auto;
     overflow: hidden;
 }
-/* CSS for FEATURED PROJECTS ---------------END*/
 
-/*login-begin*/
 .login, .signup {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -265,14 +279,12 @@ myCarousel {
     background-color: #1a1a1a;
 }
 
-/* style the container */
 .login .container,.signup .container {
     position: relative;
     border-radius: 5px;
     padding: 20px 0 20px 0;
 }
 
-/* style inputs and link buttons */
 .login input,
 .login .btn {
     width: 100%;
@@ -284,19 +296,13 @@ myCarousel {
     display: inline-block;
     font-size: 17px;
     line-height: 20px;
-    text-decoration: none; /* remove underline from anchors */
+    text-decoration: none;
 }
 
 input:hover,
 .btn:hover {
     opacity: 1;
 }
-
-/* add appropriate colors to fb, twitter and google buttons */
-/* .fb {
-  background-color: #3B5998;
-  color: white;
-} */
 
 .twitter {
     background-color: #55ACEE;
@@ -313,7 +319,6 @@ input:hover,
     color: white;
 }
 
-/* style the submit button */
 input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -324,7 +329,6 @@ input[type=submit]:hover {
     background-color: #45a049;
 }
 
-/* Two-column layout */
 .login .col {
     float: left;
     width: 50%;
@@ -336,14 +340,12 @@ input[type=submit]:hover {
     text-align: left;
 }
 
-/* Clear floats after the columns */
 .login .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-/* vertical line */
 .vl {
     position: absolute;
     left: 50%;
@@ -352,7 +354,6 @@ input[type=submit]:hover {
     height: 175px;
 }
 
-/* text inside the vertical line */
 .vl-innertext {
     position: absolute;
     top: 50%;
@@ -363,14 +364,11 @@ input[type=submit]:hover {
     padding: 8px 10px;
 }
 
-/* hide some text on medium and large screens */
 .hide-md-lg {
     display: none;
 }
 
-/* bottom container */
 .login #signup {
-    /*background-color: #1a1a1a;*/
     border-radius: 4px 4px 4px 4px;
 }
 
@@ -399,52 +397,7 @@ input[type=submit]:hover {
         text-align: center;
     }
 }
-/*login-end*/
 
-/*CSS Login Dropbar ------------BEGIN*/
-/*#login-dp{
-    min-width: 250px;
-    padding: 14px 14px 0;
-    overflow:hidden;
-    background-color:rgba(255,255,255,.8);
-}
-#login-dp .help-block{
-    font-size:12px
-}
-#login-dp .bottom{
-    background-color:rgba(255,255,255,.8);
-    border-top:1px solid #ddd;
-    clear:both;
-    padding:14px;
-}
-#login-dp .social-buttons{
-    margin:12px 0
-}
-#login-dp .social-buttons a{
-    width: 49%;
-}
-#login-dp .form-group {
-    margin-bottom: 10px;
-}
-.btn-fb{
-    color: #fff;
-    background-color:#3b5998;
-}
-.btn-fb:hover{
-    color: #fff;
-    background-color:#496ebc
-}
-.btn-tw{
-    color: #fff;
-    background-color:#55acee;
-}
-.btn-tw:hover{
-    color: #fff;
-    background-color:#59b5fa;
-}*/
-/*CSS Login Dropbar ------------END*/
-
-/*CSS Height*/
 body, html, .container-fluid { /// take all available height
 height: 100%;
 }
@@ -454,9 +407,7 @@ body {
 .login,.sign, .messages {
    min-height: 90vh;
 }
-/*CSS Height*/
 
-/*Sign up */
 .sign {
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -497,13 +448,7 @@ body {
     opacity: 1;
 }
 
-/* add appropriate colors to fb, twitter and google buttons */
-/* .fb {
-  background-color: #3B5998;
-  color: white;
-} */
 
-/* style the submit button */
 .sign input[type=submit] {
     background-color: #4CAF50;
     color: white;
@@ -514,7 +459,6 @@ body {
     background-color: #45a049;
 }
 
-/* Two-column layout */
 .sign .col {
     float: left;
     width: 50%;
@@ -523,23 +467,17 @@ body {
     margin-top: 16px;
 }
 
-/* Clear floats after the columns */
 .sign .row:after {
     content: "";
     display: table;
     clear: both;
 }
 
-
-
-/* hide some text on medium and large screens */
 .hide-md-lg {
     display: none;
 }
 
-/* bottom container */
 .sign button {
-    /*background-color: #1a1a1a;*/
     border-radius: 4px 4px 4px 4px;
 }
 
@@ -553,12 +491,11 @@ body {
     background-color: #45a049;
 }
 
-/*the container must be positioned relative:*/
 .sign .custom-select {
     position: relative;
 }
 .sign .custom-select select {
-    display: none; /*hide original SELECT element:*/
+    display: none;
 }
 
 .alert {
@@ -583,15 +520,13 @@ body {
 .alert:empty{
     display: none;
 }
+
 .alert-success {
     color: #21ec0c;
     background-color: #15360e;
     box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
 }
 
-/*Sign up*/
-
-/*Game page*/
 .hide-box:empty{
     display: none;
 }
@@ -605,40 +540,8 @@ body {
     background-color: #936c4c; /* Green */
     color: white;
 }
-/*Game page*/
 
-
-/*---PROFILE ADMIN---*/
 .profile {
     background-color: #375f84;
 }
 
-/*.row {
-    overflow: hidden;
-}*/
-
-/*nav {
-    overflow: hidden;
-}*/
-/*.content .tab {
-    text-align: center;
-    margin-top: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    background-color: #032442;
-}*/
-/*DataTable*/
-/*
-.profile table.dataTable.stripe tbody td.odd, table.dataTable.display tbody td.odd {
-    background-color: -moz-mac-accentdarkestshadow;
-}
-.profile table.dataTable.dataTables_length label{
-    text-decoration-color: white;
-}
-.profile table.dataTable.dataTables_length.dataTables_filter  {
-    text-decoration-color: white;
-}
-*/
-/*DataTable*/
->>>>>>> Dima
-/*---PROFILE ADMIN---*/
