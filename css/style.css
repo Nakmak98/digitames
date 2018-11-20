@@ -184,48 +184,55 @@ footer {
 }
 
 .ihover {
-    //position: relative;
+    position: relative;
+    z-index: 1;
     overflow:hidden;
+    //box-shadow: inset 0px -80px 0px -30px rgba(0,0,0,1);
     /*width: 50%;*/
+
 }
 .ihover img {
     -moz-transition: all 1s ease-out;
     -o-transition: all 1s ease-out;
     -webkit-transition: all 1s ease-out;
-
+    //box-shadow: inset 0px -80px 0px -30px rgba(0,0,0,1);
 }
 
 .ihover img:hover{
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
     -o-transform: scale(1.1);
+    //box-shadow: inset 0px -80px 20px -30px rgba(0,0,0,0.44);
 }
 .ihover:hover{
     transition: 2s;
 }
 
 .overlay {
-    opacity: 0;
+    background-color: red;
     height: 100%;
     width: 100%;
     transition: .5s ease;
-    background-color:rgba(0,0,0,0.7);
 }
 
 .ihover:hover .overlay {
     opacity: 1;
-    background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 40%);
+    //background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 40%);
 }
 
-.ihover:hover .overlay p{
-    top: 70%;
+.ihover:hover .overlay {
+    height: 70%;
 }
 
-.overlay p {
+.overlay  {
+    opacity: 0.7;
+    background-color: rgba(0,0,0,0.7);
     transition: 1s;
     font-size: 20px;
     position: absolute;
-    top: 80%;
+    height: 0%;
+    width: 100%;
+    top: 100%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
