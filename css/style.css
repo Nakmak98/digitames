@@ -485,6 +485,7 @@ input[type=submit]:hover {
     #gdpr-cookie-message li {
         list-style-type: none;
         display: block;
+        width: 150px;
     }
     #gdpr-cookie-message p:last-child {
         margin-bottom: 0;
