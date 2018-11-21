@@ -39,7 +39,7 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="position: absolute;">
                     <a class="dropdown-item" href="profile/profile.php" method="post">Profile</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="index.php?signout">Sign out</a>
+                    <a class="dropdown-item" href="../index.php?signout">Sign out</a>
                 </div>
             </li>
             <li class="nav-item">

@@ -34,16 +34,16 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 if ($results = mysqli_query($mysqli, $sql)) {
                     $user_role = mysqli_fetch_assoc($results);
                     setcookie("user_role", $user_role['role'], time() + (86400 * 30), "/gamesite");
-                    header('Location: profile/profile.php');
+                    header('Location: ../profile/profile.php');
                 }
                 else {
                     $_SESSION['message_db'] = "SELECT USER_ROLE ERROR" . mysqli_error($mysqli);
-                    header('Location: templates/error.php');
+                    header('Location: ../emplates/error.php');
                 }
             }
             else {
                 $_SESSION['message_db'] = "INSERT USER_DATA ERROR" . mysqli_error($mysqli);
-                header('Location: templates/error.php');
+                header('Location: ../templates/error.php');
             }
         }
         else {
@@ -81,7 +81,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 rt-col">
-                <form method="POST" action="account/login.php">
+                <form method="POST" action="login.php">
                     <h3 class="text-center">Sign in</h3>
                     <div class="alert alert-error"><?php
                         if(isset($_SESSION['message_login'])) { echo $_SESSION['message_login']; }
@@ -119,7 +119,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="col-sm-3"></div>
             <div class="col-sm-3">
                 <p>Don't have an account? Create now!</p>
-                <a href="account/registration.php" method="post">
+                <a href="registration.php" method="post">
                     <button class="btn btn-primary" id="sup">Create account</button>
                 </a>
             </div>

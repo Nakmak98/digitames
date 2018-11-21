@@ -8,7 +8,7 @@ unset($_SESSION['message_db']);
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
     //if ($_POST['new_password'] == $_POST['confirm_password']) { //matching passwords
         // connecting to db
-        include $_SERVER['DOCUMENT_ROOT']."dbconnect_anon_user.php";
+        include $_SERVER['DOCUMENT_ROOT']."/dbconnect_anon_user.php";
 
         $mysqli = dbconnect();
 
@@ -42,26 +42,26 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                             unset($results);
                             unset($_SESSION['message_email']);
                             mysqli_close($mysqli);
-                            header('Location: templates/welcome.php');
+                            header('Location: ../templates/welcome.php');
                         }
                         else {
                             $_SESSION['message_db'] = "INSERT USER_ROLE ERROR".mysqli_error($mysqli);
-                            header('Location: templates/error.php');
+                            header('Location: ../templates/error.php');
                         }
                     }
                     else {
                         $_SESSION['message_db'] = "INSERT USER_DATA ERROR".mysqli_error($mysqli);
-                        header('Location: templates/error.php');
+                        header('Location: ../templates/error.php');
                     }
                 }
                 else {
                     $_SESSION['message_db'] = "SELECT USER_ID ERROR".mysqli_error($mysqli);
-                    header('Location: templates/error.php');
+                    header('Location: ../templates/error.php');
                 }
             }
             else {
                 $_SESSION['message_db'] = "INSERT USER ERROR".mysqli_error($mysqli);
-                header('Location: templates/error.php');
+                header('Location: ../templates/error.php');
                 }
         }
 /*    }
@@ -96,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
-                <form method="POST" action="account/registration.php">
+                <form method="POST" action="registration.php">
                     <h2 class="text-center">Sign up</h2>
                     <div class="alert alert-error"><?php
                         if(isset($_SESSION['message_password'])) { echo $_SESSION['message_password']; }
