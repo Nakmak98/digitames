@@ -16,7 +16,7 @@
                 title: '&#x1F36A; Разрешить сайту принимать Cookie?',
                 message: 'На этом сайте не используются файлы cookie, соглашаясь вы предоставите возможность принимать файли куки, или можете их настроить самостоятельно',
                 delay: 600,
-                expires: -1,
+                expires: 1,
                 link: 'cookies_rules.php',
                 onAccept: function(){
                     var myPreferences = $.fn.ihavecookies.cookie();

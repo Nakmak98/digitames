@@ -207,12 +207,15 @@
     background: grey;
     color: #e7e9ed;
     font-family: 'Quicksand', sans-serif;
-    font-size: 15px;
+    font-size: 15px;list-style-type: none;ы
     padding: 7px;
     border-radius: 3px;
     margin-left: 15px;
     cursor: pointer;
     transition: all 0.3s ease-in;
+    margin-bottom: 10px;
+    width: 150px;
+    height: 35px;
 }
 #gdpr-cookie-message button:hover {
     background: #212121;
@@ -277,7 +280,7 @@ footer {
 .ihover {
     position: relative;
     z-index: 1;
-    overflow:hidden;
+    overflow: hidden;
     //box-shadow: inset 0px -80px 0px -30px rgba(0,0,0,1);
     /*width: 50%;*/
 
@@ -300,7 +303,6 @@ footer {
 }
 
 .overlay {
-    background-color: red;
     height: 100%;
     width: 100%;
     transition: .5s ease;
@@ -308,11 +310,10 @@ footer {
 
 .ihover:hover .overlay {
     opacity: 1;
-    //background: linear-gradient(180deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0) 40%);
 }
 
 .ihover:hover .overlay {
-    height: 70%;
+    height: 50%;
 }
 
 .overlay  {
@@ -481,6 +482,14 @@ input[type=submit]:hover {
 }
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 650px) {
+    #gdpr-cookie-message li {
+        list-style-type: none;
+        display: block;
+    }
+    #gdpr-cookie-message p:last-child {
+        margin-bottom: 0;
+        text-align: center;
+    }
     .login .col {
         width: 100%;
         margin-top: 0;
