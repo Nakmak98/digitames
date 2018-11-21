@@ -11,7 +11,7 @@
 </head>
 <body>
 <!--Navbar-->
-<?php include $_SERVER['DOCUMENT_ROOT']."templates/header_default.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/templates/header_default.php"; ?>
 <!--Navbar-->
 <div class="messages content text-center  text-white" style="height: 90vh;">
     <br><br>
@@ -29,12 +29,12 @@
         ?>
     </h2>
     <br><br><br>
-    <a href="index.php" class="text-green">
+    <a href="../index.php" class="text-green">
         <button class="btn btn-primary" id="sup">Go back to home page</button>
     </a>
 </div>
 <!-- Footer -->
-<?php include $_SERVER['DOCUMENT_ROOT']."templates/footer.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/templates/footer.php"; ?>
 <!-- Footer -->
 
 <!--JS-->

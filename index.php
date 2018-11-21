@@ -24,6 +24,11 @@ if(isset($_GET['profile'])) {
     exit;
 }
 
+if(isset($_GET['search'])){
+    include $_SERVER['DOCUMENT_ROOT']."/search.php";
+    exit;
+}
+
 $template = 1;
 include $_SERVER['DOCUMENT_ROOT']."/home.php";
 

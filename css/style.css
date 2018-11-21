@@ -41,6 +41,10 @@
 
 }
 
+.menu_back a img{
+    margin-left: 10px;
+}
+
 .menu_back a p{
     margin-top: 13px;
     text-decoration: none;
@@ -51,13 +55,18 @@
 }
 
 
-.menu_back input{
-    justify-self: end;
-    align-self: center;
+.menu_back form input{
+
     border-radius: 5px;
     height: 40px;
     margin-right: 2%;
     border: 0px solid;
+}
+
+.menu_back form{
+    justify-self: end;
+    align-self: center;
+    margin-right: 2%;
 }
 
 .menu_back .nav_but {

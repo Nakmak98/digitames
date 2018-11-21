@@ -50,7 +50,7 @@ if (isset($_POST[''])) {
 <body>
 
 <!--Navbar-->
-<?php include $_SERVER['DOCUMENT_ROOT']."templates/header.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/templates/header.php"; ?>
 <!--Navbar-->
 
 <div class="content">
@@ -107,7 +107,7 @@ if (isset($_POST[''])) {
 
 
 <!-- Footer -->
-<?php include $_SERVER['DOCUMENT_ROOT']."templates/footer.php"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/templates/footer.php"; ?>
 <!-- Footer -->
 
 <!--JS-->
