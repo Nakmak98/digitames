@@ -83,14 +83,13 @@ $conn->close();?>
                     continue;
                 echo '<div class="col">';
                 echo '<div class="card bg-dark text-white">';
-                echo '<div class="card-body" id="card-body-top">DLC</div>';
-                //echo '<p class="card-title text-white">DLC</p></div>';
                 $tableview = $result_tableview->fetch_assoc();
+                echo "<div class=\"card-body\" id=\"card-body-top\">$tableview[proj_name]</div>";
                 echo "<a class=\"info\" name=\"game_page\" href=\"templates/game_page.php?game=$tableview[id]\" >";
                 echo '<div class="ihover">';
                 echo "<img class=\"card-img-bottom\" src=\"$tableview[proj_img]\" alt=\"Image\">";
                 echo '<div class="overlay">';
-                echo "<p class=\"card-title text-white\">$tableview[proj_name]</p>
+                echo "<p class=\"card-title text-white\">$tableview[proj_desc]</p>
                          </div></div></a>";
                 echo '<div class="card-body bg-dark" id="card-body-bottom">';
                 echo '<div class="row">';
