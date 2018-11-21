@@ -8,55 +8,68 @@
 
 class Registration
 {
-    public $db;
+    protected $db;
     public $email;
     public $password;
     public $age;
     public $region;
+    public $registration_error = "This user already exist";
 
-    function __construct($dbconn, $post){
+    //TODO метод валидации приходящих данных на всякие атаки
+    function __construct($dbconn, $post)
+    {
         $this->db = $dbconn;
         $this->email = $post['new_email'];
         $this->password = $post['new_password'];
         $this->age = $post['age'];
-        $this->region =$post['region'];
+        $this->region = $post['region'];
     }
-//    TODO метод валидации приходящих данных на всякие атаки
-    function email_exist(){
+
+    function sign_up()
+    {
+        if($this->email_exist()){
+            return;
+        }
+        $this->password = password_hash($this->password, PASSWORD_DEFAULT);
+        $sql = "INSERT INTO users (email, password)
+                VALUES ('$this->email', '$this->password')";
+        $this->db->query($sql);
+    }
+
+    public function email_exist()
+    {
         $sql = "SELECT id FROM users WHERE email='$this->email'";
-        $results = $this->db->conn->query($sql);
+        $results = $this->db->query($sql);
         if ($results->num_rows) {
             return true;
         }
         return false;
     }
 
-    function sign_up(){
-        $sql = "INSERT INTO users (email, password)
-                VALUES ('$this->email', '$this->password')";
-        $this->db->conn->query($sql);
+    function insert_user_data()
+    {
+        $id = $this->get_user_id();
+        if($this->user_data_exist($id)){
+           return False;
+        }
+        $sql = "INSERT INTO user_data (user_id, age, region) VALUES ('$id', '$this->age ', '$this->region')";
+        $this->db->query($sql);
+        $sql = "INSERT INTO user_role (user_id, role) VALUES ('$id', 'subscriber')";
+        $this->db->query($sql);
+        return True;
     }
 
-    function get_user_id(){
+    protected function get_user_id()
+    {
         $sql = "SELECT id FROM users WHERE email='$this->email'";
-        $results = $this->db->getQuery($sql);
+        $results = $this->db->query($sql);
+        $results = $results->fetch_assoc();
         return $results['id'];
     }
 
-    function insert_user_data(){
-        $id = $this->get_user_id();
-        $sql = "INSERT INTO user_data (user_id, age, region, role) VALUES ('$id', '$this->age ', '$this->region')";
-        $this->db->conn->query($sql);
-        $sql = "INSERT INTO user_role (user_id, role) VALUES ('$id', 'subscriber')";
-        $this->db->conn->query($sql);
+    protected function user_data_exist($id){
+        $sql = "SELECT id FROM user_data WHERE user_id='$id'";
+        $this->db->query($sql) ? True : False;
     }
 
-    function __destruct()
-    {
-        unset($this->email);
-        unset($this->password);
-        unset($this->region);
-        unset($this->age);
-        unset($this->region);
-    }
 }
