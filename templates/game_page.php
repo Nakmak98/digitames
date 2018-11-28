@@ -108,7 +108,6 @@ else {
     <script type="text/javascript" src="/js/navbar.js"></script>
 </head>
 <body>
-
 <!--Navbar-->
 <?php
 if(isset($_COOKIE['user_id'])) {
