@@ -15,9 +15,10 @@
 <!--Navbar-->
 <?php include $_SERVER['DOCUMENT_ROOT']."templates/header_default.php"; ?>
 <!--Navbar-->
+{{ error.id }}
 <div class="messages content text-center  text-white" style="height: 90vh;">
     <br><br>
-    <h1>ERROR.</h1>
+    <h1>{{ error }}</h1>
     <h2>
         <?php
         session_start();

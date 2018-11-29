@@ -34,6 +34,8 @@ use \Psr\Http\Message\ResponseInterface as Response;
 require 'vendor/autoload.php';
 require_once 'Logic/User.php';
 require_once 'Logic/Db/Db.php';
+require_once 'Logic/AuthenticateUser.php';
+require_once 'Logic/Controllers.php';
 
 
 $config['displayErrorDetails'] = true;
@@ -55,33 +57,12 @@ $container['view'] = function ($container) {
     return $view;
 };
 $container['db'] = function () {
-    return new Db();
+    return Db::getConnection();
 };
 
-class Controller {
-    protected $container;
-    protected $sessid;
-    protected $user;
-    protected $db;
-
-    function __construct($container) {
-        $this->container = $container;
-        $isAuth = isset($_COOKIE['sessid']) ? true : false;
-        $this->user = \Logic\Db\User::getInstance($isAuth);
-    }
-}
-
-class AuthController extends Controller {
-    protected $login;
-    protected $password;
-
-    function getLoginForm($request, $response, $args) {
-        $className = get_class($this->user);
-        return $this->container['view']->render($response, 'login.php', [
-            'test' => $className ]);
-    }
-}
 
 $app->get('/login/', AuthController::class . ':getLoginForm');
+$app->get('/logout/', AuthController::class . ':logout');
+$app->post('/login/', AuthController::class . ':signIn');
 $app->run();
 ?>

@@ -6,35 +6,22 @@
  * Time: 15:26
  */
 
-class Db
-{
-    public $db;
-    public $host;
-    private $login;
-    private $password;
-    public $conn;
-
-    function __construct()
-    {
-        $this->db = "gamesite";
-        $this->host = "localhost";
-        $this->login = "gamesite";
-        $this->password = "1qaz2wsx3edc";
-        try {
-            $this->conn = new mysqli($this->host, $this->login, $this->password, $this->db, 3306);
-        } catch (mysqli_sql_exception $e) {
-            echo $e;
-            exit;
+class Db {
+    static function getConnection() {
+        $db = "gamesite";
+        $host = "5.23.54.233";
+        $login = "gamesite";
+        $password = "1qaz2wsx3edc";
+        static $conn = null;
+        if ($conn == null) {
+            try {
+                $conn = new mysqli($host, $login, $password, $db, 3306);
+                return $conn;
+            } catch (mysqli_sql_exception $e) {
+                echo $e;
+                exit;
+            }
         }
-    }
-
-    function getQuery($sql) {
-        try {
-            $stmt = $this->conn->query($sql);
-        } catch (mysqli_sql_exception $e) {
-            echo $e;
-            exit;
-        }
-        return $stmt->fetch_assoc();
+        return $conn;
     }
 }

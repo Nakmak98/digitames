@@ -17,7 +17,7 @@
 <!--Navbar-->
 <?php include $_SERVER['DOCUMENT_ROOT']."templates/header.php"; ?>
 <!--Navbar-->
-
+{{ user }}
 <div class="messages content text-center  text-white" style="height: 90vh;">
 <div class="row">
     <div class="col-sm-2">

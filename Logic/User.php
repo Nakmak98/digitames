@@ -6,11 +6,10 @@
  * Time: 23:43
  */
 
-namespace Logic\Db;
+namespace Logic;
 
 
-abstract class User
-{
+abstract class User {
     protected $sessid;
     protected $user_id;
     protected $nickname;
@@ -18,8 +17,8 @@ abstract class User
     protected $region;
     protected $role;
 
-    static function getInstance($userIsAuth){
-        if($userIsAuth){
+    static function getInstance($userIsAuth) {
+        if ($userIsAuth) {
             return new AuthUser();
         }
         return new AnonymousUser();
@@ -28,16 +27,30 @@ abstract class User
     abstract function shortName();
 }
 
-class AnonymousUser extends User{
-    function shortName()
-    {
+class AnonymousUser extends User {
+    function shortName() {
         // TODO: Implement shortName() method.
     }
 }
 
-class AuthUser extends User{
-    function shortName()
-    {
+class AuthUser extends User {
+
+    function __construct() {
+        $this->sessid = $_COOKIE['sessid'];
+        $user_data = $this->getUserData();
+        $this->nickname = $user_data['nickname'];
+        $this->age = $user_data['age'];
+        $this->region = $user_data['region'];
+        $this->user_id = $user_data['user_id'];
+    }
+
+    private function getUserData() {
+        $dbconn = \Db::getConnection();
+        $result = $dbconn->query("SELECT * FROM gamesite.user_data WHERE session_id='$this->sessid'");
+        return $result->fetch_assoc();
+    }
+
+    function shortName() {
         // TODO: Implement shortName() method.
     }
 }
