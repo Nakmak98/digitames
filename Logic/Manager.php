@@ -13,12 +13,12 @@ class Manager {
         $this->dbconn = Db::getConnection();
     }
 
-    function getAssocResult($sql){
+    function getAssocResult($sql) {
         $result = $this->dbconn->query($sql);
         return $result->fetch_assoc();
     }
 
-    function getResult($sql){
+    function getResult($sql) {
         return $this->dbconn->query($sql);
     }
 }

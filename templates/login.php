@@ -11,18 +11,20 @@
             <div class="col-sm-6 rt-col">
                 <form method="POST" action="/login/">
                     <h3 class="text-center">Sign in</h3>
-                    <div class="alert alert-error"></div>
+                    <div class="alert alert-error">{{error}}</div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputEmail4">Email</p></label>
-                            <input type="email" class="form-control" id="email" placeholder="Email" name="email" required>
+                            <input type="email" class="form-control" id="email" placeholder="Email" name="email"
+                                   required>
                             <input type="hidden" name="type" value="basic">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="inputPassword4">Password</p></label>
-                            <input type="password" class="form-control" id="password" placeholder="Password" name="password" required>
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                   name="password" required>
                         </div>
                     </div>
                     <br>
