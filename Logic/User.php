@@ -7,7 +7,8 @@
  */
 
 namespace Logic;
-
+require_once 'AnonymousUser.php';
+require_once 'AuthUser.php';
 
 abstract class User {
     protected $sessid;
@@ -25,32 +26,4 @@ abstract class User {
     }
 
     abstract function shortName();
-}
-
-class AnonymousUser extends User {
-    function shortName() {
-        // TODO: Implement shortName() method.
-    }
-}
-
-class AuthUser extends User {
-
-    function __construct() {
-        $this->sessid = $_COOKIE['sessid'];
-        $user_data = $this->getUserData();
-        $this->nickname = $user_data['nickname'];
-        $this->age = $user_data['age'];
-        $this->region = $user_data['region'];
-        $this->user_id = $user_data['user_id'];
-    }
-
-    private function getUserData() {
-        $dbconn = \Db::getConnection();
-        $result = $dbconn->query("SELECT * FROM gamesite.user_data WHERE session_id='$this->sessid'");
-        return $result->fetch_assoc();
-    }
-
-    function shortName() {
-        // TODO: Implement shortName() method.
-    }
 }

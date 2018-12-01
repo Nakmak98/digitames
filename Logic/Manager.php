@@ -6,11 +6,13 @@
  * Time: 19:12
  */
 
+namespace Logic;
+require_once 'Db/Db.php';
 class Manager {
     protected $dbconn;
 
     function __construct() {
-        $this->dbconn = Db::getConnection();
+        $this->dbconn = \Db::getConnection();
     }
 
     function getAssocResult($sql) {

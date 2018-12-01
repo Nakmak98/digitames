@@ -1,42 +1,12 @@
 <?php
-//
-//if(isset($_GET['signout'])) {
-//    unset($_COOKIE['user_id']);
-//    unset($_COOKIE['user_role']);
-//    setcookie('user_id', null, -1);
-//    setcookie('user_role' ,null, -1);
-//}
-//
-//if(isset($_GET['signup'])) {
-//    header('Location: account/registration.php');
-//    exit;
-//}
-//
-//if(isset($_GET['login'])) {
-$template = 2;
-//    include $_SERVER['DOCUMENT_ROOT']."home.php";
-//    exit;
-//}
-//
-//if(isset($_GET['profile'])) {
-$template = 4;
-//    include $_SERVER['DOCUMENT_ROOT']."home.php";
-//    exit;
-//}
-//
-//$template = 1;
-//include $_SERVER['DOCUMENT_ROOT']."/home.php";
-//
-//
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 require 'vendor/autoload.php';
-require_once 'Logic/User.php';
 require_once 'Logic/Db/Db.php';
-require_once 'Logic/AuthenticateUser.php';
-require_once 'Logic/Controllers.php';
-
+require_once 'Logic/Controller.php';
+require_once 'Logic/HomePageController.php';
+require_once 'Logic/AuthController.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -63,9 +33,11 @@ $container['db'] = function () {
 };
 
 
-$app->get('/', HomePageController::class . ':getHomePage');
-$app->get('/login/', AuthController::class . ':getLoginForm');
-$app->get('/logout/', AuthController::class . ':logout');
-$app->post('/login/', AuthController::class . ':signIn');
+$app->get('/', Logic\HomePageController::class . ':getHomePage');
+$app->get('/login/', Logic\AuthController::class . ':getLoginForm');
+$app->get('/logout/', Logic\AuthController::class . ':logout');
+$app->post('/login/', Logic\AuthController::class . ':signIn');
+$app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
+$app->post('/signup/', Logic\SignUpController::class . ':signUp');
 $app->run();
 ?>
