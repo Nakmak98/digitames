@@ -12,10 +12,10 @@ namespace Logic;
 abstract class User {
     protected $sessid;
     protected $user_id;
-    protected $nickname;
-    protected $age;
-    protected $region;
-    protected $role;
+    public $nickname;
+    public $age;
+    public $region;
+    public $role;
 
     static function getInstance($userIsAuth) {
         if ($userIsAuth) {

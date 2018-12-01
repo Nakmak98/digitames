@@ -6,16 +6,20 @@
  * Time: 22:54
  */
 
+require_once ('Manager.php');
+
 class Controller {
     protected $container;
     protected $sessid;
-    protected $user;
+    public $user;
     protected $db;
+    protected $context;
 
     function __construct($container) {
         $this->container = $container;
         $isAuth = isset($_COOKIE['sessid']) ? true : false;
         $this->user = \Logic\User::getInstance($isAuth);
+        $this->context['user']=$this->user;
     }
 }
 
@@ -45,5 +49,27 @@ class AuthController extends Controller {
         $user = $auth->logout();
         //TODO пернаправить на шаблон стартовой страницы
         return $this->container['view']->render($response, 'home.php');
+    }
+}
+
+class HomePageController extends Controller {
+    static $getFeatured = "SELECT * FROM `game_project` WHERE is_featured = 1";
+    static $getTableView = "SELECT * FROM `game_project`";
+
+    function getHomePage($request, $response, $args){
+        $manager = new Manager();
+        $feature_result = $manager->getResult(self::$getFeatured);
+        $tableview_result = $manager->getResult(self::$getTableView);
+        $feature_list = $feature_result->fetch_all(MYSQLI_ASSOC);
+        $tableview_list = $tableview_result->fetch_all(MYSQLI_ASSOC);
+        $tableview_rows = round(($tableview_result->num_rows / 2.0), 0,
+            PHP_ROUND_HALF_UP);
+        $this->context['featured'] =$feature_list;
+        $this->context['test'] =$feature_result;
+        $this->context['featured_num_rows'] = $feature_result->num_rows - 1;
+        $this->context['tableview'] = $tableview_result;
+        $this->context['tableview_cols']=2.0;
+        $this->context['tableview_rows']=$tableview_rows;
+        return $this->container['view']->render($response, 'home.html', $this->context);
     }
 }

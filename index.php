@@ -48,12 +48,14 @@ $container = $app->getContainer();
 
 // Register component on container
 $container['view'] = function ($container) {
-    $view = new \Slim\Views\Twig('templates', []);
+    $view = new \Slim\Views\Twig('templates', [
+        'debag' => true,
+    ]);
 
     // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-
+    $view->addExtension(new Twig_Extension_Debug());
     return $view;
 };
 $container['db'] = function () {
@@ -61,6 +63,7 @@ $container['db'] = function () {
 };
 
 
+$app->get('/', HomePageController::class . ':getHomePage');
 $app->get('/login/', AuthController::class . ':getLoginForm');
 $app->get('/logout/', AuthController::class . ':logout');
 $app->post('/login/', AuthController::class . ':signIn');

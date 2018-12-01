@@ -1,19 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <title>Игровой портал</title>
-    <link rel="icon" href="../img/icon.png">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
 <div class="login h-100">
     <div class="container text-white">
         <br>
-        <div class="dropdown-divider"></div>
+
         <br>
         <div class="row">
             <div class="col-sm-3"></div>
@@ -67,8 +58,4 @@
         </div>
     </div>
 </div>
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}

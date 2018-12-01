@@ -53,7 +53,7 @@ class BasicAuth extends AuthenticateUser {
         $id = $this->user['id'];
         $sql = "UPDATE user_data SET session_id='$sessid' WHERE user_id='$id'";
         $this->dbconn->query($sql);
-        setcookie("sessid", $sessid, time() + (86400 * 30), "/login");
+        setcookie("sessid", $sessid, time() + (86400 * 30), "/");
     }
 
     public function logout() {
