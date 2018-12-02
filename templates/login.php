@@ -2,10 +2,7 @@
 
 {% block content %}
 <div class="login h-100">
-    <div class="container text-white">
-        <br>
-
-        <br>
+    <div class="container text-white"><br><br>
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 rt-col">

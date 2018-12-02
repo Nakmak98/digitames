@@ -24,6 +24,6 @@ class SignUpController extends Controller {
                 'error' => $e,
             ]);
         }
-        return $this->container['view']->render($response, 'welcom  e.html');
+        return $this->container['view']->render($response, 'welcome.html');
     }
 }

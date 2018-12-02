@@ -8,14 +8,13 @@
             {% if feature_num_rows != 0 %}
             {% for feature, value in range(0, feature_num_rows) %}
             <li data-target="#myCarousel" data-slide-to={{ featured_num_rows }}></li>
-            '
             {% endfor %}
             {% endif %}
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <a href={{ featured[0]['proj_url']}}>
-                <a class="info" name="game_page" href="game_page/{{featured[0]['proj_name']}}" ">
+                <a class="info" name="game_page" href="game_page/{{featured[0]['proj_name']}}">
                 <img class="d-block w-100" src={{ featured[0]['proj_img'] }} alt = {{ featured[0]['proj_name'] }}>
                 </a>
                 <div class="carousel-caption d-none d-md-block">
