@@ -707,41 +707,64 @@ body {
     color: white;
 }
 
-/*Game page*/
-
-
-/*---PROFILE ADMIN---*/
 .profile {
     background-color: #375f84;
 }
 
-/*.row {
-    overflow: hidden;
-}*/
+.myButton {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
+    background: -moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: -ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
+    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23', GradientType=0);
+    background-color: #ffec64;
+    -moz-border-radius: 23px;
+    -webkit-border-radius: 23px;
+    border-radius: 23px;
+    border: 5px solid #ffaa22;
+    display: inline-block;
+    cursor: pointer;
+    color: #333333;
+    font-family: Impact;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 17px 47px;
+    text-decoration: none;
+    text-shadow: 0px 1px 18px #a1a1a1;
+}
 
-/*nav {
-    overflow: hidden;
-}*/
-/*.content .tab {
-    text-align: center;
-    margin-top: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
-    background-color: #032442;
-}*/
-/*DataTable*/
-/*
-.profile table.dataTable.stripe tbody td.odd, table.dataTable.display tbody td.odd {
-    background-color: -moz-mac-accentdarkestshadow;
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background: -moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64', GradientType=0);
+    background-color: #ffab23;
 }
-.profile table.dataTable.dataTables_length label{
-    text-decoration-color: white;
-}
-.profile table.dataTable.dataTables_length.dataTables_filter  {
-    text-decoration-color: white;
-}
-*/
-/*DataTable*/
->>> >>> > Dima
 
-/*---PROFILE ADMIN---*/
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+#shadows {
+    box-shadow: 1px 1px 8px 8px #101010;
+}
+
+.video {
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.video iframe {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+}

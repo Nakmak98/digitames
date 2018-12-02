@@ -1,4 +1,5 @@
 <?php
+
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
@@ -7,6 +8,7 @@ require_once 'Logic/Db/Db.php';
 require_once 'Logic/Controller.php';
 require_once 'Logic/HomePageController.php';
 require_once 'Logic/AuthController.php';
+require_once 'Logic/GamePageController.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -28,6 +30,7 @@ $container['view'] = function ($container) {
     $view->addExtension(new Twig_Extension_Debug());
     return $view;
 };
+
 $container['db'] = function () {
     return Db::getConnection();
 };
@@ -39,5 +42,6 @@ $app->get('/logout/', Logic\AuthController::class . ':logout');
 $app->post('/login/', Logic\AuthController::class . ':signIn');
 $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
 $app->post('/signup/', Logic\SignUpController::class . ':signUp');
+$app->get('/game_page/{project_name}', Logic\GamePageController::class . ':getGamePage');
 $app->run();
 ?>

@@ -10,7 +10,6 @@ require_once  'User.php';
 
 class Controller {
     protected $container;
-    protected $sessid;
     public $user;
     protected $db;
     protected $context;

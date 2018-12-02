@@ -1,4 +1,6 @@
-<?php
+<?php /** @noinspection PhpUndefinedMethodInspection */
+/** @noinspection ALL */
+
 /**
  * Created by PhpStorm.
  * User: Nakmak
@@ -31,7 +33,7 @@ class AuthController extends Controller {
 
     function logout($request, $response, $args) {
         $auth = AuthenticateUser::getInstance($_POST);
-        $user = $auth->logout();
+        $auth->logout();
         return $this->container['view']->render($response, 'home.php');
     }
 }

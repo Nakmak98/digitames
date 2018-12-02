@@ -6,7 +6,6 @@
  * Time: 22:59
  */
 namespace Logic;
-use mysql_xdevapi\Exception;
 
 require_once 'Db/Db.php';
 class Registration

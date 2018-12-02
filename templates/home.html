@@ -1,50 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
 <div class="content">
-    <div id="myCarousel" class="h-100 carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            {% if feature_num_rows != 0 %}
-            {% for feature, value in range(0, feature_num_rows) %}
-            <li data-target="#myCarousel" data-slide-to={{ featured_num_rows }}></li>
-            '
-            {% endfor %}
-            {% endif %}
-        </ol>
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <a href={{ featured[0]['proj_url']}}>
-                <a class="info" name="game_page" href="game_page/{{featured[0]['proj_name']}}" ">
-                <img class="d-block w-100" src={{ featured[0]['proj_img'] }} alt = {{ featured[0]['proj_name'] }}>
-                </a>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3> {{ featured[0]['proj_name'] }}</h3>
-                    <p> {{ featured[0]['proj_desc'] }} </p>
-                </div>
-            </div>
-            {% if feature_num_rows != 0 %}
-            {% for feature, value in featured %}
-            <div class="carousel-item">
-                <a class="info" name="game_page" href=game_page/{{ value['proj_name'] }}>
-                <img class="d-block w-100" src={{ value['proj_img'] }} alt={{ value['proj_name'] }}></a>
-                <div class="carousel-caption d-none d-md-block">
-                    <h3>{{ value['proj_name'] }}</h3>
-                    <p> {{ value['proj_desc'] }} </p>
-                </div>
-            </div>
-            {% endfor %}
-            {% endif %}
-        </div>
-        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
+    {% include 'carousel.html' %}
     <div class="h-100 main">
         <br>
         <div id="home_page_container" class="container text-center">
@@ -75,8 +34,6 @@
                 </div>
             </div>
             {% endfor %}
-
-
             <br>
         </div>
     </div>

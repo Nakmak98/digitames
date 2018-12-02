@@ -20,6 +20,11 @@ class Manager {
         return $result->fetch_assoc();
     }
 
+    function getMultipleAssocResult($sql) {
+        $result = $this->dbconn->query($sql);
+        return $result->fetch_all(MYSQLI_ASSOC);
+    }
+
     function getResult($sql) {
         return $this->dbconn->query($sql);
     }

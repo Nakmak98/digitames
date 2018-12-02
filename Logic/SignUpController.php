@@ -11,7 +11,7 @@ namespace Logic;
 
 class SignUpController extends Controller {
 
-    function getSignUpForm(){
+    function getSignUpForm($request, $response, $args){
         return $this->container['view']->render($response, 'sign_up.html');
     }
     function signUp($request, $response, $args){

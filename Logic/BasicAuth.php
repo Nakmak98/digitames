@@ -17,6 +17,7 @@ class BasicAuth extends AuthenticateUser {
     protected $user;
 
     function __construct($params) {
+        parent::__construct();
         $this->dbconn = \Db::getConnection();
         $this->login = $params['email'];
         $this->password = $params['password'];

@@ -1,9 +1,9 @@
 UPDATE gamesite.game_page SET proj_id = 14, img = '../img/hearthstone.jpg', video = 'https://www.youtube.com/embed/vPguoeYTvMI', about = 'Some text about this game should be placed here!' WHERE id = 1;
 UPDATE gamesite.game_page SET proj_id = 16, img = '../img/hex.jpg', video = 'https://www.youtube.com/embed/5Ivz9MWhrHM', about = 'Some text about Hex game should be placed here!' WHERE id = 2;
 UPDATE gamesite.game_page SET proj_id = 18, img = '../img/gwint.jpg', video = 'https://www.youtube.com/embed/5yu7FVZOyAo', about = 'Some textt about Gwint gonna be placed here soon!' WHERE id = 4;
-UPDATE gamesite.game_page_carousel SET proj_id = 14, carousel = 'http://via.placeholder.com/1920x1080?text=Game+1', carousel_title = 'Slider_1', carousel_info = 'Information 1' WHERE id = 1;
-UPDATE gamesite.game_page_carousel SET proj_id = 14, carousel = 'http://via.placeholder.com/1920x1080?text=Game+2', carousel_title = 'Slider_2', carousel_info = 'Information 2' WHERE id = 2;
-UPDATE gamesite.game_page_carousel SET proj_id = 14, carousel = 'http://via.placeholder.com/1920x1080?text=Game+3', carousel_title = 'Slider_3', carousel_info = 'Information 3' WHERE id = 3;
+UPDATE gamesite.game_page_carousel SET proj_id = 14, proj_img = 'http://via.placeholder.com/1920x1080?text=Game+1', proj_name = 'Slider_1', proj_desc = 'Information 1' WHERE id = 1;
+UPDATE gamesite.game_page_carousel SET proj_id = 14, proj_img = 'http://via.placeholder.com/1920x1080?text=Game+2', proj_name = 'Slider_2', proj_desc = 'Information 2' WHERE id = 2;
+UPDATE gamesite.game_page_carousel SET proj_id = 14, proj_img = 'http://via.placeholder.com/1920x1080?text=Game+3', proj_name = 'Slider_3', proj_desc = 'Information 3' WHERE id = 3;
 UPDATE gamesite.game_project SET proj_name = 'Hearthstone', proj_url = 'https://playhearthstone.com/ru-ru/', proj_img = 'img/hearthstone.jpg', proj_desc = 'Best TCG game... ', is_featured = true WHERE id = 14;
 UPDATE gamesite.game_project SET proj_name = 'Hex ', proj_url = 'http://www.hextcg.com/', proj_img = 'img/hex.jpg', proj_desc = 'Cool tcg with nice UI...', is_featured = true WHERE id = 16;
 UPDATE gamesite.game_project SET proj_name = 'gwint', proj_url = 'https://www.playgwent.com', proj_img = 'img/gwint.jpg', proj_desc = 'You know that stuff', is_featured = false WHERE id = 18;
