@@ -35,7 +35,9 @@ $container['db'] = function () {
     return Db::getConnection();
 };
 
-
+//TODO config locale (from cookies or lang settings by default)
+// and special by user choice
+// maybe I can use $config this app
 $app->get('/', Logic\HomePageController::class . ':getHomePage');
 $app->get('/login/', Logic\AuthController::class . ':getLoginForm');
 $app->get('/logout/', Logic\AuthController::class . ':logout');
