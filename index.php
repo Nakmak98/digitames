@@ -14,20 +14,13 @@ $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
 
 $app = new \Slim\App(["settings" => $config]);
-
-// Get container
 $container = $app->getContainer();
-
-// Register component on container
 $container['view'] = function ($container) {
     $view = new \Slim\Views\Twig('templates', [
         'debag' => true,
     ]);
-
-    // Instantiate and add Slim specific extension
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
-    $view->addExtension(new Twig_Extension_Debug());
     return $view;
 };
 
@@ -35,9 +28,22 @@ $container['db'] = function () {
     return Db::getConnection();
 };
 
-//TODO config locale (from cookies or lang settings by default)
-// and special by user choice
-// maybe I can use $config this app
+
+define('BASE_PATH', realpath(dirname(__FILE__)));
+define('LANGUAGES_PATH', BASE_PATH . '/langs');
+
+if (isset($_COOKIE['locale']))
+    $locale = $_COOKIE['locale'];
+else {
+    $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    setcookie('locale', $locale);
+}
+putenv("LC_ALL=" . $locale);
+setlocale(LC_ALL, $locale, $locale . '.utf8');
+bind_textdomain_codeset($locale, 'UTF-8');
+bindtextdomain($locale, LANGUAGES_PATH);
+textdomain($locale);
+
 $app->get('/', Logic\HomePageController::class . ':getHomePage');
 $app->get('/login/', Logic\AuthController::class . ':getLoginForm');
 $app->get('/logout/', Logic\AuthController::class . ':logout');

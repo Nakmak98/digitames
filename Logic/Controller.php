@@ -6,7 +6,10 @@
  * Time: 22:54
  */
 namespace Logic;
+use Logic\Locolizer\Locolizer;
+
 require_once  'User.php';
+require_once 'Locolizer/Locolizer.php';
 
 class Controller {
     protected $container;

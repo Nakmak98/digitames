@@ -8,15 +8,23 @@
 
 namespace Logic\Locolizer;
 
-class Locolizer {
+abstract class Locolizer {
+    static function getInstance($controller){
+        static $locolizer;
+        switch ($controller){
+            case 'HomePage': $locolizer = new HomePageLocolizer();
+                                            break;
+        }
+        return $locolizer;
+    }
+
     static function getBaseContext(){
-        $baseContext['blog'] = gettext("BLOG");
-        $baseContext['signin/signup'] = gettext("Signin/Signup");
-        $baseContext['search'] = gettext("Search...");
+        $baseContext['blog'] = gettext("Blog");
+        $baseContext['login'] = gettext("Login");
+        $baseContext['search'] = gettext("Search");
+        $baseContext['lang_pref'] = gettext("Language Preferences");
+
         return $baseContext;
     }
 }
 
-// Попробовать сделать класс абстрактным.
-// Отдавать нужный объект подкласса в зависимости от вызывающего контекста
-// м.б. имя функции или входной параметр
