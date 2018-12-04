@@ -16,7 +16,7 @@ class AuthController extends Controller {
     protected $password;
 
     function getLoginForm($request, $response, $args) {
-        return $this->container['view']->render($response, 'login.php');
+        return $this->container['view']->render($response, 'sign_in.html');
     }
 
     function signIn($request, $response, $args) {
@@ -26,7 +26,7 @@ class AuthController extends Controller {
             $auth->login();
             return $this->container['view']->render($response, 'profile.php');
         }
-        return $this->container['view']->render($response, 'login.php', [
+        return $this->container['view']->render($response, 'sign_in.html', [
             'error' => 'Неверный логин / пароль',
         ]);
     }
