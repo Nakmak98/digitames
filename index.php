@@ -7,6 +7,7 @@ require_once 'Logic/Db/Db.php';
 require_once 'Logic/Controller.php';
 require_once 'Logic/HomePageController.php';
 require_once 'Logic/AuthController.php';
+require_once 'Logic/SignUpController.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;

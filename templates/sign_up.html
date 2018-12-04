@@ -6,7 +6,7 @@
         <div class="row">
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
-                <form method="POST" action="account/registration.php">
+                <form method="POST" action="/signup/">
                     <h2 class="text-center">Sign up</h2>
                     <div class="alert alert-error">{{error}}</div>
                     <div class="form-row">
@@ -66,9 +66,9 @@
             <div class="col-sm-4 rt-col">
                 <br><br>
                 <p>Already have account?</p>
-                <a href="login.php">
+                <form action="/login/" method="get">
                     <button class="btn btn-primary">Login with your account</button>
-                </a>
+                </form>
                 <br><br>
                 <p>Here is terms of user. We won't share your date.
                     We will only collecting it for our personal statistic and

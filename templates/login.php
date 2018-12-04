@@ -43,10 +43,8 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-3">
-                <p>Don't have an account? Create now!</p>
-                <a href="account/registration.php" method="post">
-                    <button class="btn btn-primary" id="sup">Create account</button>
-                </a>
+                <p>Don't have an account? <a href="/signup/" class="text-white">Create now!</a> </p>
+
             </div>
             <div class="col-sm-3">
                 <a href="#" method="post" class="text-white" style="align: right">
