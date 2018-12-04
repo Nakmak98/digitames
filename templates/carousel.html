@@ -8,8 +8,8 @@
         <li data-target="#myCarousel" data-slide-to={{ featured_num_rows }}></li>
         {% endfor %}
         {% endif %}
-        {% endif %}
     </ol>
+    {% endif %}
     <div class="carousel-inner">
         <div class="carousel-item active">
             <a href={{ featured[0]['proj_url']}}>
@@ -21,7 +21,7 @@
                 <p> {{ featured[0]['proj_desc'] }} </p>
             </div>
         </div>
-        {% if feature_num_rows != 0 %}
+        {% if feature_num_rows > 1 %}
         {% for feature, value in featured %}
         <div class="carousel-item">
             <a class="info" name="game_page" href=game_page/{{ value['proj_name'] }}>

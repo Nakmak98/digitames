@@ -24,7 +24,7 @@ class AuthController extends Controller {
         $user = $auth->authenticate();
         if ($user) {
             $auth->login();
-            return $this->container['view']->render($response, 'profile.php');
+            return $this->container['view']->render($response, 'profile.html');
         }
         return $this->container['view']->render($response, 'sign_in.html', [
             'error' => 'Неверный логин / пароль',
