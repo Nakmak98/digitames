@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="content">
+    {% include 'carousel.html' %}
+    <div class="h-100 main">
+        <br>
+        <div id="home_page_container" class="container text-center">
+            {% for card in tableview %}
+            <div class="card bg-dark text-white">
+
+                <div class="card-body" id="card-body-top">{{ card['proj_name'] }}</div>
+                <a class="info" name="game_page" href=game_page/{{ card['proj_name'] }}>
+                <div class="ihover">
+                    <img class="card-img-bottom" src="{{ card['proj_img'] }}" alt="Image {{ card['proj_img'] }}">
+                    <div class="overlay">
+                        <p class="card-title text-white">{{ card['proj_desc'] }}</p>
+                    </div>
+                </div>
+                </a>
+                <div class="card-body bg-dark" id="card-body-bottom">
+                    <div class="row">
+                        <div class="col">
+                            <i class="fab fa-windows fa-sm text-white"></i>
+                        </div>
+                        <div class="col">
+                            <i class="fab fa-apple fa-sm text-white"></i>
+                        </div>
+                        <div class="col">
+                            <i class="fab fa-linux fa-sm text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            <br>
+        </div>
+    </div>
+    {% endblock %}

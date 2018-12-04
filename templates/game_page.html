@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="game-page" style="background-color: #1a1a1a;">
+    <div class="conteiner">
+        <div class="hide-box">
+            <div class="image">
+                <img class="d-block w-100 h-100" src="{{ game_data['img']}}">
+            </div>
+        </div>
+        <br>
+        <div class="row text-center" id="shadows">
+            <br>
+            <div class="col">
+                <a href=""><i class="fab fa-google-play text-white fa-3x"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i class="fab fa-steam text-white fa-3x"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i class="fab fa-app-store-ios text-white fa-3x"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i class="fab fa-playstation text-white fa-3x"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i class="fab fa-steam text-white fa-3x"></i></a>
+            </div>
+            <div class="col">
+                <a href=""><i class="fab fa-xbox text-white fa-3x"></i></a>
+            </div>
+        </div>
+        <br><br><br>
+        <div class="row text-center">
+            <div class="col">
+                <button class="myButton">Subscribe on {{ game_data['proj_name'] }}></button>
+            </div>
+        </div>
+        <br><br>
+        <br>
+        <div class="video container">
+            <iframe width="560px" height="315px" src={{ game_data['video'] }} frameborder="0"
+                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="hide-box" id="shadows">
+            <div class="text-center text-white">
+                <h1>About {{ game_data['proj_name'] }}</h1>
+                <p><?php echo $result['about'];?></p>
+            </div>
+        </div>
+        <br><br>
+        <div class="hide-box">
+            {% include 'carousel.html' %}
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: ru_RU\n"
+"X-Generator: Poedit 2.0.6\n"
+
+msgid "Blog"
+msgstr "Блог"
+
+msgid "Login"
+msgstr "Войти"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Language Preferences"
+msgstr "Выбор языка"
+
+msgid "Coming soon"
+msgstr "Скоро"
+
+msgid "You know that stuff"
+msgstr "Вы знаете, что это"
+
+msgid "Cool tcg with nice UI..."
+msgstr "Захватывающая коллекционная карточная игра с привлекательным интерфейсом..."
+
+msgid "Best TCG game... "
+msgstr "Лучшая карточная игра "

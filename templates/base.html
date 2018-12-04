@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Digitames</title>
+    <link rel="icon" href="/img/icon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+          integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="/js/jquery.cookie.js"></script>
+    <script src="/js/lang.js"></script>
+</head>
+<body>
+<div class="menu_back" id="container">
+    <div id="container1">
+        <a href="/"><img class="icon" src="../img/icon.png"></a>
+        <a class="nav_but" href="#">{{base.blog}}</a>
+    </div>
+
+    <div id="container2">
+        <a class="nav_but" href="/login/">{{base.login}}</a>
+        <input class="srch" type="search" placeholder={{base.search}} aria-label="Search">
+    </div>
+</div>
+{% block content %}{% endblock %}
+<footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+            <div class="col-md-6 mt-md-0 mt-3">
+                <h5 class="text-uppercase">Footer Content</h5>
+                <p>Some text.</p>
+            </div>
+            <hr class="clearfix w-100 d-md-none pb-3">
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">{{base.lang_pref}}</h5>
+                <ul class="list-unstyled">
+                    <li>
+                        <a id="lang_ru" href="">Ru</a>
+                    </li>
+                    <li>
+                        <a id="lang_en" href="">En</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-md-0 mb-3">
+                <h5 class="text-uppercase">Social media</h5>
+                <ul class="list-unstyled social-media">
+                    <li>
+                        <a href="#!"><i class="fab fa-facebook fa-3x text-white"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fab fa-google-plus-square fa-3x text-white"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fab fa-twitter-square fa-3x text-white"></i></a>
+                    </li>
+                    <li>
+                        <a href="#!"><i class="fab fa-youtube-square fa-3x text-white"></i></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="/">Digitames</a>
+    </div>
+</footer>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,36 +1,55 @@
 <?php
 
-if(isset($_GET['signout'])) {
-    unset($_COOKIE['user_id']);
-    unset($_COOKIE['user_role']);
-    setcookie('user_id', null, -1);
-    setcookie('user_role' ,null, -1);
+use \Psr\Http\Message\ServerRequestInterface as Request;
+use \Psr\Http\Message\ResponseInterface as Response;
+
+require 'vendor/autoload.php';
+require_once 'Logic/Db/Db.php';
+require_once 'Logic/Controller.php';
+require_once 'Logic/HomePageController.php';
+require_once 'Logic/AuthController.php';
+require_once 'Logic/GamePageController.php';
+require_once 'Logic/SignUpController.php';
+
+$config['displayErrorDetails'] = true;
+$config['addContentLengthHeader'] = false;
+
+$app = new \Slim\App(["settings" => $config]);
+$container = $app->getContainer();
+$container['view'] = function ($container) {
+    $view = new \Slim\Views\Twig('templates', [
+        'debag' => true,
+    ]);
+    $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
+    $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+    return $view;
+};
+
+$container['db'] = function () {
+    return Db::getConnection();
+};
+
+define('BASE_PATH', realpath(dirname(__FILE__)));
+define('LANGUAGES_PATH', BASE_PATH . '/langs');
+
+if (isset($_COOKIE['locale']))
+    $locale = $_COOKIE['locale'];
+else {
+    $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    setcookie('locale', $locale);
 }
+putenv("LC_ALL=" . $locale);
+setlocale(LC_ALL, $locale, $locale . '.utf8');
+bind_textdomain_codeset($locale, 'UTF-8');
+bindtextdomain($locale, LANGUAGES_PATH);
+textdomain($locale);
 
-if(isset($_GET['signup'])) {
-    header('Location: account/registration.php');
-    exit;
-}
-
-if(isset($_GET['login'])) { 
-    //$template = 2;
-    include $_SERVER['DOCUMENT_ROOT']."home.php";
-    exit;
-}
-
-if(isset($_GET['profile'])) {
-    //$template = 4;
-    include $_SERVER['DOCUMENT_ROOT']."home.php";
-    exit;
-}
-
-if(isset($_GET['search'])){
-    include $_SERVER['DOCUMENT_ROOT']."/search.php";
-    exit;
-}
-
-$template = 1;
-include $_SERVER['DOCUMENT_ROOT']."/home.php";
-
-
+$app->get('/', Logic\HomePageController::class . ':getHomePage');
+$app->get('/login/', Logic\AuthController::class . ':getLoginForm');
+$app->get('/logout/', Logic\AuthController::class . ':logout');
+$app->post('/login/', Logic\AuthController::class . ':signIn');
+$app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
+$app->post('/signup/', Logic\SignUpController::class . ':signUp');
+$app->get('/game_page/{project_name}', Logic\GamePageController::class . ':getGamePage');
+$app->run();
 ?>
