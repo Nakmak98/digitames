@@ -18,12 +18,12 @@
 <div class="menu_back" id="container">
     <div id="container1">
         <a href="/"><img class="icon" src="../img/icon.png"></a>
-        <a class="nav_but" href="#">{{base.blog}}</a>
+        <a class="nav_but" href="#">{% trans 'Blog'%}</a>
     </div>
 
     <div id="container2">
-        <a class="nav_but" href="/login/">{{base.login}}</a>
-        <input class="srch" type="search" placeholder={{base.search}} aria-label="Search">
+        <a class="nav_but" href="/login/">{% trans 'Login'%}</a>
+        <input class="srch" type="search" placeholder={% trans 'Search' %} aria-label="Search">
     </div>
 </div>
 {% block content %}{% endblock %}
@@ -36,7 +36,7 @@
             </div>
             <hr class="clearfix w-100 d-md-none pb-3">
             <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">{{base.lang_pref}}</h5>
+                <h5 class="text-uppercase">{% trans 'Language Preferences'%}</h5>
                 <ul class="list-unstyled">
                     <li>
                         <a id="lang_ru" href="">Ru</a>
@@ -47,7 +47,7 @@
                 </ul>
             </div>
             <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">{{base.social}}</h5>
+                <h5 class="text-uppercase">{% trans 'Social Media'%}</h5>
                 <ul class="list-unstyled social-media">
                     <li>
                         <a href="#!"><i class="fab fa-facebook fa-3x text-white"></i></a>
