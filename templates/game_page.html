@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{{test}}
 <div class="game-page" style="background-color: #1a1a1a;">
     <div class="conteiner">
         <div class="hide-box">
@@ -45,7 +46,7 @@
         <div class="hide-box" id="shadows">
             <div class="text-center text-white">
                 <h1>About {{ game_data['proj_name'] }}</h1>
-                <p><?php echo $result['about'];?></p>
+               <p>{{ game_data['about'] }}</p>
             </div>
         </div>
         <br><br>

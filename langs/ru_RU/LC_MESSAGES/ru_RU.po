@@ -23,6 +23,9 @@ msgstr "Поиск"
 msgid "Language Preferences"
 msgstr "Выбор языка"
 
+msgid "Social Media"
+msgstr "Социальные сети"
+
 msgid "Coming soon"
 msgstr "Скоро"
 
@@ -34,3 +37,6 @@ msgstr "Захватывающая коллекционная карточная
 
 msgid "Best TCG game... "
 msgstr "Лучшая карточная игра "
+
+msgid "Some text about this game should be placed here!"
+msgstr "Какой-то текст об этой игре должен быть размещён здесь"

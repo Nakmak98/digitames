@@ -13,7 +13,15 @@ abstract class Locolizer {
         static $locolizer;
         switch ($controller){
             case 'HomePage': $locolizer = new HomePageLocolizer();
-                                            break;
+                break;
+            case 'GamePage': $locolizer = new GamePageLocolizer();
+                break;
+            case 'LoginPage': $locolizer = new LoginLocolizer();
+                break;
+            case 'SignUpPage': $locolizer = new SignUpLocolizer();
+                break;
+            case 'ProfilePage': $locolizer = new ProfileLocolizer();
+                break;
         }
         return $locolizer;
     }
@@ -23,7 +31,7 @@ abstract class Locolizer {
         $baseContext['login'] = gettext("Login");
         $baseContext['search'] = gettext("Search");
         $baseContext['lang_pref'] = gettext("Language Preferences");
-
+        $baseContext['social']= gettext("Social Media");
         return $baseContext;
     }
 }

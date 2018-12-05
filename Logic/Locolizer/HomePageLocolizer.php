@@ -10,7 +10,6 @@ namespace Logic\Locolizer;
 
 
 class HomePageLocolizer extends Locolizer {
-
     function getLocale(array $arrays){
         foreach ($arrays as $array){
             foreach ($array as  $key => $value){
