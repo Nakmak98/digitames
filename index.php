@@ -22,6 +22,7 @@ $container['view'] = function ($container) {
     ]);
     $basePath = rtrim(str_ireplace('index.php', '', $container['request']->getUri()->getBasePath()), '/');
     $view->addExtension(new Slim\Views\TwigExtension($container['router'], $basePath));
+    $view->addExtension(new Twig_Extensions_Extension_I18n());
     return $view;
 };
 

@@ -40,3 +40,6 @@ msgstr "Лучшая карточная игра "
 
 msgid "Some text about this game should be placed here!"
 msgstr "Какой-то текст об этой игре должен быть размещён здесь"
+
+msgid "Subscribe on"
+msgstr "Подпишись на"
