@@ -2,7 +2,7 @@
     position: fixed;
     height: 50px;
     width: 100%;
-    background: #363d49;
+    background: rgba(54,61,73,0.7);
     z-index: 5;
 }
 
@@ -11,20 +11,32 @@
 }
 
 .menu_back:hover {
-    position: fixed;
-    height: 50px;
-    width: 100%;
-    background: #363d49;
-    opacity: 1;
-    z-index: 5;
+    background: rgba(54,61,73,0.9);
 }
 
 #container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-self: center;
+}
 
+
+.mbut:hover {
+    background: #8D95A4;
+}
+
+a.nav_but{
+    display: block;
+    position: relative;
+    top: 11px;
+    align-self: center;
+    height: 100%;
+
+}
+
+.mbut{
+    text-align: center;
+    width: 100px;
 }
 
 #container1 {
@@ -50,22 +62,26 @@
 }
 
 .menu_back a:hover {
+    text-decoration: none;
     color: azure;
 }
 
 .menu_back input {
-    justify-self: end;
     align-self: center;
     border-radius: 5px;
     height: 40px;
+    width: 60%;
     margin-right: 2%;
-    border: 0px solid;
+    padding: 5px;
+    outline: none;
+    border: 0;
 }
 
 .menu_back .nav_but {
-    text-align: center;
+
+   // text-align: center;
     width: 100px;
-    align-self: center;
+    //align-self: center;
 }
 
 
@@ -79,6 +95,11 @@
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 780px) {
+
+    .srch{
+        display: none;
+    }
+
     .login .col {
         width: 100%;
         margin-top: 0;
