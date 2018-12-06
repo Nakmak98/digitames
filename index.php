@@ -40,8 +40,9 @@ else {
     setcookie('locale', $locale);
 }
 putenv("LC_ALL=" . $locale);
-setlocale(LC_ALL, $locale, $locale . '.utf8');
-bind_textdomain_codeset($locale, 'UTF-8');
+putenv(("LANG=" . $locale));
+setlocale(LC_ALL, $locale, $locale . '.utf-8');
+bind_textdomain_codeset($locale, 'utf-8');
 bindtextdomain($locale, LANGUAGES_PATH);
 textdomain($locale);
 
