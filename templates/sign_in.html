@@ -4,17 +4,16 @@
 <div class="login h-100">
     <div class="container text-white">
         <br>
-
         <br>
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 rt-col">
                 <form method="POST" action="/login/">
-                    <h3 class="text-center">Sign in</h3>
+                    <h3 class="text-center">{% trans 'Sign in with your account'%}</h3>
                     <div class="alert alert-error">{{error}}</div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputEmail4">Email</p></label>
+                            <label for="inputEmail4">{% trans 'Email'%}</p></label>
                             <input type="email" class="form-control" id="email" placeholder="Email" name="email"
                                    required>
                             <input type="hidden" name="type" value="basic">
@@ -22,7 +21,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputPassword4">Password</p></label>
+                            <label for="inputPassword4">{% trans 'Password'%}</p></label>
                             <input type="password" class="form-control" id="password" placeholder="Password"
                                    name="password" required>
                         </div>
@@ -36,7 +35,7 @@
                     <br>
                     <div class="g-recaptcha" data-sitekey="your_site_key" data-theme="dark"></div>
                     <br><br>
-                    <input type="submit" class="btn btn-primary " value="Login" id="reg_btn" name="login">
+                    <input type="submit" class="btn btn-primary " value="{% trans 'Sign in' %}" id="reg_btn" name="login">
                     <br><br>
                 </form>
             </div>
@@ -46,11 +45,14 @@
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-3">
-                <p>Don't have an account? <a href="/signup/" class="text-white">Create now!</a></p>
+                <p>{% trans "Don't have an account? Create now!" %}</p>
+                <a href="/signup/">
+                    <button class="btn btn-primary" id="sup">{% trans 'Create account' %}</button>
+                </a>
             </div>
             <div class="col-sm-3">
                 <a href="#" method="post" class="text-white" style="align: right">
-                    Forgot your password?
+                    {% trans 'Forgot your password?'%}
                 </a>
             </div>
             <div class="col-sm-3"></div>
