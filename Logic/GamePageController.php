@@ -7,16 +7,24 @@
  */
 
 namespace Logic;
+use Logic\Locolizer\Locolizer;
+
 require_once 'GamePage.php';
+require_once 'Locolizer/GamePageLocolizer.php';
 
 class GamePageController extends Controller {
 
     function getGamePage($request, $response, $args) {
+        $locolizer = Locolizer::getInstance('GamePage');
         $game_page = new GamePage($args['project_name']);
-        $this->context['game_data'] = $game_page->getGameData();
+        $this->context['game_data'] = $locolizer->getLocale(
+            $game_page->getGameData()
+        );
         if(!is_null($carousel = $game_page->getCarousel()))
             $this->context['featured'] = $carousel;
         $this->context['feature_num_rows'] = $game_page->getNumRows();
+      //TODO поменять названия столбцов в game_page c carousel
+        // на proj_*
         return $this->container['view']->render($response, 'game_page.html', $this->context);
     }
 }

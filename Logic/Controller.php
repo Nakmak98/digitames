@@ -20,7 +20,6 @@ class Controller {
 
     function __construct($container) {
         $this->container = $container;
-        $this->context['base']= Locolizer::getBaseContext();
         $isAuth = isset($_COOKIE['sessid']) ? true : false;
         $this->user = User::getInstance($isAuth);
         $this->context['user'] = $this->user;

@@ -33,7 +33,7 @@
         <br><br><br>
         <div class="row text-center">
             <div class="col">
-                <button class="myButton">Subscribe on {{ game_data['proj_name'] }}></button>
+                <button class="myButton">{% trans "Subscribe on" %} {{ game_data['proj_name'] }}</button>
             </div>
         </div>
         <br><br>
@@ -44,8 +44,8 @@
         </div>
         <div class="hide-box" id="shadows">
             <div class="text-center text-white">
-                <h1>About {{ game_data['proj_name'] }}</h1>
-                <p><?php echo $result['about'];?></p>
+                <h1>{% trans 'About'%} {{ game_data['proj_name'] }}</h1>
+               <p>{{ game_data['about'] }}</p>
             </div>
         </div>
         <br><br>

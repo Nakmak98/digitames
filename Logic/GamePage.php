@@ -37,6 +37,6 @@ class GamePage {
     }
 
     public function getNumRows(){
-        return count($this->carousel)-2;
+        return count($this->carousel)-1;
     }
 }

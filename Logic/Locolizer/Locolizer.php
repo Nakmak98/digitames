@@ -9,22 +9,15 @@
 namespace Logic\Locolizer;
 
 abstract class Locolizer {
-    static function getInstance($controller){
+    static function getInstance(string $controller){
         static $locolizer;
         switch ($controller){
             case 'HomePage': $locolizer = new HomePageLocolizer();
-                                            break;
+                break;
+            case 'GamePage': $locolizer = new GamePageLocolizer();
+                break;
         }
         return $locolizer;
-    }
-
-    static function getBaseContext(){
-        $baseContext['blog'] = gettext("Blog");
-        $baseContext['login'] = gettext("Login");
-        $baseContext['search'] = gettext("Search");
-        $baseContext['lang_pref'] = gettext("Language Preferences");
-
-        return $baseContext;
     }
 }
 
