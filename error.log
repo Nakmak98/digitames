@@ -37,3 +37,15 @@ PHP message: PHP Warning:  The first parameter of bindtextdomain must not be emp
 PHP message: PHP Warning:  The first parameter of bindtextdomain must not be empty in /home/digitimes/gameportal/index.php on line 46" while reading response header from upstream, client: 176.58.123.79, server: 5.23.54.233, request: "GET / HTTP/1.0", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:"
 2018/12/06 15:15:47 [error] 9062#9062: *46 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: HTTP_ACCEPT_LANGUAGE in /home/digitimes/gameportal/index.php on line 39
 PHP message: PHP Warning:  The first parameter of bindtextdomain must not be empty in /home/digitimes/gameportal/index.php on line 46" while reading response header from upstream, client: 54.81.203.115, server: 5.23.54.233, request: "GET / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "5.23.54.233"
+2018/12/06 16:09:39 [error] 9062#9062: *49 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: HTTP_ACCEPT_LANGUAGE in /home/digitimes/gameportal/index.php on line 39
+PHP message: PHP Warning:  The first parameter of bindtextdomain must not be empty in /home/digitimes/gameportal/index.php on line 46
+PHP message: PHP Fatal error:  Uncaught InvalidArgumentException: Unsupported HTTP method "PROPFIND" provided in /home/digitimes/gameportal/vendor/slim/slim/Slim/Http/Request.php:316
+Stack trace:
+#0 /home/digitimes/gameportal/vendor/slim/slim/Slim/Http/Request.php(172): Slim\Http\Request->filterMethod('PROPFIND')
+#1 /home/digitimes/gameportal/vendor/slim/slim/Slim/Http/Request.php(146): Slim\Http\Request->__construct('PROPFIND', Object(Slim\Http\Uri), Object(Slim\Http\Headers), Array, Array, Object(Slim\Http\RequestBody), Array)
+#2 /home/digitimes/gameportal/vendor/slim/slim/Slim/Container.php(131): Slim\Http\Request::createFromEnvironment(Object(Slim\Http\Environment))
+#3 /home/digitimes/gameportal/vendor/pimple/pimple/src/Pimple/Container.php(118): Slim\Container->Slim\{closure}(Object(Slim\Container))
+#4 /home/digitimes/gameportal/vendor/slim/slim/Slim/Container.php(266): Pimple\Container->offsetGet('request')
+#5 /home/digitimes/gameportal/vendor/slim/slim/Slim/App.php(297): Slim\Container->get('reques" while reading response header from upstream, client: 116.58.8.172, server: 5.23.54.233, request: "PROPFIND / HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "localhost"
+2018/12/06 16:09:39 [error] 9062#9062: *51 FastCGI sent in stderr: "PHP message: PHP Notice:  Undefined index: HTTP_ACCEPT_LANGUAGE in /home/digitimes/gameportal/index.php on line 39
+PHP message: PHP Warning:  The first parameter of bindtextdomain must not be empty in /home/digitimes/gameportal/index.php on line 46" while reading response header from upstream, client: 116.58.8.172, server: 5.23.54.233, request: "GET /webdav/ HTTP/1.1", upstream: "fastcgi://unix:/run/php/php7.2-fpm.sock:", host: "5.23.54.233:80"
