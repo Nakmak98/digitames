@@ -2,4 +2,6 @@
 .htaccess
 vendor/
 composer.phar
-
+access.log
+error.log
+yandex_2715abac27c1b61f.html
