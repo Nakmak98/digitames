@@ -37,6 +37,7 @@ a.nav_but{
 .mbut{
     text-align: center;
     width: 100px;
+    margin-right: 5px;
 }
 
 #container1 {
@@ -71,8 +72,7 @@ a.nav_but{
     border-radius: 5px;
     height: 40px;
     width: 60%;
-    margin-right: 2%;
-    padding: 5px;
+    padding: 0px 0px 3px 10px;
     outline: none;
     border: 0;
 }
@@ -313,13 +313,12 @@ footer {
 }
 
 .overlay p {
+    width: fit-content;
     transition: 1s;
-    font-size: 20px;
+    font-size: 16px;
     position: absolute;
     top: 80%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     text-align: center;
 }
