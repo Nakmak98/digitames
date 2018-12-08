@@ -12,8 +12,8 @@
     {% endif %}
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <a href=game_page/{{featured[0]['proj_name']}}>
-            <a class="info" name="game_page" href="game_page/{{featured[0]['proj_name']}}">
+            <a href=game_page/{{featured[0]['proj_url']}}>
+            <a class="info" name="game_page" href="game_page/{{featured[0]['proj_url']}}">
                 <img class="d-block w-100" src={{ featured[0]['proj_img'] }} alt = {{ featured[0]['proj_name'] }}>
             </a>
             <div class="carousel-caption d-none d-md-block">
@@ -24,7 +24,7 @@
         {% if feature_num_rows > 1 %}
         {% for feature, value in featured %}
         <div class="carousel-item">
-            <a class="info" name="game_page" href=game_page/{{ value['proj_name'] }}>
+            <a class="info" name="game_page" href=game_page/{{ value['proj_url'] }}>
             <img class="d-block w-100" src={{ value['proj_img'] }} alt={{ value['proj_name'] }}></a>
             <div class="carousel-caption d-none d-md-block">
                 <h3>{{ value['proj_name'] }}</h3>

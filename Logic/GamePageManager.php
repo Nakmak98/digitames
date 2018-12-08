@@ -13,11 +13,8 @@ use Logic\Manager;
 
 class GamePageManager extends Manager {
 
-    function getData(string $proj_name){
-        $getGameData = "SELECT proj_id, proj_name, img, video, about
-                          FROM game_project
-                          JOIN game_page gp ON game_project.id = gp.proj_id
-                          WHERE proj_name='$proj_name'";
+    function getData(string $proj_url){
+        $getGameData = "SELECT proj_id, proj_name, img, video, about FROM game_project JOIN game_page gp ON game_project.id = gp.proj_id WHERE proj_url='$proj_url'";
         return $this->getAssocResult($getGameData);
     }
 

@@ -23,8 +23,6 @@ class GamePageController extends Controller {
         if(!is_null($carousel = $game_page->getCarousel()))
             $this->context['featured'] = $carousel;
         $this->context['feature_num_rows'] = $game_page->getNumRows();
-      //TODO поменять названия столбцов в game_page c carousel
-        // на proj_*
         return $this->container['view']->render($response, 'game_page.html', $this->context);
     }
 }
