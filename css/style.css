@@ -568,6 +568,7 @@ body, html, .container-fluid {
 
 body {
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 .login, .sign, .messages {
