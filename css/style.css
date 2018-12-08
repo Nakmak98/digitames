@@ -441,12 +441,18 @@ input[type=submit]:hover {
     float: left;
     width: 50%;
     margin: auto;
-    padding: 0 50px;
-    margin-top: 16px;
+    padding: 0 10%;
 }
 
 .login a {
     text-align: left;
+    width: 77%;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
 }
 
 /* Clear floats after the columns */
@@ -563,7 +569,7 @@ input[type=submit]:hover {
 
 /*CSS Height*/
 body, html, .container-fluid {
-/ / / take all available height height: 100 %;
+height: 100 %;
 }
 
 body {
@@ -572,7 +578,7 @@ body {
 }
 
 .login, .sign, .messages {
-    min-height: 90vh;
+    min-height: 80vh;
 }
 
 /*CSS Height*/
@@ -681,6 +687,32 @@ body {
 
 .sign .custom-select select {
     display: none; /*hide original SELECT element:*/
+}
+
+input[type="checkbox"]{
+    width: 50px;
+    height: 15px;
+    margin: 5px;
+}
+
+.checkform{
+    margin: 10px 6%;
+    display: flex;
+}
+
+label{
+    display: flex;
+    margin-bottom: 0;
+}
+
+.signup-input{
+    display: flex;
+    justify-content: center;
+}
+
+.forgot_password {
+    margin: 0 9%;
+    color: #fff;
 }
 
 .alert {

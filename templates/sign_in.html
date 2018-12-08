@@ -26,36 +26,35 @@
                                    name="password" required>
                         </div>
                     </div>
-                    <br>
-                    <div class="form-group form-check">
-                        <label class="form-check-label">
-                            <input class="form-check-input" type="checkbox" name="save_data" value="YES">Remember me
-                        </label>
+                    <div class="checkform form-group">
+                        <input type="checkbox" id="check1" name="save_data" value="YES">
+                        <label class="checklabel" for="check1">Remeber me</label>
                     </div>
-                    <br>
-                    <div class="g-recaptcha" data-sitekey="your_site_key" data-theme="dark"></div>
-                    <br><br>
-                    <input type="submit" class="btn btn-primary " value="{% trans 'Sign in' %}" id="reg_btn" name="login">
-                    <br><br>
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <input type="submit" class="btn btn-primary " value="{% trans 'Sign in' %}" id="reg_btn"
+                                   name="login">
+                        </div>
+
+                    </div>
+                    <a href="#" class="forgot_password" class="text-white">
+                        {% trans 'Forgot your password?'%}
+                    </a>
                 </form>
             </div>
             <div class="col-sm-3"></div>
+
         </div>
-        <br>
+
         <div class="row">
             <div class="col-sm-3"></div>
-            <div class="col-sm-3">
-                <p>{% trans "Don't have an account? Create now!" %}</p>
+            <div class="signup-input col-sm-6">
                 <a href="/signup/">
                     <button class="btn btn-primary" id="sup">{% trans 'Create account' %}</button>
                 </a>
             </div>
-            <div class="col-sm-3">
-                <a href="#" method="post" class="text-white" style="align: right">
-                    {% trans 'Forgot your password?'%}
-                </a>
-            </div>
             <div class="col-sm-3"></div>
+
         </div>
     </div>
 </div>
