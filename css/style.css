@@ -706,6 +706,7 @@ label{
 }
 
 .signup-input{
+    margin-top: 3%;
     display: flex;
     justify-content: center;
 }
