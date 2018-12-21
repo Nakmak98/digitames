@@ -4,7 +4,6 @@
     width: 100%;
     background: rgba(54,61,73,0.7);
     z-index: 5;
-    -webkit-transform: translate3d(0, 0, 0);
     transform : translate3d(0, 0, 0);
 }
 
@@ -12,9 +11,6 @@
     opacity: 0.5;
 }
 
-.menu_back:hover {
-    background: rgba(54,61,73,0.9);
-}
 
 #container {
     display: flex;
@@ -25,32 +21,37 @@
 
 .mbut:hover {
     background: #8D95A4;
-}
-
-a.nav_but{
-    display: block;
-    position: relative;
-    top: 11px;
-    align-self: center;
-    height: 100%;
-
+    cursor: pointer;
 }
 
 .mbut{
     text-align: center;
     width: 100px;
     margin-right: 5px;
+    padding: 13px;
+}
+
+.fa-sign-in-alt {
+    color: azure;
+    cursor: pointer;
+}
+
+.fa-sign-in-alt:hover{
+    color: rgba(255,255,255,0.8);
+}
+
+
+.menu-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 #container1 {
-    display: flex;
-    flex-direction: row;
     justify-items: start;
 }
 
 #container2 {
-    display: flex;
-    flex-direction: row;
     justify-items: end;
 }
 
@@ -69,21 +70,29 @@ a.nav_but{
     color: azure;
 }
 
-.menu_back input {
+.search {
     align-self: center;
-    border-radius: 5px;
+    border-radius: 22px;
     height: 40px;
     width: 60%;
-    padding: 0px 0px 3px 10px;
+    padding: 0px 0px 3px 13px;
     outline: none;
     border: 0;
+    margin-right: 10px;
+    color: azure;
+    background-color: rgba(0,0,0,.3);
 }
 
-.menu_back .nav_but {
+.fa-search {
+    color: azure;
+    position: absolute;
+    margin-left: 12px;
+}
+.menu_back input:focus {
 
-   // text-align: center;
+}
+.menu_back .nav_but {
     width: 100px;
-    //align-self: center;
 }
 
 

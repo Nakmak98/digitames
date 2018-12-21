@@ -14,17 +14,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/jquery.cookie.js"></script>
     <script src="/js/lang.js"></script>
+    <script src="/js/menu.js" defer></script>
 </head>
 <body>
 <div class="menu_back" id="container">
-    <div id="container1">
+    <div class="menu-container" id="container1">
         <a href="/"><img class="icon" src="../img/icon.png"></a>
         <div class="mbut"><a class="nav_but" href="#">{%trans 'Blog' %}</a></div>
     </div>
 
-    <div id="container2">
-        <div class="mbut"><a class="nav_but " href="/login/">{% trans 'Login' %}</a></div>
-        <input class="srch" type="search" placeholder={% trans 'Search' %} aria-label="Search">
+    <div class="menu-container" id="container2">
+        <input class="search" type="search">
+        <i class="fas fa-search"></i>
+        <a href="/login/"><i class="fas fa-sign-in-alt fa-2x"></i></a>
     </div>
 </div>
 {% block content %}{% endblock %}
