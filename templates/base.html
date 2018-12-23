@@ -8,9 +8,11 @@
 
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
-          integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/all.min.css">
+    <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"-->
+          <!--integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">-->
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fontawesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/jquery.cookie.js"></script>
     <script src="/js/menu.js" defer></script>
@@ -22,6 +24,14 @@
         <div class="mbut"><a class="nav_but" href="#">{%trans 'Blog' %}</a></div>
     </div>
     <div class="menu-container" id="container2">
+
+
+        <input class="search" id="desktop-search-input" type="search">
+        <!--<i id="desktop-search-icon" class="fas fa-search"></i>-->
+        <i id="desktop-search-icon" class="far fa-search"></i>
+        <div class="menu-sign-up">
+            <a href="/login/">Log in</a>
+        </div>
         <div class="submenu-triangle"></div>
         <div class="desktop-lang-preferences-submenu">
             <div class="submenu-item lang_ru">Русский</div>
@@ -35,15 +45,8 @@
                     EN
                 {% endif %}
             </span>
-            <i class="fas fa-caret-down"></i>
+            <i class="far fa-angle-down"></i>
         </div>
-
-        <input class="search" id="desktop-search-input" type="search">
-        <i id="desktop-search-icon" class="fas fa-search"></i>
-        <a href="/login/"><i id="desktop-sign-in-alt" class="fas fa-sign-in-alt fa-2x"></i></a>
-        <a href="#" class="menu-btn">
-            <span></span>
-        </a>
     </div>
 </div>
 <nav id="navbar">
