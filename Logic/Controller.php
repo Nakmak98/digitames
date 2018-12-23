@@ -23,5 +23,6 @@ class Controller {
         $isAuth = isset($_COOKIE['sessid']) ? true : false;
         $this->user = User::getInstance($isAuth);
         $this->context['user'] = $this->user;
+        $this->context['locale'] = $_COOKIE['locale'];
     }
 }
