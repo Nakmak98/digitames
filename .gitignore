@@ -8,13 +8,13 @@ yandex_2715abac27c1b61f.html
 
 # WordPress
 *.log
-/blog/wp-*.php
-/blog/index.php
-/blog/xmlrpc.php
-/blog/license.txt
-/blog/readme.html
-/blog/sitemap.xml
-/blog/sitemap.xml.gz
+#/blog/wp-*.php
+#/blog/index.php
+#/blog/xmlrpc.php
+#/blog/license.txt
+#/blog/readme.html
+#/blog/sitemap.xml
+#/blog/sitemap.xml.gz
 
 /blog/backup*
 
