@@ -21,14 +21,22 @@
 <div class="menu_back" id="container">
     <div class="menu-container" id="container1">
         <a href="/"><img class="icon" src="../img/icon.png"></a>
-        <div class="mbut"><a class="nav_but" href="#">{%trans 'Blog' %}</a></div>
+        <a class="nav_but" href="/blog/"><div class="mbut">{%trans 'Blog' %}</div></a>
     </div>
     <div class="menu-container" id="container2">
         <input class="search" id="desktop-search-input" type="search">
         <i id="desktop-search-icon" class="far fa-search"></i>
+        {% if not user %}
         <div class="menu-sign-up">
             <a href="/login/">Log in</a>
         </div>
+        {% else %}
+        <a href="/profile/">
+            <div class="desktop-menu-user">
+                {{ user.nickname }}
+            </div>
+        </a>
+        {% endif %}
         <div class="submenu-triangle"></div>
         <div class="desktop-lang-preferences-submenu">
             <div class="submenu-item lang_ru">Русский</div>
@@ -50,7 +58,7 @@
 </div>
 <nav id="navbar">
     <div class="nav-container">
-        <a href="#">
+        <a href="/blog/">
             <div class="nav-but">{%trans 'Blog' %}</div>
         </a>
     </div>
@@ -63,13 +71,16 @@
     </div>
     <input id="nav-search-input" class="search" type="search">
     <i id="nav-search-icon" class="far fa-search"></i>
+    {% if not user %}
     <div class="nav-sign-up">
         <a href="/login/">Log in</a>
     </div>
-    <!--<div class="nav-user">-->
-        <!--<i class="fas fa-user"></i>-->
-        <!--<span>{{user['email']}}</span>-->
-    <!--</div>-->
+    {% else %}
+    <div class="nav-user">
+        <i class="fas fa-user"></i>
+        <a href="/profile/">{{ user.nickname }}</a>
+    </div>
+    {% endif %}
 </nav>
 {% block content %}{% endblock %}
 <footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">

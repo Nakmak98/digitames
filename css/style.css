@@ -6,7 +6,6 @@ a {
 a:hover {
     color: azure;
     text-decoration: none;
-    background-color: #4e4e4eb5
 }
 
 .menu_back {
@@ -28,16 +27,17 @@ a:hover {
     justify-content: space-between;
 }
 
-.mbut:hover {
-    background: #8D95A4;
-    cursor: pointer;
-}
 
 .mbut {
     text-align: center;
     width: 100px;
     margin-right: 5px;
     padding: 13px;
+    cursor: pointer;
+}
+
+.mbut:hover {
+    color: #55ACEE;
 }
 
 .fa-sign-in-alt {
@@ -68,11 +68,6 @@ a:hover {
     height: 50px;
 }
 
-.menu_back a {
-    color: azure;
-    width: 50px;
-}
-
 .menu_back a:hover {
     text-decoration: none;
     color: azure;
@@ -91,10 +86,19 @@ a:hover {
     background-color: rgba(0, 0, 0, .3);
 }
 
+.desktop-menu-user {
+    color: azure;
+    cursor: pointer;
+}
+
+.desktop-menu-user:hover {
+    color: #55ACEE;
+}
+
 #desktop-search-icon {
     color: azure;
     position: absolute;
-    margin-left: 185px;
+    margin-left: 15px;
 }
 
 .desktop-lang-preferences {
@@ -763,6 +767,10 @@ input[type=submit]:hover {
     }
 
     .desktop-lang-preferences {
+        display: none;
+    }
+
+    .desktop-menu-user {
         display: none;
     }
 }
