@@ -24,10 +24,7 @@
         <div class="mbut"><a class="nav_but" href="#">{%trans 'Blog' %}</a></div>
     </div>
     <div class="menu-container" id="container2">
-
-
         <input class="search" id="desktop-search-input" type="search">
-        <!--<i id="desktop-search-icon" class="fas fa-search"></i>-->
         <i id="desktop-search-icon" class="far fa-search"></i>
         <div class="menu-sign-up">
             <a href="/login/">Log in</a>
@@ -40,12 +37,15 @@
         <div class="desktop-lang-preferences">
             <span>
                 {% if locale == 'ru_RU' %}
-                    RU
+                    Ru
                 {% else %}
-                    EN
+                    En
                 {% endif %}
             </span>
         </div>
+        <a href="#" class="menu-btn">
+            <span></span>
+        </a>
     </div>
 </div>
 <nav id="navbar">
@@ -62,11 +62,14 @@
         </div>
     </div>
     <input id="nav-search-input" class="search" type="search">
-    <i id="nav-search-icon" class="fas fa-search"></i>
-    <div class="nav-user">
-        <i class="fas fa-user"></i>
-        <span>{{user['email']}}</span>
+    <i id="nav-search-icon" class="far fa-search"></i>
+    <div class="nav-sign-up">
+        <a href="/login/">Log in</a>
     </div>
+    <!--<div class="nav-user">-->
+        <!--<i class="fas fa-user"></i>-->
+        <!--<span>{{user['email']}}</span>-->
+    <!--</div>-->
 </nav>
 {% block content %}{% endblock %}
 <footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">
