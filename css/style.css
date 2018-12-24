@@ -3,6 +3,12 @@ a {
     color: azure;
 }
 
+a:hover {
+    color: azure;
+    text-decoration: none;
+    background-color: #4e4e4eb5
+}
+
 .menu_back {
     position: fixed;
     height: 50px;
@@ -16,13 +22,11 @@ a {
     opacity: 0.5;
 }
 
-
 #container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
-
 
 .mbut:hover {
     background: #8D95A4;
@@ -45,7 +49,6 @@ a {
     color: rgba(255, 255, 255, 0.8);
 }
 
-
 .menu-container {
     display: flex;
     flex-direction: row;
@@ -63,7 +66,6 @@ a {
 
 .menu_back .icon {
     height: 50px;
-
 }
 
 .menu_back a {
@@ -146,12 +148,6 @@ a {
     cursor: pointer;
 }
 
-.desktop-lang-preferences option {
-    background: ;
-}
-
-
-
 .menu-sign-up {
     text-align: center;
     color: azure;
@@ -161,7 +157,6 @@ a {
     width: 120px;
     cursor: pointer;
 }
-
 
 .menu_back .nav_but {
     width: 100px;
@@ -230,7 +225,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     width: 88vw;
-    margin-top: 9px;
+    margin-top: 25px;
     text-align: center;
 }
 
@@ -238,8 +233,6 @@ nav {
     border: 1px solid #333;
     padding: 10px;
 }
-
-
 
 .nav-user {
     position: relative;
@@ -251,19 +244,19 @@ nav {
 #nav-search-input {
     position: absolute;
     background-color: rgba(248, 245, 245, 0.3);
-    bottom: 39%;
+    bottom: 70px;
 }
 
 #nav-search-icon {
     position: absolute;
-    bottom: 41%;
+    bottom: 80px;
     left: 25%;
     color: azure;
 }
 .nav-lang-preferences {
     display: flex;
     position: absolute;
-    bottom: 50%;
+    top: 170px;
     background-color: #595858a6;
     flex-direction: column;
     color: azure;
@@ -290,6 +283,17 @@ nav {
     top: 1vw;
     position: relative;
     width: 19px;
+}
+
+.nav-sign-up {
+    position: relative;
+    top: 265px;
+    text-align: center;
+    color: azure;
+    border: 1px solid azure;
+    border-radius: 20px;
+    padding: 6px;
+    width: 120px;
 }
 .social-media {
     display: flex;
@@ -739,10 +743,9 @@ input[type=submit]:hover {
         transform: translateX(0%);
     }
 
-    .fa-bars {
-        display: block;
+    .menu-sign-up {
+        display: none;
     }
-
     #desktop-search-input {
         display: none;
     }
