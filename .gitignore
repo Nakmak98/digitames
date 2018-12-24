@@ -22,8 +22,8 @@ yandex_2715abac27c1b61f.html
 /blog/wp-includes/
 
 /blog/wp-content/*
-!/blog/wp-content/themes/
-/blog/wp-content/themes/*
+#!/blog/wp-content/themes/
+#/blog/wp-content/themes/*
 
 !/blog/wp-content/plugins/
 /blog/wp-content/plugins/*
