@@ -299,6 +299,8 @@ nav {
     padding: 6px;
     width: 120px;
 }
+.signup_bot{padding-right: 15px;padding-left: 15px;}
+
 .social-media {
     display: flex;
 }
