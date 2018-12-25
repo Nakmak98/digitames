@@ -18,8 +18,12 @@
 <div class="menu_back" id="container">
     <div class="menu-container" id="container1">
         <a href="/"><img class="icon" src="../img/icon.png"></a>
+        <a href="/blog/">
+            <div class="mbut">{%trans 'Blog' %}</div>
+        </a>
     </div>
     <div class="menu-container" id="container2">
+
         <input class="search" id="desktop-search-input" type="search">
         <i id="desktop-search-icon" class="far fa-search"></i>
         {% if user.nickname is null %}

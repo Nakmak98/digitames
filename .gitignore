@@ -5,33 +5,3 @@ composer.phar
 access.log
 error.log
 yandex_2715abac27c1b61f.html
-
-# WordPress
-#*.log
-#/blog/wp-*.php
-#/blog/index.php
-#/blog/xmlrpc.php
-#/blog/license.txt
-#/blog/readme.html
-#/blog/sitemap.xml
-#/blog/sitemap.xml.gz
-
-#/blog/backup*
-
-#/blog/wp-admin/
-#/blog/wp-includes/
-
-#/blog/wp-content/*
-#!/blog/wp-content/themes/
-#/blog/wp-content/themes/*
-
-#!/blog/wp-content/plugins/
-#/blog/wp-content/plugins/*
-
-#!/blog/wp-content/themes/ei/
-#!/blog/wp-content/themes/ei-child/
-
-#!/blog/wp-content/plugins/realty-export
-
-# Frontend tools
-#/blog/wp-content/themes/ei-child/node_modules/
