@@ -16,7 +16,7 @@ class AuthController extends Controller {
     protected $password;
 
     function getLoginForm($request, $response, $args) {
-        return $this->container['view']->render($response, 'sign_in.html');
+        return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
 
     function signIn($request, $response, $args) {
@@ -26,14 +26,14 @@ class AuthController extends Controller {
             $auth->login();
             return $this->container['view']->render($response, 'profile.html');
         }
+        //TODO redirect to /profile/
         return $this->container['view']->render($response, 'sign_in.html', [
             'error' => 'Неверный логин / пароль',
         ]);
     }
 
     function logout($request, $response, $args) {
-        $auth = AuthenticateUser::getInstance($_POST);
-        $auth->logout();
-        return $this->container['view']->render($response, 'home.php');
+        $this->user->logout();
+        return $response->withStatus(302)->withHeader('Location', '/');
     }
 }
