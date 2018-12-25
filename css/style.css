@@ -307,6 +307,29 @@ nav {
     margin-right: auto;
 }
 
+
+
+.game_page_img {
+    width: 100%;
+}
+
+.store-row img {
+    width: 230px;
+}
+
+.store-row {
+    align-items: center;
+    position: relative;
+    bottom: 17vw;
+}
+
+.store-row .col {
+   margin: 5px;
+}
+
+
+
+
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 768px) {
 
@@ -333,6 +356,15 @@ nav {
     .social-media > li {
         margin: 0 auto;
     }
+
+    .store-row {
+        bottom: 23vw;
+    }
+
+    .store-row img {
+        width: 200px;
+    }
+
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
@@ -716,7 +748,7 @@ input[type=submit]:hover {
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 680px) {
     .login .col {
         width: 100%;
         margin-top: 0;
@@ -732,7 +764,6 @@ input[type=submit]:hover {
         display: block;
         text-align: center;
     }
-}
 
 @media screen and (max-width: 550px) {
     .menu-btn {
@@ -774,10 +805,14 @@ input[type=submit]:hover {
         display: none;
     }
 }
+    .store-row {
+        bottom: 0;
+    }
 
-
-body, html, .container-fluid {
-    height: 100%;
+    .menu_back {
+        position: relative;
+        background-color: rgba(54,61,73,1);
+    }
 }
 
 body {
@@ -976,28 +1011,8 @@ label {
     background-color: #375f84;
 }
 
-.myButton {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffec64), color-stop(1, #ffab23));
-    background: -moz-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-    background: -webkit-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-    background: -o-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-    background: -ms-linear-gradient(top, #ffec64 5%, #ffab23 100%);
-    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffec64', endColorstr='#ffab23', GradientType=0);
-    background-color: #ffec64;
-    -moz-border-radius: 23px;
-    -webkit-border-radius: 23px;
-    border-radius: 23px;
-    border: 5px solid #ffaa22;
-    display: inline-block;
-    cursor: pointer;
-    color: #333333;
-    font-family: Impact;
-    font-size: 24px;
-    font-weight: bold;
-    padding: 17px 47px;
-    text-decoration: none;
-    text-shadow: 0px 1px 18px #a1a1a1;
+.subscribe-btn {
+    margin-bottom: 5vw;
 }
 
 .myButton:hover {
@@ -1016,20 +1031,17 @@ label {
     top: 1px;
 }
 
-#shadows {
-    box-shadow: 1px 1px 8px 8px #101010;
-}
-
 .video {
-    width: 100%;
+    width: 80vw;
     height: 0;
-    padding-bottom: 56.25%;
+    padding-bottom: 62.25%;
     position: relative;
     margin: 0 auto;
 }
 
 .video iframe {
     position: absolute;
-    width: 100%;
+    width: 72vw;
     height: 80%;
+    margin-top: 5vw;
 }
