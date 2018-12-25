@@ -41,13 +41,4 @@ class BasicAuth extends AuthenticateUser {
         $this->dbconn->query($sql);
         setcookie("sessid", $sessid, time() + (86400 * 30), "/");
     }
-
-    public function logout() {
-        session_abort();
-        $sessid = $_COOKIE['sessid'];
-        $sql = "DELETE FROM gamesite.user_data
-                WHERE gamesite.user_data.session_id = '$sessid'";
-        $this->dbconn->query($sql);
-        unset($_COOKIE['sessid']);
-    }
 }

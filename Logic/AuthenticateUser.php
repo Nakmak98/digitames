@@ -16,10 +16,7 @@ abstract class AuthenticateUser {
     }
 
     static function getInstance($params) {
-        switch ($params['type']) {
-            default:
-                return new BasicAuth($params);
-        }
+        return new BasicAuth($params);
     }
 
     abstract function authenticate();

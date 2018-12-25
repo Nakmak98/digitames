@@ -7,7 +7,7 @@
  */
 
 namespace Logic;
-
+require_once "Registration.php";
 
 class SignUpController extends Controller {
 
