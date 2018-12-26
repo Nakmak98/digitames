@@ -29,4 +29,20 @@ class AuthUser extends User {
     function shortName() {
         // TODO: Implement shortName() method.
     }
+
+    public function logout() {
+        session_abort();
+        $dbconn = \Db::getConnection();
+        $sql = "UPDATE gamesite.user_data SET gamesite.user_data.session_id = ''
+                WHERE gamesite.user_data.session_id = '$this->sessid'";
+        $dbconn->query($sql);
+        if (isset($_COOKIE['sessid'])) {
+            unset($_COOKIE['sessid']);
+            setcookie('sessid', '', time() - 3600, '/'); // empty value and old timestamp
+        }
+        if (isset($_COOKIE['PHPSESSID'])) {
+            unset($_COOKIE['PHPSESSID']);
+            setcookie('PHPSESSID', '', time() - 3600, '/'); // empty value and old timestamp
+        }
+    }
 }

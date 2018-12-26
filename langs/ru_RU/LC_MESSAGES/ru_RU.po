@@ -14,7 +14,7 @@ msgstr ""
 msgid "Blog"
 msgstr "Блог"
 
-msgid "Login"
+msgid "Log in"
 msgstr "Войти"
 
 msgid "Search"

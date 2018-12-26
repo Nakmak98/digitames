@@ -3,4 +3,4 @@
 vendor/
 composer.phar
 access.log
-error.log
+

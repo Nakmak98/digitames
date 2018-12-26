@@ -11,19 +11,19 @@
                     <div class="alert alert-error">{{error}}</div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputEmail4">{% trans 'Email' %}*</p></label>
+                            <label for="inputEmail4">{% trans 'Email' %}</p></label>
                             <input type="email" class="form-control" id="new_email" placeholder="Email" name="new_email" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputPassword4">{% trans 'Password' %}*</p></label>
+                            <label for="inputPassword4">{% trans 'Password' %}</p></label>
                             <input type="password" class="form-control" id="new_password" placeholder={% trans 'Password' %} name="new_password" required>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputAddress">{% trans 'Select your age' %}*</label>
+                            <label for="inputAddress">{% trans 'Select your age' %}</label>
                             <select class="custom-select" id="age" name="age" required>
                                 <option selected disabled value=''>{% trans 'Select your age' %}</option>
                                 <option value="3">3-6</option>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="inputAddress">{% trans 'Select your region' %}*</label>
+                            <label for="inputAddress">{% trans 'Select your region' %}</label>
                             <select class="custom-select" id="region" name="region" required>
                                 <option selected disabled value=''>{% trans 'Select your region' %}</option>
                                 <option value="af">{% trans 'Africa' %}</option>
@@ -57,13 +57,15 @@
             </div>
             <div class="col-sm-2"></div>
             <div class="col-sm-4 rt-col">
-                <br><br>
-                <p>{% trans 'Already have account?' %}</p>
-                <a href="/login/">
-                    <button class="btn btn-primary">{% trans 'Sign in with your account' %}</button>
-                </a>
-                <br><br>
-                <p>{% trans "Here is terms of user. We won't share your date. We will only collecting it for our personal statistic and so you will be enable to get some additional featured on our website." %}</p>
+                <div class="signup_bot">
+                    <br><br>
+                    <p>{% trans 'Already have account?' %}</p>
+                    <a href="/login/">
+                        <button class="btn btn-primary">{% trans 'Sign in with your account' %}</button>
+                    </a>
+                    <br><br>
+                    <p>{% trans "Here is terms of user. We won't share your date. We will only collecting it for our personal statistic and so you will be enable to get some additional featured on our website." %}</p>
+                </div>
             </div>
         </div>
     </div>
