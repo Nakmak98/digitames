@@ -56,5 +56,8 @@ $app->get('/game_page/{project_name}', Logic\GamePageController::class . ':getGa
 $app->get('/blog/', function (Request $request, Response $response, array $args) {
     require 'blog/index.php';
 });
+$app->get('/blog/wp-admin/', function (Request $request, Response $response, array $args) {
+    require 'blog/wp-admin/index.php';
+});
 $app->run();
 ?>
