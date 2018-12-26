@@ -53,5 +53,8 @@ $app->post('/login/', Logic\AuthController::class . ':signIn');
 $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
 $app->post('/signup/', Logic\SignUpController::class . ':signUp');
 $app->get('/game_page/{project_name}', Logic\GamePageController::class . ':getGamePage');
+$app->get('/blog/', function (Request $request, Response $response, array $args) {
+    require 'blog/index.php';
+});
 $app->run();
 ?>
