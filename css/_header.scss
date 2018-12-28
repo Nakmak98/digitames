@@ -1,0 +1,247 @@
+@mixin size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($position:absolute, $top:auto, $right:auto, $bottom:auto, $left:auto) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+.menu_back {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  @include size(100%, 50px);
+  background: $menu-background;
+  z-index: 5;
+  transform: translate3d(0, 0, 0);
+
+  .menu-container {
+    display: flex;
+    align-items: center;
+  }
+
+  a:hover {
+    color: $menu-item-hover;
+  }
+}
+
+
+.left-container {
+  justify-items: start;
+
+  .icon {
+    height: 50px;
+  }
+
+  .mbut {
+    text-align: center;
+    @include size(100px);
+    margin-right: 5px;
+    padding: 13px;
+    color: $link-color;
+  }
+}
+
+.right-container {
+  justify-items: end;
+
+  .search {
+    border: 0;
+    border-radius: 22px;
+    @include size(60%, 40px);
+    padding: 0px 0px 3px 13px;
+    outline: none;
+    margin-right: 15px;
+    color: $link-color;
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  .desktop-menu-user {
+    @extend %clickable-item;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  #desktop-search-icon {
+    color: $link-color;
+    position: absolute;
+    margin-left: 15px;
+  }
+
+
+  .desktop-lang-preferences {
+    @extend %clickable-item;
+    background: 0;
+    border: 0;
+    margin: 0 9px 1px 15px;
+    @include size(50px);
+
+    span:after {
+      font-family: "Font Awesome 5 Pro";
+      font-weight: 400;
+      content: "\f107";
+    }
+  }
+
+  .submenu-triangle {
+    display: none;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 7px solid #ffffffd4;
+    @include position($top: 43px, $right: 17px);
+  }
+
+  .desktop-lang-preferences-submenu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    @include position($top: 50px, $right: 10px);
+    @include size(100px);
+    background-color: $submenu-background;
+    padding: 5px;
+  }
+
+  .submenu-item {
+    @include size(100%, 100%);
+    z-index: 2;
+    padding: 5px 0;
+    text-align: center;
+
+    &:hover {
+      background-color: $submenu-item-hover;
+      cursor: pointer;
+    }
+  }
+
+}
+
+.menu-btn {
+  display: none;
+}
+
+.menu-btn span,
+.menu-btn span::before,
+.menu-btn span::after {
+  @include position($top: 50%, $left: 90%);
+  margin: -1px 0 0 -18px;
+  @include size(20px, 2px);
+  background-color: azure;
+}
+
+.menu-btn span::before,
+.menu-btn span::after {
+  content: '';
+  display: block;
+  transition: 0.2s;
+}
+
+.menu-btn span::before {
+  transform: translateY(-5px);
+}
+
+.menu-btn span::after {
+  transform: translateY(5px);
+}
+
+.menu-btn_active span {
+  height: 0;
+
+  &:before {
+    transform: rotate(45deg);
+  }
+
+  &:after {
+    transform: rotate(-45deg);
+  }
+}
+
+nav {
+  display: none;
+  z-index: 1;
+  @include size(100%, 100vh);
+  transform: translateX(130%);
+  background-color: $mobile-menu-background;
+  padding-top: 15%;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.5s;
+
+  .nav-container {
+    @extend %flex-centered-column;
+    @include size(88vw);
+    margin-top: 25px;
+    text-align: center;
+  }
+
+  .nav-but {
+    color: $link-color;
+    border: 1px solid #333;
+    padding: 10px;
+  }
+
+  .nav-user {
+    @include position(relative, $top: 50%);
+    color: $link-color;
+    font-size: 18px;
+  }
+
+  #nav-search-input {
+    @include position($bottom: 71px);
+    background-color: rgba(248, 245, 245, 0.3);
+    border: 0;
+    border-radius: 22px;
+    padding: 5px;
+  }
+
+  #nav-search-icon {
+    @include position($bottom: 80px, $left: 25%);
+    color: $link-color;
+  }
+
+  .nav-lang-preferences {
+    @extend %flex-centered-column;
+    @include position($top: 170px);
+    background-color: #595858a6;
+    color: $link-color;
+    border-radius: 7%;
+
+    .nav-lang-preferences-title {
+      @include size(54vw);
+      background-color: #252525;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      padding: 6% 5% 0%;
+      text-align: center;
+    }
+
+    .nav-lang-preferences-inputs {
+      padding: 5% 7%;
+    }
+  }
+
+}
+
+.nav-lang-preferences-inputs input {
+  @include size(19px, 19px);
+  @include position(relative, $top: 1vw);
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.nav-sign-up {
+  @include position(relative, $top: 265px);
+  @include size(120px);
+  color: $link-color;
+  border: 1px solid azure;
+  border-radius: 20px;
+  padding: 6px;
+  text-align: center;
+}

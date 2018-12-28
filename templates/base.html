@@ -8,41 +8,45 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/fontawesome.min.css">
+    <link rel="stylesheet" href="../css/base.css">
+    <!--<link rel="stylesheet" href="/css/style.css">-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.6.0/css/mdb.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/jquery.cookie.js"></script>
     <script src="/js/menu.js" defer></script>
 </head>
 <body>
 <div class="menu_back" id="container">
-    <div class="menu-container" id="container1">
-        <a href="/"><img class="icon" src="../img/icon.png"></a>
-        <a href="/blog/">
-            <div class="mbut">{%trans 'Blog' %}</div>
-        </a>
-    </div>
-    <div class="menu-container" id="container2">
+    <div class="menu-container left-container"
+    <a href="/"><img class="icon" src="../img/icon.png"></a>
+    <a href="/blog/">
+        <div class="mbut">{%trans 'Blog' %}</div>
+    </a>
+</div>
+<div class="menu-container right-container">
 
-        <input class="search" id="desktop-search-input" type="search">
-        <i id="desktop-search-icon" class="far fa-search"></i>
-        {% if user.nickname is null %}
-        <div class="menu-sign-up">
-            <a href="/login/">{% trans 'Log in' %}</a>
+    <input class="search" id="desktop-search-input" type="search">
+    <i id="desktop-search-icon" class="far fa-search"></i>
+    {% if user.nickname is null %}
+    <!--<div class="menu-sign-up">-->
+    <!--{% trans 'Log in' %}-->
+    <!--</div>-->
+    <a href="/login/">
+        <button type="button" id="menu-sign-up" class="btn btn-primary">{% trans 'Log in' %}</button>
+    </a>
+    {% else %}
+    <a href="/profile/">
+        <div class="desktop-menu-user">
+            {{ user.nickname }}
         </div>
-        {% else %}
-        <a href="/profile/">
-            <div class="desktop-menu-user">
-                {{ user.nickname }}
-            </div>
-        </a>
-        {% endif %}
-        <div class="submenu-triangle"></div>
-        <div class="desktop-lang-preferences-submenu">
-            <div class="submenu-item lang_ru">Русский</div>
-            <div class="submenu-item lang_en">English</div>
-        </div>
-        <div class="desktop-lang-preferences">
+    </a>
+    {% endif %}
+    <div class="submenu-triangle"></div>
+    <div class="desktop-lang-preferences-submenu">
+        <div class="submenu-item lang_ru">Русский</div>
+        <div class="submenu-item lang_en">English</div>
+    </div>
+    <div class="desktop-lang-preferences">
             <span>
                 {% if locale == 'ru_RU' %}
                     Ru
@@ -50,11 +54,11 @@
                     En
                 {% endif %}
             </span>
-        </div>
-        <a href="#" class="menu-btn">
-            <span></span>
-        </a>
     </div>
+    <a href="#" class="menu-btn">
+        <span></span>
+    </a>
+</div>
 </div>
 <nav id="navbar">
     <div class="nav-container">
@@ -72,9 +76,11 @@
     <input id="nav-search-input" class="search" type="search">
     <i id="nav-search-icon" class="far fa-search"></i>
     {% if user.nickname is null %}
-    <div class="nav-sign-up">
-        <a href="/login/">Log in</a>
-    </div>
+    <a href="/login/">
+        <div class="nav-sign-up">
+            {% trans 'Log in' %}
+        </div>
+    </a>
     {% else %}
     <div class="nav-user">
         <i class="fas fa-user"></i>
@@ -83,34 +89,27 @@
     {% endif %}
 </nav>
 {% block content %}{% endblock %}
-<footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">
-    <div class="container-fluid text-center text-md-left">
+<!-- Footer -->
+<footer class="page-footer font-small darken-3">
+    <div class="container">
         <div class="row">
-            <div class="col-md-6 mt-md-0 mt-3">
-                <h5 class="text-uppercase">Footer Content</h5>
-                <p>Some text.</p>
-            </div>
-            <div class="col-md-3"></div>
-            <hr class="clearfix w-100 d-md-none pb-3">
-            <div class="col-md-3 mb-md-0 mb-3">
-                <h5 class="text-uppercase">{% trans 'Social Media'%}</h5>
-                <ul class="list-unstyled social-media">
-                    <li>
-                        <a href="#!"><i class="fab fa-facebook fa-3x text-white"></i></a>
-                    </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-google-plus-square fa-3x text-white"></i></a>
-                    </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-twitter-square fa-3x text-white"></i></a>
-                    </li>
-                    <li>
-                        <a href="#!"><i class="fab fa-youtube-square fa-3x text-white"></i></a>
-                    </li>
-                </ul>
-
+            <div class="col-md-12 py-5">
+                <div class="mb-5 flex-center">
+                    <a class="fb-ic">
+                        <i class="fab fa-facebook-f fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="tw-ic">
+                        <i class="fab fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <a class="ins-ic">
+                        <i class="fab fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+        <a href="https://mdbootstrap.com/education/bootstrap/">Digitames.com</a>
     </div>
 </footer>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
