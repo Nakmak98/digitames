@@ -44,6 +44,9 @@
     margin-right: 5px;
     padding: 13px;
     color: $link-color;
+    &:hover {
+      color: $menu-item-hover;
+    }
   }
 }
 
@@ -59,6 +62,12 @@
     margin-right: 15px;
     color: $link-color;
     background-color: rgba(0, 0, 0, .3);
+  }
+
+  a {
+    .btn {
+      width: 110px;
+    }
   }
 
   .desktop-menu-user {
@@ -183,8 +192,9 @@ nav {
 
   .nav-but {
     color: $link-color;
-    border: 1px solid #333;
+    border: 1px solid $link-color;
     padding: 10px;
+    background-color: $mobile-menu-btn-background;
   }
 
   .nav-user {
@@ -209,13 +219,13 @@ nav {
   .nav-lang-preferences {
     @extend %flex-centered-column;
     @include position($top: 170px);
-    background-color: #595858a6;
+    background-color: $secondary-color;
     color: $link-color;
     border-radius: 7%;
 
     .nav-lang-preferences-title {
       @include size(54vw);
-      background-color: #252525;
+      background-color: $menu-background;
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
       padding: 6% 5% 0%;
