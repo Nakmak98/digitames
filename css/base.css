@@ -54,7 +54,7 @@ nav .nav-container, nav .nav-lang-preferences {
     border: 0;
     border-radius: 22px;
     width: 60%;
-    height: 30px;
+    height: 33px;
     padding: 0px 0px 3px 13px;
     outline: none;
     margin-right: 15px;
@@ -72,10 +72,11 @@ nav .nav-container, nav .nav-lang-preferences {
     background: 0;
     border-radius: 4px;
     border: 2px solid #474d51;
-    margin-right: 60px;
-    margin-left: 15px;
-    width: 140px;
-    height: 30px; }
+    margin: 0 9px 1px 15px;
+    width: 150px;
+    margin-right: 80px;
+    text-align: center;
+    height: 32px; }
     .right-container .desktop-lang-preferences span:after {
       font-family: "Font Awesome 5 Pro";
       font-weight: 400;
@@ -243,8 +244,8 @@ nav {
   text-align: center; }
 
 .btn-input {
-  width: 100px;
-  height: 30px;
+  width: 115px;
+  height: 33px;
   border-radius: 4px;
   border: 2px solid #474d51;
   background-color: transparent;
