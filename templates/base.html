@@ -32,7 +32,9 @@
     <!--{% trans 'Log in' %}-->
     <!--</div>-->
     <a href="/login/">
-        <button type="button" id="menu-sign-up" class="btn btn-primary">{% trans 'Log in' %}</button>
+        <button type="button" id="menu-sign-up" class="btn-input">
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            {% trans 'Log in' %}</button>
     </a>
     {% else %}
     <a href="/profile/">
@@ -41,17 +43,18 @@
         </div>
     </a>
     {% endif %}
-    <div class="submenu-triangle"></div>
     <div class="desktop-lang-preferences-submenu">
-        <div class="submenu-item lang_ru">Русский</div>
-        <div class="submenu-item lang_en">English</div>
+        <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Russian</label></div>
+        <div class="submenu-item lang_en"><img src = "../img/icon_usa.png" class = "flag"><label class = "lang">English</label></div>
     </div>
     <div class="desktop-lang-preferences">
             <span>
                 {% if locale == 'ru_RU' %}
-                    Ru
+                    <img src = "../img/icon_russia.png" class = "flag">
+                    <label class = "lang">Russian</label>
                 {% else %}
-                    En
+                    <img src = "../img/icon_usa.png" class = "flag">
+                    <label class = "lang">English</label>
                 {% endif %}
             </span>
     </div>

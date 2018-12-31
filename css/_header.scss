@@ -88,7 +88,8 @@
   .desktop-lang-preferences {
     @extend %clickable-item;
     background: 0;
-    border: 0;
+    border-radius: 4px;
+    border: 2px solid #474d51;
     margin: 0 9px 1px 15px;
     @include size(50px);
 
@@ -105,6 +106,9 @@
     border-right: 6px solid transparent;
     border-bottom: 7px solid #ffffffd4;
     @include position($top: 43px, $right: 17px);
+  }
+  .submenu-triangle:after {
+    transform: rotate(180deg);
   }
 
   .desktop-lang-preferences-submenu {
@@ -254,4 +258,41 @@ nav {
   border-radius: 20px;
   padding: 6px;
   text-align: center;
+}
+
+.btn-input {
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
+  border: 2px solid #474d51;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 700;
+  transition: border-color ease-in-out .3s,background-color ease-in-out .3s;
+  &:hover {
+    background-color: #f49c0f;
+    border-color: #f49c0f;
+  }
+}
+
+.fa-lock {
+  font-size:  12px;
+  margin-right: 8px;
+}
+
+.flag {
+  height: 12px;
+  width: 12px;
+  margin-right: 6px;
+  margin-left: 10px;
+}
+
+.lang {
+  font-size: 13px;
+  font-weight: 400!important;
+  margin-right: 5px;
+  cursor: pointer;
 }
