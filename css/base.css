@@ -76,7 +76,12 @@ nav .nav-container, nav .nav-lang-preferences {
     width: 230px;
     margin-right: 80px;
     text-align: left;
-    height: 32px; }
+    height: 32px;
+    transition: border-color ease-in-out .3s;
+  }
+  .right-container .desktop-lang-preferences:hover {
+    border-color: #f49c0f;
+  }
     .right-container .desktop-lang-preferences span:after {
       font-family: "Font Awesome 5 Pro";
       font-weight: 400;
