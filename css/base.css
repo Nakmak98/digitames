@@ -72,10 +72,9 @@ nav .nav-container, nav .nav-lang-preferences {
     background: 0;
     border-radius: 4px;
     border: 2px solid #474d51;
-    width: 135px;
-    margin-right: 60px;
-
-    height: 30px; }
+    margin: 0 9px 1px 15px;
+    width: 50px;
+    height: auto; }
     .right-container .desktop-lang-preferences span:after {
       font-family: "Font Awesome 5 Pro";
       font-weight: 400;
@@ -271,7 +270,8 @@ nav {
 .lang {
   font-size: 13px;
   font-weight: 400 !important;
-  margin-right: 5px; }
+  margin-right: 5px;
+  cursor: pointer; }
 
 .main {
   background-color: #2220; }
