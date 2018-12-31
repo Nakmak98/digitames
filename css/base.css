@@ -73,13 +73,15 @@ nav .nav-container, nav .nav-lang-preferences {
     border-radius: 4px;
     border: 2px solid #474d51;
     margin: 0 9px 1px 15px;
-    width: 150px;
+    width: 230px;
     margin-right: 80px;
-    text-align: center;
+    text-align: left;
     height: 32px; }
     .right-container .desktop-lang-preferences span:after {
       font-family: "Font Awesome 5 Pro";
       font-weight: 400;
+      margin-left: 40px;
+      font-size: 13px;
       content: "\f107"; }
   .right-container .submenu-triangle {
     display: none;
