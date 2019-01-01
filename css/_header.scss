@@ -36,6 +36,7 @@
 
   .icon {
     height: 50px;
+    position: absolute;
   }
 
   .mbut {
@@ -90,9 +91,11 @@
     background: 0;
     border-radius: 4px;
     border: 2px solid #474d51;
-    margin: 0 9px 1px 15px;
+    margin-right: 70px;
+    margin-left: 15px;
+    height: 30px;
+    width: 250px;
     @include size(50px);
-
     span:after {
       font-family: "Font Awesome 5 Pro";
       font-weight: 400;
@@ -295,4 +298,71 @@ nav {
   font-weight: 400!important;
   margin-right: 5px;
   cursor: pointer;
+}
+
+.right-container .search {
+  border: 0;
+  border-radius: 22px;
+  width: 60%;
+  height: 30px;
+  padding: 0px 0px 3px 13px;
+  outline: none;
+  margin-right: 15px;
+  color: azure;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.menu_back {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  //background: rgba(54, 61, 73, 0.7);
+  z-index: 5;
+  transform: translate3d(0, 0, 0); }
+.menu_back .menu-container {
+  display: flex;
+  align-items: center; }
+.menu_back a:hover {
+  color: azure; }
+
+/////////////////////////////////////////////////////
+.main {
+  background: inherit;
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  overflow: hidden; /*добавил новое правило*/
+  border-bottom-width: 0.5px; /* Толщина линии внизу */
+  border-bottom-style: groove; /* Стиль линии внизу */
+  border-bottom-color: #c6c6c7;
+}
+
+.main:before {
+  content: '';
+  width: 100%;
+  height: 60px;
+  background: inherit;
+  position: absolute;
+  box-shadow: inset 0 0 0 200px rgba(255, 255, 255, 0.3);
+  filter: blur(10px);
+  border-bottom-width: 0.5px; /* Толщина линии внизу */
+  border-bottom-style: groove; /* Стиль линии внизу */
+  border-bottom-color: #c6c6c7;
+}
+
+.sub-main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  z-index: 30;
+  text-align: center;
+  display: inline-block;
+}
+
+.Logo {
+  position: absolute;
+  top: 30px;
+  background: green;
 }

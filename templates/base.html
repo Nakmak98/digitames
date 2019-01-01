@@ -16,8 +16,16 @@
     <script src="/js/menu.js" defer></script>
 </head>
 <body>
-<div class="menu_back" id="container">
-    <div class="menu-container left-container"
+    <div class="main menu_back" id = container>
+        <div class = "sub-main">
+            <div class = "Logo">
+                <a href="/"><img class="icon" src="../img/icon.png"></a>
+                <a href="/blog/"><div class="mbut">{%trans 'Blog' %}</div></a>
+            </div>
+        </div>
+    </div>
+<!--<div class="menu_back" id="container">
+    <div class="menu-container left-container">
     <a href="/"><img class="icon" src="../img/icon.png"></a>
     <a href="/blog/">
         <div class="mbut">{%trans 'Blog' %}</div>
@@ -28,9 +36,9 @@
     <input class="search" id="desktop-search-input" type="search">
     <i id="desktop-search-icon" class="far fa-search"></i>
     {% if user.nickname is null %}
-    <!--<div class="menu-sign-up">-->
-    <!--{% trans 'Log in' %}-->
-    <!--</div>-->
+    &lt;!&ndash;<div class="menu-sign-up">&ndash;&gt;
+    &lt;!&ndash;{% trans 'Log in' %}&ndash;&gt;
+    &lt;!&ndash;</div>&ndash;&gt;
     <a href="/login/">
         <button type="button" id="menu-sign-up" class="btn-input">
             <i class="fa fa-lock" aria-hidden="true"></i>
@@ -90,7 +98,7 @@
         <a href="/profile/">{{ user.nickname }}</a>
     </div>
     {% endif %}
-</nav>
+</nav>-->
 {% block content %}{% endblock %}
 <!-- Footer -->
 <footer class="page-footer font-small darken-3">
