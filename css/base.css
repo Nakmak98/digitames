@@ -338,12 +338,12 @@ nav {
   display: block; }
 
 .active_menu {
-  margin-right: 20px;
+  margin-right: 21px;
   margin-left: 20px;
   margin-top: 5px;
   color: #90919e;
   transition: 1s;
-  font-weight: 400; }
+  font-weight: 300; }
 
 .active_menu:hover {
   color: white; }
@@ -467,8 +467,8 @@ nav {
   background: transparent; }
 
 .more-carousel {
-  margin-top: -120px;
-  margin-left: 80px;
+  margin-top: -14%;
+  margin-left: 9%;
   position: absolute;
   height: 50px;
   width: 180px;
