@@ -50,18 +50,20 @@
 
     </label>
     <div class="desktop-lang-preferences-submenu">
-        <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Russian</label></div>
+        <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Русский</label></div>
         <div class="submenu-item lang_en"><img src = "../img/icon_usa.png" class = "flag"><label class = "lang">English</label></div>
     </div>
     <div class="desktop-lang-preferences">
             <span>
+                <i class="fas fa-globe-africa"></i>
                 {% if locale == 'ru_RU' %}
-                    <img src = "../img/icon_russia.png" class = "flag">
-                    <label class = "lang">Russian</label>
+                    <!--<img src = "../img/icon_russia.png" class = "flag">-->
+                    <label class = "lang">Русский</label>
                 {% else %}
-                    <img src = "../img/icon_usa.png" class = "flag">
+                <!--    <img src = "../img/icon_usa.png" class = "flag">-->
                     <label class = "lang">English</label>
                 {% endif %}
+                <i class="fas fa-angle-down"></i>
             </span>
     </div>
 

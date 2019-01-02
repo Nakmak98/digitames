@@ -9,12 +9,8 @@ $mobile-menu-background: rgba(0, 0, 0, .9);
 $mobile-menu-btn-background: transparent;
 $content-background: #011c4b;
 $footer-background: #212121;
-// Цвета игровых карточек завязаны на классах bg-dark и text-white.
-//
-// Чтобы модифицировать их, нужно удалить эти клаЦвет кнопки Log in завязан на классе btn-primaryссы и написать свои стили
 
-// Здесь прикрепить ссылку на цветовую палитру из colorscheme.ru
-// Пример: https://colorscheme.ru/#3Od1DK-hWpBpB
+///https://colorscheme.ru/#3.11T--pIw0w0
 
 html, body {
   margin: 0;
@@ -81,3 +77,4 @@ a {
       display: none;
     }
   }
+

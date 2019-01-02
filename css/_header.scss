@@ -274,6 +274,7 @@ nav {
   font-weight: 400!important;
   margin-right: 5px;
   cursor: pointer;
+  transition: 1s;
 }
 
 .right-container .search {
@@ -314,19 +315,13 @@ nav {
 
 .right-container .desktop-lang-preferences {
   background: 0;
-  color: white;
-  border: 0.5px groove #c6c6c7;
-  border-radius: 2px;
+  color: #90919e;
   margin-right: 70px;
   margin-left: 15px;
   width: 140px;
   height: 30px;
+  margin-top: -10px;
   transition: border-color ease-in-out .3s;}
-.right-container .desktop-lang-preferences span:after {
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 400;
-  margin-left: 20px;
-  content: "\f107"; }
 
 .right-container .desktop-lang-preferences:hover {
   border-color: #0e86ca;
@@ -416,4 +411,30 @@ nav {
   .fa-cogs, .fa-user {
     color:#00aeff;
   }
+}
+
+.fa-globe-africa{
+  cursor: pointer;
+  margin-right: 5px;
+  font-size:14px;
+  color: #0e86ca;
+  transition: 1s;
+}
+.desktop-lang-preferences:hover  .fa-globe-africa{
+  color:#00aeff;
+}
+.desktop-lang-preferences:hover {
+  color: white;
+}
+
+.fa-angle-down {
+  cursor: pointer;
+  margin-left: 8px;
+  padding-top:10px;
+  font-size: 15px;
+  color: #90919e;
+  transition: 1s;
+}
+.desktop-lang-preferences:hover .fa-angle-down {
+  color: white;
 }

@@ -15,11 +15,12 @@
             <a href=game_page/{{featured[0]['proj_url']}}>
                 <a class="info" name="game_page" href="game_page/{{featured[0]['proj_url']}}">
                     <img class="d-block w-100" src={{ featured[0]['proj_img'] }} alt = {{ featured[0]['proj_name'] }}>
+                    <div class ="blue-btn more-carousel">Подробнее</div>
                 </a>
-                <div class="carousel-caption d-none d-md-block">
+                <!--<div class="carousel-caption d-none d-md-block">
                 <h3> {{ featured[0]['proj_name'] }}</h3>
                 <p> {{ featured[0]['proj_desc'] }} </p>
-                </div>
+                </div>-->
         </div>
         {% if feature_num_rows > 1 %}
         {% for feature, value in featured %}

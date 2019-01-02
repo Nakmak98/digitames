@@ -253,7 +253,8 @@ nav {
   font-size: 13px;
   font-weight: 400 !important;
   margin-right: 5px;
-  cursor: pointer; }
+  cursor: pointer;
+  transition: 1s; }
 
 .right-container .search {
   border: 0;
@@ -291,20 +292,13 @@ nav {
 
 .right-container .desktop-lang-preferences {
   background: 0;
-  color: white;
-  border: 0.5px groove #c6c6c7;
-  border-radius: 2px;
+  color: #90919e;
   margin-right: 70px;
   margin-left: 15px;
   width: 140px;
   height: 30px;
+  margin-top: -10px;
   transition: border-color ease-in-out .3s; }
-
-.right-container .desktop-lang-preferences span:after {
-  font-family: "Font Awesome 5 Pro";
-  font-weight: 400;
-  margin-left: 20px;
-  content: "\f107"; }
 
 .right-container .desktop-lang-preferences:hover {
   border-color: #0e86ca; }
@@ -385,6 +379,30 @@ nav {
 .login-add:hover .fa-cogs, .login-add:hover .fa-user {
   color: #00aeff; }
 
+.fa-globe-africa {
+  cursor: pointer;
+  margin-right: 5px;
+  font-size: 14px;
+  color: #0e86ca;
+  transition: 1s; }
+
+.desktop-lang-preferences:hover .fa-globe-africa {
+  color: #00aeff; }
+
+.desktop-lang-preferences:hover {
+  color: white; }
+
+.fa-angle-down {
+  cursor: pointer;
+  margin-left: 8px;
+  padding-top: 10px;
+  font-size: 15px;
+  color: #90919e;
+  transition: 1s; }
+
+.desktop-lang-preferences:hover .fa-angle-down {
+  color: white; }
+
 .main {
   background-color: #2220; }
 
@@ -404,14 +422,16 @@ nav {
 
 .ihover {
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  background: red;
+  color: white;
+  border: 0.5px solid; }
   .ihover img {
     transition: all 1s ease-out; }
     .ihover img:hover {
       transform: scale(1.1); }
 
 .overlay {
-  opacity: 0;
   width: 100%;
   height: 100%;
   transition: .5s ease; }
@@ -435,10 +455,27 @@ nav {
   top: 70%; }
 
 .content {
-  background-color: #011c4b; }
+  background-image: url(../img/bg.jpg); }
+
+.new-text {
+  color: #00aeff; }
+
+.card .card-body .card-text {
+  color: #00aeff; }
+
+.card {
+  background: transparent; }
+
+.more-carousel {
+  margin-top: -120px;
+  margin-left: 80px;
+  position: absolute;
+  height: 50px;
+  width: 180px;
+  padding-top: 15px; }
 
 footer {
-  background-color: #212121; }
+  background-image: url("../img/bg-footer.jpg"); }
 
 @media screen and (max-width: 550px) {
   .menu-btn {
