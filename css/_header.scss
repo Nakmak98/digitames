@@ -47,6 +47,7 @@
     margin-right: 5px;
     padding: 13px;
     color: $link-color;
+    transition: color ease-in-out .3s;
     &:hover {
       color: $menu-item-hover;
     }
@@ -88,22 +89,7 @@
   }
 
 
-  .desktop-lang-preferences {
-    @extend %clickable-item;
-    background: 0;
-    border-radius: 4px;
-    border: 2px solid #474d51;
-    margin-right: 70px;
-    margin-left: 15px;
-    height: 30px;
-    width: 250px;
-    @include size(50px);
-    span:after {
-      font-family: "Font Awesome 5 Pro";
-      font-weight: 400;
-      content: "\f107";
-    }
-  }
+
 
   .submenu-triangle {
     display: none;
@@ -123,7 +109,12 @@
     @include position($top: 50px, $right: 10px);
     @include size(100px);
     background-color: $submenu-background;
-    padding: 5px;
+    color: white;
+    margin-right: 60px;
+    width: 136px;
+    margin-top: -10px;
+    border-radius: 4px;
+    border: 2px solid #848693;
   }
 
   .submenu-item {
@@ -131,7 +122,8 @@
     z-index: 2;
     padding: 5px 0;
     text-align: center;
-
+    text-align: left;
+    padding-left: 1px;
     &:hover {
       background-color: $submenu-item-hover;
       cursor: pointer;
@@ -316,4 +308,53 @@ nav {
 
 .logo-icon {
   margin-left: 40px;
+}
+
+.right-container a .btn {
+  width: 120px;
+}
+
+.right-container .desktop-lang-preferences {
+  background: 0;
+  color: white;
+  border-radius: 4px;
+  border: 2px solid #848693;
+  margin-right: 70px;
+  margin-left: 15px;
+  width: 200px;
+  height: 30px;
+  transition: border-color ease-in-out .3s;}
+.right-container .desktop-lang-preferences span:after {
+  font-family: "Font Awesome 5 Pro";
+  font-weight: 400;
+  margin-left: 20px;
+  content: "\f107"; }
+
+.right-container .desktop-lang-preferences:hover {
+  border-color: #4285f4;
+}
+
+.right-container .desktop-lang-preferences:after {
+  border-color: #4285f4;
+}
+
+.btn-outline-primary {
+  border: 2px solid red!important;
+  background-color: transparent!important;
+  color: red!important;
+}
+.menu {
+  display: none;
+  position:absolute;
+}
+
+.menu a {
+  position:relative;
+  display: block;
+  margin: 1px;
+  padding: 10px;
+}
+
+.active_menu input:checked + .menu {
+  display: block;
 }
