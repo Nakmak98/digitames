@@ -59,7 +59,7 @@ $app->get('/blog/', function (Request $request, Response $response, array $args)
 $app->get('/blog/wp-admin/', function (Request $request, Response $response, array $args) {
     require 'blog/wp-admin/index.php';
 });
-$app->get ('/cookies_rules/', function(Request $request, Response $response, array $srgs) {
+$app->get ('/cookies_rules/', function(Request $request, Response $response, array $args) {
     return $this->view->render($response, 'cookies_rules.html');
 });
 $app->run();
