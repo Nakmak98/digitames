@@ -5,18 +5,43 @@
     background: rgba(0,67,133,0.7);
     width: 100%;
     color: white;
+    padding: 10px 20px 10px 20px;
+
 }
-.cookie-message-text a {
+.cookie-close-btn {
+    background-color: white;
     color: #007bff;
+    border-radius: 20px;
+    height: 30px;
+    width: 30px;
     transition: 1s;
 }
-.cookie-message-text a:hover {
-    color: #007bfa;
+.cookie-close-btn:hover {
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
 }
-.cookie-accept-btn {
+.cookie-message-text a {
+    transition: 1s;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.align-right {
+    text-align: right;
+    margin-top: -23px;
+}
+
+.align-center {
     text-align: center;
-    background: white;
-    color: rgba(0,67,133,1);
+    margin-top: 10px;
+}
+.cookie-message-text {
+    text-align: center;
+}
+.cookie-message-text a:hover {
+    color: #007bff;
 }
 /*####################-------COOKIE_END--------##########################*/
 a {
