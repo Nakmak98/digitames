@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="/js/jquery.cookie.js"></script>
     <script src="/js/menu.js" defer></script>
+    <script src="/js/cookie.js" defer></script>
 </head>
 <body>
 <div class="menu_back" id="container">
@@ -84,14 +85,14 @@
 </nav>
 {% block content %}{% endblock %}
 <div class = "cookie-message" id = "cookie-message">
-    <div class="align-right" onclick = "document.getElementById('cookie-message').style.display = 'none';">
+    <div class="align-right" id = "closing">
         <button  class = "cookie-close-btn">X</button>
     </div>
     <div class = "cookie-message-text">
         Сайт использует cookies. Оставаясь на сайте, вы соглашаетесь с <a href = "/cookies_rules/">политикой использования файлов cookie.</a>
     </div>
-    <div class = "align-center" onclick = "document.getElementById('cookie-message').style.display = 'none';">
-        <button type="button" class="btn btn-primary">Принять и закрыть</button>
+    <div class = "align-center" >
+        <button type="button" id = "accept" class="btn btn-primary">Принять и закрыть</button>
     </div>
 </div>
 <footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">

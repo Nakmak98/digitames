@@ -9,6 +9,7 @@
 
 }
 .cookie-close-btn {
+    outline: none;
     background-color: white;
     color: #007bff;
     border-radius: 20px;
@@ -17,6 +18,7 @@
     transition: 1s;
 }
 .cookie-close-btn:hover {
+    outline: none;
     cursor: pointer;
     background-color: #007bff;
     color: white;
@@ -29,6 +31,7 @@
 }
 
 .align-right {
+    //outline: none;
     text-align: right;
     margin-top: -23px;
 }
