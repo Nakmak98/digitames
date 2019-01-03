@@ -1,4 +1,24 @@
-/*####################-------COOKIE_START------##########################*/
+/*####################-------COOKIES_RULES.php_START------##########################*/
+.about_cookies {
+
+    padding-top: 60px;
+    min-height: 100vh;
+}
+
+.head_cookies {
+    text-align: center;
+    font-size: 20px;
+}
+.text_cookies ul li {
+    padding-top: 20px;
+    margin-top: 10px;
+}
+ul {
+    list-style-type: none;
+}
+/*####################-------COOKIES_RULES.php_END------##########################*/
+
+/*####################-------COOKIE_MESSAGE_START------##########################*/
 .cookie-message {
     position: fixed;
     bottom: 0;
