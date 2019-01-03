@@ -83,21 +83,17 @@
     {% endif %}
 </nav>
 {% block content %}{% endblock %}
-
-<!--####################-------COOKIE_START------##########################-->
 <div class = "cookie-message" id = "cookie-message">
     <div class="align-right" onclick = "document.getElementById('cookie-message').style.display = 'none';">
         <button  class = "cookie-close-btn">X</button>
     </div>
     <div class = "cookie-message-text">
-        Сайт использует cookies. Оставаясь на сайте, вы соглашаетесь с <a href = "../cookies_rules.php">политикой использования файлов cookie.</a>
+        Сайт использует cookies. Оставаясь на сайте, вы соглашаетесь с <a href = "/cookies_rules/">политикой использования файлов cookie.</a>
     </div>
     <div class = "align-center" onclick = "document.getElementById('cookie-message').style.display = 'none';">
         <button type="button" class="btn btn-primary">Принять и закрыть</button>
     </div>
 </div>
-<!--####################-------COOKIE_END------##########################-->
-
 <footer class=" h-100 page-footer font-small blue pt-4 bg-dark text-white">
     <div class="container-fluid text-center text-md-left">
         <div class="row">

@@ -1,24 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Подробно о Cookies</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css" integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body style = "background: #5c656f">
-    <!--Navbar-->
-    <?php
-    if(isset($_COOKIE['user_id'])) {
-        include $_SERVER['DOCUMENT_ROOT'] . "/templates/header.php";
-    }
-    else {
-        include $_SERVER['DOCUMENT_ROOT'] . "/templates/header_default.php";
-    }
-    ?>
-    <!--Navbar-->
+{% extends 'base.html' %}
+
+{% block content %}
     <div class = "about_cookies">
         <div class = "head_cookies">Подробнее об использованиии <br>файлов cookie на сайте</div>
         <div class = "text_cookies">
@@ -45,8 +27,4 @@
             </ul>
         </div>
     </div>
-    <!-- Footer -->
-    <?php include "templates/footer.php"; ?>
-    <!-- Footer -->
-</body>
-</html>
+{% endblock %}
