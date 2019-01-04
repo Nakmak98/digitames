@@ -48,6 +48,9 @@ textdomain($locale);
 
 $app->get('/', Logic\HomePageController::class . ':getHomePage');
 $app->get('/login/', Logic\AuthController::class . ':getLoginForm');
+$app->get('/forget_password/', Logic\AuthController::class . ':getForgetPass');
+$app->post('/forget_pass/', Logic\AuthController::class . ':handlerForgetPass');
+$app->get('/request/{md5email}', Logic\AuthController::class . ':getNewPassForm');
 $app->get('/logout/', Logic\AuthController::class . ':logout');
 $app->post('/login/', Logic\AuthController::class . ':signIn');
 $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');

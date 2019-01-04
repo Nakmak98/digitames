@@ -12,4 +12,8 @@ class AnonymousUser extends User {
     function shortName() {
         // TODO: Implement shortName() method.
     }
+
+    function checkEmail() {
+
+    }
 }
