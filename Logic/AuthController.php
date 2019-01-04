@@ -46,20 +46,56 @@ class AuthController extends Controller {
 
         $forget_password_email = new Email();
         $forget_password_email ->SendLinkForgetPass($email,$md5email);
+        return $this->container['view']->render($response, 'sign_in.html', [
+            'success' => 'На вашу почту было выслано сообщение. Зайдите на вашу почту и следуйте инструкции.'
+        ]);
     }
 
     function getNewPassForm($request, $response, $args) {
         $md5email_real = $args['md5email'];
         $sql = "select email, TTL from forget_password where md5email = '$md5email_real'";
         $manager = new Manager();
-        //Тут надо fetch all т к теперь там еще TTL
-        //И надо установить TTL real time
-        $manager ->getAssocResult($sql);
-        //Может триггер сделать в бд, который удаляет записи из
-        //Таблицы forget_password через 24 часа???
-        //$md5email_expected = $manager ->getResult($sql);
-        //Теперь надо взять новый введенный пароль и присвоить его пользователю
+        $forget_password = $manager ->getAssocResult($sql);
+        if(!$forget_password)
+        {
+            return $this->container['view']->render($response, 'error.html', [
+                'error' => 'Страница не найдена.'
+            ]);
+        }
+        $ttl = $forget_password ['TTL'];
+        $ttl =  strtotime($ttl);
+        $real_time = strtotime(date("Y-m-d H:i:s"));
+        if($ttl - $real_time > 24 * 3600)
+        {
+            return $this->container['view']->render($response, 'error.html', [
+                'error' => 'Страница не найдена.'
+            ]);
+        }
+        return $this->container['view']->render($response, 'new_password.html', [
+            'email' => $forget_password['email']
+        ]);
+    }
 
+    function CreateNewPass($request, $response, $args) {
+        $email = $_POST['email'];
+        $new_password = $_POST['new_password'];
+        $repeat_password = $_POST['repeat_password'];
+        if($new_password != $repeat_password)
+        {
+            return $this->container['view']->render($response, 'new_password.html', [
+                'error' => 'Пароли не совпадают.'
+            ]);
+        }
+        $sql = "update users set password = '$new_password' where email = '$email'";
+        $manager = new Manager();
+        $manager ->getResult($sql);
+
+        $sql = "DELETE FROM forget_password WHERE email = '$email';";
+        $manager ->getResult($sql);
+
+        return $this->container['view']->render($response, 'sign_in.html', [
+            'success' => 'Выш пароль успешно изменен.'
+        ]);
     }
 
     function signIn($request, $response, $args) {
