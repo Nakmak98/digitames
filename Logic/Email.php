@@ -6,20 +6,10 @@
  * Time: 15:41
  */
 namespace Logic;
-/*
-Задачи контроллера:
-#############---------FORGET_PASSWORD_START------------###############
-1)Из шаблона forget_password достать mail пользователя
-2)Проверить есть ли пользователь с такой почтой в бд
-3)Создать ссылку со сроком жизни 24 часа
-4)Выполнить скрипт mail.php с заданной почтой
-прикрепленной к сообщению ссылкой
-5)
-#############---------FORGET_PASSWORD_END------------#################
-*/
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-//Load Composer's autoloader
+
 //require '../vendor/autoload.php';
 
 class Email
@@ -46,12 +36,12 @@ class Email
         }
     }
 
-    function SendLinkForgetPass($email, $link)
+    function SendForgetPasswordEmail($email, $link)
     {
         try{
             $this->mail->addAddress($email, 'Dear Guest');
             $this->mail->Subject = 'Password recovering message';
-            $this->mail->Body    = 'Для восстановления пароля перейди по ссылке: http://digitames.com/request/'.$link;
+            $this->mail->Body    = 'Для восстановления пароля перейдите по ссылке: http://digitames.com/request/'.$link;
             $this->mail->send();
         }
         catch(Exception $e) {

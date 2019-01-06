@@ -1,5 +1,4 @@
-<?php /** @noinspection PhpUndefinedMethodInspection */
-/** @noinspection ALL */
+<?php
 
 /**
  * Created by PhpStorm.
@@ -17,102 +16,115 @@ class AuthController extends Controller {
     protected $login;
     protected $password;
 
-    function getLoginForm($request, $response, $args) {
+    public function getLoginForm($request, $response, $args) {
         return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
 
-    function getForgetPass($request, $response, $args) {
+    public function getForgetPasswordForm($request, $response, $args) {
         return $this->container['view']->render($response, 'forget_password.html', $this->context);
     }
 
-    function getMd5EmailCrypt($email){
-        return md5($email);
-    }
-
-    function handlerForgetPass($request, $response, $args) {
+    public function forgetPasswordHandler($request, $response, $args) {
         $email = $_POST['email'];
-
         $manager = new Manager();
-        $sql = "select email from users where email = '$email'";
-        if (!$manager -> getAssocResult($sql))
-        {
-            return $this->container['view']->render($response, 'forget_password.html', [
-                'error' => 'Пользователь с таким email не зарегистрирован.'
-            ]);
+        if ($this->isEmailExist($manager, $email)) {
+            $md5email = $this->saveEncryptedKey($email, $manager);
+            $forget_password_email = new Email();
+            $forget_password_email->SendForgetPasswordEmail($email, $md5email);
+            $this->context['success'] = 'На вашу почту было выслано сообщение. Зайдите на вашу почту и следуйте инструкции.';
+            return $this->container['view']->render($response, 'sign_in.html', $this->context);
+        } else {
+            $this->context['error'] = 'Пользователь с таким email не зарегистрирован.';
+            return $this->container['view']->render($response, 'forget_password.html', $this->context);
         }
-        $md5email = $this->getMd5EmailCrypt($email);
-        $sql = "insert into forget_password(email,md5email) values ('$email','$md5email')";
-        $manager ->getResult($sql);
 
-        $forget_password_email = new Email();
-        $forget_password_email ->SendLinkForgetPass($email,$md5email);
-        return $this->container['view']->render($response, 'sign_in.html', [
-            'success' => 'На вашу почту было выслано сообщение. Зайдите на вашу почту и следуйте инструкции.'
-        ]);
     }
 
-    function getNewPassForm($request, $response, $args) {
-        $md5email_real = $args['md5email'];
-        $sql = "select email, TTL from forget_password where md5email = '$md5email_real'";
+    public function getNewPasswordForm($request, $response, $args) {
+        $user_md5email = $args['md5email'];
         $manager = new Manager();
-        $forget_password = $manager ->getAssocResult($sql);
-        if(!$forget_password)
-        {
-            return $this->container['view']->render($response, 'error.html', [
-                'error' => 'Страница не найдена.'
-            ]);
+        try {
+            $forget_password_token = $this->getForgetPasswordToken($user_md5email, $manager);
+            $this->checkForgetPasswordToken($forget_password_token);
+        } catch (\Exception $e) {
+            $this->context['error'] = 'Страница не найдена';
+            return $this->container['view']->render($response, 'error.html', $this->context);
         }
-        $ttl = $forget_password ['TTL'];
-        $ttl =  strtotime($ttl);
-        $real_time = strtotime(date("Y-m-d H:i:s"));
-        if($ttl - $real_time > 24 * 3600)
-        {
-            return $this->container['view']->render($response, 'error.html', [
-                'error' => 'Страница не найдена.'
-            ]);
-        }
-        return $this->container['view']->render($response, 'new_password.html', [
-            'email' => $forget_password['email']
-        ]);
+        $this->context['email'] = $forget_password_token['email'];
+        return $this->container['view']->render($response, 'new_password.html', $this->context);
     }
 
-    function CreateNewPass($request, $response, $args) {
+    public function CreateNewPassword($request, $response, $args) {
         $email = $_POST['email'];
         $new_password = $_POST['new_password'];
         $repeat_password = $_POST['repeat_password'];
-        if($new_password != $repeat_password)
-        {
-            return $this->container['view']->render($response, 'new_password.html', [
-                'error' => 'Пароли не совпадают.'
-            ]);
+        if ($new_password != $repeat_password) {
+            $this->context['error'] = 'Пароли не совпадают';
+            return $this->container['view']->render($response, 'new_password.html', $this->context);
         }
-        $sql = "update users set password = '$new_password' where email = '$email'";
         $manager = new Manager();
-        $manager ->getResult($sql);
-
-        $sql = "DELETE FROM forget_password WHERE email = '$email';";
-        $manager ->getResult($sql);
-
-        return $this->container['view']->render($response, 'sign_in.html', [
-            'success' => 'Выш пароль успешно изменен.'
-        ]);
+        $manager->getResult("update users set password = '$new_password' where email = '$email'");
+        $manager->getResult("DELETE FROM forget_password WHERE email = '$email';");
+        $this->context['success'] = 'Выш пароль успешно изменен.';
+        return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
 
-    function signIn($request, $response, $args) {
+    public function signIn($request, $response, $args) {
         $auth = AuthenticateUser::getInstance($_POST);
         $user = $auth->authenticate();
         if ($user) {
             $auth->login();
-            return $this->container['view']->render($response, 'profile.html');
+            return $this->container['view']->render($response, 'profile.html', $this->context);
         }
         //TODO redirect to /profile/
-        return $this->container['view']->render($response, 'sign_in.html', [
-            'error' => 'Неверный логин / пароль',
-        ]);
+        $this->context['error'] = 'Страница не найдена';
+        return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
 
-    function logout($request, $response, $args) {
+    public function logout($request, $response, $args) {
         $this->user->logout();
         return $response->withStatus(302)->withHeader('Location', '/');
+    }
+
+
+    protected function isEmailExist($manager, $email) {
+        $sql = "select email from users where email = '$email'";
+        return $manager->getAssocResult($sql);
+    }
+
+    /**
+     * @param $email
+     * @param Manager $manager
+     * @return string
+     */
+    protected function saveEncryptedKey($email, Manager $manager): string {
+        $md5email = md5($email); // encrypted email is a unique user key
+        $ttl = date("Y-m-d H:i:s");
+        $sql = "insert into forget_password(email,md5email, TTL) values ('$email','$md5email', '$ttl')";
+        $manager->getResult($sql);
+        return $md5email;
+    }
+
+    /**
+     * @param $user_md5email
+     * @param Manager $manager
+     * @return array|null
+     */
+    protected function getForgetPasswordToken($user_md5email, Manager $manager) {
+        $sql = "select email, TTL from forget_password where md5email = '$user_md5email'";
+        $forget_password = $manager->getAssocResult($sql);
+        return $forget_password;
+    }
+
+    /**
+     * @param $forget_password_token
+     * @throws Exception is ttl has expired
+     */
+    protected function checkForgetPasswordToken($forget_password_token) {
+        $ttl = strtotime($forget_password_token['TTL']);
+        $real_time = strtotime(date("Y-m-d H:i:s"));
+        if ($ttl - $real_time > 24 * 3600) {
+            throw new \Exception('ttl of forget password token has expired');
+        }
     }
 }
