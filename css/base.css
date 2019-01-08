@@ -492,7 +492,26 @@ footer {
     display: block; }
 
   nav {
-    display: flex; }
+    display: flex;
+    background-image: url("../img/bg.jpg"); }
+
+  nav .nav-btn {
+    width: 90%;
+    height: 50px;
+    padding-top: 17px; }
+
+  nav .nav-sign {
+    height: 50px;
+    padding-top: 17px;
+    margin-top: 260px;
+    width: 700%;
+    margin-left: -300%; }
+
+  .fa-search:before {
+    margin-left: 17px; }
+
+  nav .nav-lang-preferences .nav-lang-preferences-title {
+    background: #263041; }
 
   .nav-active {
     transform: translateX(0%); }
