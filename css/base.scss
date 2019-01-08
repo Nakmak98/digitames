@@ -54,6 +54,27 @@ a {
 
 @import 'footer';
 
+@media (min-width: 1200px)  {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 770px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
+@media (max-width: 770px) and (min-width: 550px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
 
 @media screen and (max-width: 550px) {
     .menu-btn {
@@ -71,10 +92,13 @@ a {
     .desktop-lang-preferences,
     .mbut,
     .desktop-menu-user,
+    .delete-label,
+    .more-carousel,
     #menu-sign-up,
     #desktop-search-input,
     #desktop-search-icon{
       display: none;
     }
   }
+
 

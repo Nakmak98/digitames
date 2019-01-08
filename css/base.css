@@ -406,11 +406,6 @@ nav {
 .main {
   background-color: #2220; }
 
-.home-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 11px 12px; }
-
 .card:last-of-type {
   grid-column: 1 / 3; }
 
@@ -477,6 +472,21 @@ nav {
 footer {
   background-image: url("../img/bg-footer.jpg"); }
 
+@media (min-width: 1200px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 20px; } }
+@media (max-width: 1200px) and (min-width: 770px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px; } }
+@media (max-width: 770px) and (min-width: 550px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px; } }
 @media screen and (max-width: 550px) {
   .menu-btn {
     display: block; }
@@ -490,6 +500,8 @@ footer {
   .desktop-lang-preferences,
   .mbut,
   .desktop-menu-user,
+  .delete-label,
+  .more-carousel,
   #menu-sign-up,
   #desktop-search-input,
   #desktop-search-icon {

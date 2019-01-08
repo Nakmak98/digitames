@@ -39,16 +39,17 @@
         </div>
     </a>
     {% endif %}
-    <label class='active_menu' style='cursor: pointer'>
-        <input id='checkbox' type='checkbox'  style='display: none'>
-        Мой аккаунт
-        <div class="menu">
-            <a href="/login/" ><div class="blue-btn">{% trans 'Log in' %}</div></a>
-            <a href="#" class="login-add"><i class="fas fa-cogs"></i>Настроить аккаунт</a>
-            <a href="#" class="login-add"><i class="far fa-user"></i>Зарегистрироваться</a>
-        </div>
-
-    </label>
+    <div class="delete-label">
+        <label class='active_menu' style='cursor: pointer'>
+            <input id='checkbox' type='checkbox'  style='display: none'>
+            Мой аккаунт
+            <div class="menu">
+                <a href="/login/" ><div class="blue-btn">{% trans 'Log in' %}</div></a>
+                <a href="#" class="login-add"><i class="fas fa-cogs"></i>Настроить аккаунт</a>
+                <a href="#" class="login-add"><i class="far fa-user"></i>Зарегистрироваться</a>
+            </div>
+        </label>
+    </div>
     <div class="desktop-lang-preferences-submenu">
         <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Русский</label></div>
         <div class="submenu-item lang_en"><img src = "../img/icon_usa.png" class = "flag"><label class = "lang">English</label></div>
