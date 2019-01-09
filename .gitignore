@@ -2,6 +2,7 @@
 .htaccess
 vendor/
 docs/
+phpDocumentor.phar
 composer.phar
 access.log
 phpDocumentor.phar

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*####################-------COOKIES_RULES.php_START------##########################*/
 .about_cookies {
 
@@ -1116,3 +1117,460 @@ label {
     height: 80%;
     margin-top: 5vw;
 }
+=======
+a {
+    text-decoration: none;
+    color: azure;
+}
+
+a:hover {
+    color: azure;
+    text-decoration: none;
+}
+
+
+.signup_bot{padding-right: 15px;padding-left: 15px;}
+
+.social-media {
+    display: flex;
+}
+
+.social-media > li {
+    margin-right: auto;
+}
+
+
+
+.game_page_img {
+    width: 100%;
+}
+
+.store-row img {
+    width: 230px;
+}
+
+.store-row {
+    align-items: center;
+    position: relative;
+    bottom: 17vw;
+}
+
+.store-row .col {
+   margin: 5px;
+}
+
+
+
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+
+/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    background-color: #1a1a1a;
+    padding: 16px;
+}
+
+html, body {
+    font-family: sans-serif;
+    font-weight: lighter;
+}
+
+/* Add a gray background color and some padding to the footer */
+footer {
+    background-color: #1a1a1a;
+    padding: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/*css card boxes*/
+
+/* Style the images inside the grid */
+
+
+
+/* CSS for FEATURED PROJECTS ---------------END*/
+
+/*login-begin*/
+.login, .signup {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login, .signup {
+    box-sizing: border-box;
+    background-color: #1a1a1a;
+}
+
+/* style the container */
+.login .container, .signup .container {
+    position: relative;
+    border-radius: 5px;
+    padding: 20px 0 20px 0;
+}
+
+/* style inputs and link buttons */
+.login input,
+.login .btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+}
+
+input:hover,
+.btn:hover {
+    opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+/* .fb {
+  background-color: #3B5998;
+  color: white;
+} */
+
+.twitter {
+    background-color: #55ACEE;
+    color: white;
+}
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+}
+
+.steam {
+    background-color: #1b2838;
+    color: white;
+}
+
+/* style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Two-column layout */
+.login .col {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 0 10%;
+}
+
+.login a {
+    text-align: left;
+    width: 77%;
+    border: none;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none;
+}
+
+/* Clear floats after the columns */
+.login .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* vertical line */
+.vl {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 2px solid #ddd;
+    height: 175px;
+}
+
+/* text inside the vertical line */
+.vl-innertext {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #1a1a1a;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+    display: none;
+}
+
+/* bottom container */
+.login #signup {
+    /*background-color: #1a1a1a;*/
+    border-radius: 4px 4px 4px 4px;
+}
+
+#sup {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+#sup:hover {
+    background-color: #45a049;
+}
+
+/* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
+
+
+    .store-row {
+        bottom: 0;
+    }
+
+    .menu_back {
+        position: relative;
+        background-color: rgba(54,61,73,1);
+    }
+}
+
+body {
+    justify-content: space-between;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.login, .sign, .messages {
+    min-height: 80vh;
+}
+
+/*CSS Height*/
+
+/*Sign up */
+.sign {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.sign {
+    box-sizing: border-box;
+    background-color: #1a1a1a;
+}
+
+.sign form, .sign row, .sign .rt-col, .login row, .login form {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* style the container */
+.sign .container {
+    position: relative;
+    border-radius: 5px;
+    padding: 60px 0 20px 0;
+}
+
+/* style inputs and link buttons */
+.sign input,
+.sign .btn, .sign option {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none; /* remove underline from anchors */
+}
+
+.sign input:hover,
+.sign .btn:hover, .sign select:hover {
+    opacity: 1;
+}
+
+/* add appropriate colors to fb, twitter and google buttons */
+/* .fb {
+  background-color: #3B5998;
+  color: white;
+} */
+
+/* style the submit button */
+.sign input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.sign input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Two-column layout */
+.sign .col {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 0 50px;
+    margin-top: 16px;
+}
+
+/* Clear floats after the columns */
+.sign .row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* hide some text on medium and large screens */
+.hide-md-lg {
+    display: none;
+}
+
+/* bottom container */
+.sign button {
+    /*background-color: #1a1a1a;*/
+    border-radius: 4px 4px 4px 4px;
+}
+
+.sign .btn {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.sign .btn:hover {
+    background-color: #45a049;
+}
+
+/*the container must be positioned relative:*/
+.sign .custom-select {
+    position: relative;
+}
+
+.sign .custom-select select {
+    display: none; /*hide original SELECT element:*/
+}
+
+input[type="checkbox"] {
+    width: 50px;
+    height: 15px;
+    margin: 5px;
+}
+
+.checkform {
+    margin: 10px 6%;
+    display: flex;
+}
+
+label {
+    display: flex;
+    margin-bottom: 0;
+}
+
+.signup-input {
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+.forgot_password {
+    margin: 0 9%;
+    color: #fff;
+}
+
+.alert {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 4px 20px 4px 20px;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 20px;
+    text-shadow: none;
+    position: relative;
+    background-color: #272e3b;
+    color: rgba(255, 255, 255, 0.7);
+    border: 1px solid #000;
+    box-shadow: 0 0 0 1px #363d49 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+
+.alert-error {
+    color: #f00;
+    background-color: #360e10;
+    box-shadow: 0 0 0 1px #551e21 inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+
+.alert:empty {
+    display: none;
+}
+
+.alert-success {
+    color: #21ec0c;
+    background-color: #15360e;
+    box-shadow: 0 0 0 1px #2a551e inset, 0 5px 10px rgba(0, 0, 0, 0.75);
+}
+
+/*Sign up*/
+
+/*Game page*/
+.hide-box:empty {
+    display: none;
+}
+
+#sub-btn {
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+}
+
+#sub-btn:hover {
+    background-color: #936c4c; /* Green */
+    color: white;
+}
+
+.profile {
+    background-color: #375f84;
+}
+
+.subscribe-btn {
+    margin-bottom: 5vw;
+}
+
+.myButton:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
+    background: -moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: -ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
+    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64', GradientType=0);
+    background-color: #ffab23;
+}
+
+.myButton:active {
+    position: relative;
+    top: 1px;
+}
+
+.video {
+    width: 80vw;
+    height: 0;
+    padding-bottom: 62.25%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.video iframe {
+    position: absolute;
+    width: 72vw;
+    height: 80%;
+    margin-top: 5vw;
+}
+>>>>>>> sass

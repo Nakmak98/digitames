@@ -1,0 +1,123 @@
+$primary-color: #4285f4;
+$secondary-color: #6c757d;
+$link-color: #90919e;
+$menu-background: rgba(25, 30, 58, 0.7);
+$menu-item-hover: azure;
+$submenu-background: #263041;
+$submenu-item-hover: #90919e;
+$mobile-menu-background: rgba(0, 0, 0, .9);
+$mobile-menu-btn-background: transparent;
+$content-background: #011c4b;
+$footer-background: #212121;
+
+///https://colorscheme.ru/#3.11T--pIw0w0
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+// template classes
+
+%flex-centered-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-centered-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%clickable-item {
+  color: azure;
+  cursor: pointer;
+}
+
+@import 'header';
+
+@import 'home';
+
+@import 'footer';
+
+@media (min-width: 1200px)  {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
+@media (max-width: 1200px) and (min-width: 770px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
+@media (max-width: 770px) and (min-width: 550px) {
+  .home-page {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+    .menu-btn {
+      display: block;
+    }
+
+    nav {
+      display: flex;
+      background-image: url("../img/bg.jpg");
+    }
+    nav .nav-btn {
+      width: 90%;
+      height: 50px;
+      padding-top: 17px;
+    }
+    nav .nav-sign {
+      height: 50px;
+      padding-top: 17px;
+      margin-top: 260px;
+      width: 700%;
+      margin-left: -300%;
+    }
+    .fa-search:before {
+      margin-left: 17px;
+    }
+    nav .nav-lang-preferences .nav-lang-preferences-title {
+      background: #263041;
+    }
+
+    .nav-active {
+      transform: translateX(0%);
+    }
+
+    .desktop-lang-preferences,
+    .mbut,
+    .desktop-menu-user,
+    .delete-label,
+    .more-carousel,
+    #menu-sign-up,
+    #desktop-search-input,
+    #desktop-search-icon{
+      display: none;
+    }
+  }
+
+
