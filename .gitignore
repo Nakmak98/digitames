@@ -1,6 +1,8 @@
 .idea
 .htaccess
 vendor/
+docs/
+phpDocumentor.phar
 composer.phar
 access.log
 
