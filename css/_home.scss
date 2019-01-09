@@ -31,7 +31,6 @@
 }
 
 .overlay {
-  //opacity: 0;
   @include size(100%, 100%);
   transition: .5s ease;
   p {
@@ -66,13 +65,4 @@
 .card {
   background: transparent;
 
-}
-
-.more-carousel {
-  margin-top: -14%;
-  margin-left: 9%;
-  position: absolute;
-  height: 50px;
-  width: 180px;
-  padding-top:15px;
 }
