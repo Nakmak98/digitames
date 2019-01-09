@@ -3,9 +3,7 @@
 }
 
 .home-page {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 11px 12px;
+
 }
 
 .card:last-of-type {
@@ -18,10 +16,12 @@
   border-bottom-left-radius: 4px;
   padding: 0px;
 }
-
 .ihover {
   position: relative;
   overflow: hidden;
+  background: red;
+  color: white;
+  border: 0.5px solid ;
   img {
     transition: all 1s ease-out;
     &:hover {
@@ -31,7 +31,6 @@
 }
 
 .overlay {
-  opacity: 0;
   @include size(100%, 100%);
   transition: .5s ease;
   p {
@@ -54,5 +53,20 @@
 }
 
 .content {
-  background-color: $content-background;
+  background-image: url(../img/bg.jpg);
+}
+
+.project-platforms {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  color: #00aeff;
+  padding: 0 0 0 5%;
+}
+.card .card-body .card-text {
+  color: #00aeff;
+}
+.card {
+  background: transparent;
+
 }

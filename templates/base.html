@@ -16,24 +16,22 @@
     <script src="/js/menu.js" defer></script>
 </head>
 <body>
+
 <div class="menu_back" id="container">
     <div class="menu-container left-container"
-    <a href="/"><img class="icon" src="../img/icon.png"></a>
+    <a href="/"><img class="icon logo-icon" src="../img/icon.png"></a>
     <a href="/blog/">
         <div class="mbut">{%trans 'Blog' %}</div>
     </a>
 </div>
 <div class="menu-container right-container">
-
     <input class="search" id="desktop-search-input" type="search">
     <i id="desktop-search-icon" class="far fa-search"></i>
     {% if user.nickname is null %}
     <!--<div class="menu-sign-up">-->
     <!--{% trans 'Log in' %}-->
     <!--</div>-->
-    <a href="/login/">
-        <button type="button" id="menu-sign-up" class="btn btn-primary">{% trans 'Log in' %}</button>
-    </a>
+
     {% else %}
     <a href="/profile/">
         <div class="desktop-menu-user">
@@ -41,20 +39,36 @@
         </div>
     </a>
     {% endif %}
-    <div class="submenu-triangle"></div>
+    <div class="delete-label">
+        <label class='active_menu' style='cursor: pointer'>
+            <input id='checkbox' type='checkbox'  style='display: none'>
+            Мой аккаунт
+            <div class="menu">
+                <a href="/login/" ><div class="blue-btn">{% trans 'Log in' %}</div></a>
+                <a href="#" class="login-add"><i class="fas fa-cogs"></i>Настроить аккаунт</a>
+                <a href="#" class="login-add"><i class="far fa-user"></i>Зарегистрироваться</a>
+            </div>
+        </label>
+    </div>
+
     <div class="desktop-lang-preferences-submenu">
-        <div class="submenu-item lang_ru">Русский</div>
-        <div class="submenu-item lang_en">English</div>
+        <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Русский</label></div>
+        <div class="submenu-item lang_en"><img src = "../img/icon_usa.png" class = "flag"><label class = "lang">English</label></div>
     </div>
     <div class="desktop-lang-preferences">
             <span>
+                <i class="fas fa-globe-africa"></i>
                 {% if locale == 'ru_RU' %}
-                    Ru
+                    <!--<img src = "../img/icon_russia.png" class = "flag">-->
+                    <label class = "lang">Русский</label>
                 {% else %}
-                    En
+                <!--    <img src = "../img/icon_usa.png" class = "flag">-->
+                    <label class = "lang">English</label>
                 {% endif %}
+                <i class="fas fa-angle-down"></i>
             </span>
     </div>
+
     <a href="#" class="menu-btn">
         <span></span>
     </a>
@@ -63,9 +77,10 @@
 <nav id="navbar">
     <div class="nav-container">
         <a href="/blog/">
-            <div class="nav-but">{%trans 'Blog' %}</div>
+            <div class="nav-btn blue-btn">{%trans 'Blog' %}</div>
         </a>
     </div>
+
     <div class="nav-lang-preferences">
         <div class="nav-lang-preferences-title"><p>{% trans 'Language Preferences'%}</p></div>
         <div class="nav-lang-preferences-inputs">
@@ -73,11 +88,12 @@
             <p><input class="lang_en" type="radio"> English</p>
         </div>
     </div>
+
     <input id="nav-search-input" class="search" type="search">
     <i id="nav-search-icon" class="far fa-search"></i>
     {% if user.nickname is null %}
     <a href="/login/">
-        <div class="nav-sign-up">
+        <div class="nav-sign blue-btn">
             {% trans 'Log in' %}
         </div>
     </a>

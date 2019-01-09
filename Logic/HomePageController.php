@@ -22,7 +22,7 @@ class HomePageController extends Controller {
         $tableview_result = $manager->getMultipleAssocResult(self::$getTableView);
         $feature_list = $feature_result->fetch_all(MYSQLI_ASSOC);
         $this->context['featured'] = $locolizer->getLocale($feature_list);  
-        $this->context['feature_num_rows'] = $feature_result->num_rows;
+        $this->context['feature_num_rows'] = $feature_result->num_rows - 1;
         $this->context['tableview'] = $locolizer->getLocale($tableview_result);
         return $this->container['view']->render($response, 'home.html', $this->context);
     }
