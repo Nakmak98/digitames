@@ -56,8 +56,12 @@
   background-image: url(../img/bg.jpg);
 }
 
-.new-text {
+.project-platforms {
+  display: flex;
+  align-items: center;
+  justify-content: start;
   color: #00aeff;
+  padding: 0 0 0 5%;
 }
 .card .card-body .card-text {
   color: #00aeff;

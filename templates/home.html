@@ -7,58 +7,22 @@
         <br>
         <div class="container text-center home-page">
             {% for card in tableview %}
-            <!--<div class="card new-bg new-text">
-                <div class="card-body card-body-top">{{ card['proj_name'] }}</div>
-                <a class="info" name="game_page" href=game_page/{{ card['proj_url'] }}>
-                <div class="ihover">
-                    <img class="card-img-bottom" src="{{ card['proj_img'] }}" alt="Image {{ card['proj_img'] }}">
-                    <div class="overlay">
-                        <p class="card-title new-text">{{ card['proj_desc'] }}</p>
-                    </div>
-                </div>
-                <div class="card-body new-bg card-body-bottom">
-                    <div class="row">
-                        <div class="col">
-                            <i class="fab fa-windows fa-sm new-text"></i>
-                        </div>
-                        <div class="col">
-                            <i class="fab fa-apple fa-sm new-text"></i>
-                        </div>
-                        <div class="col">
-                            <i class="fab fa-linux fa-sm new-text"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>-->
-            <!-- Card Dark -------------------------------------------------------------------------------->
             <div class="card new-bg">
-                <!-- Card image -->
                 <div class="view overlay">
                     <img class="card-img-top" src="{{ card['proj_img'] }}">
                     <a class="info" name="game_page" href=game_page/{{ card['proj_url'] }}>
-                        <div class="mask rgba-white-slight"></div>
+                    <div class="mask rgba-white-slight"></div>
                     </a>
                 </div>
-
-                <!-- Card content -->
-                <div class="card-body new-text rounded-bottom">
-                    <!-- Social shares button -->
-                    <!-- Title -->
-                    <h4 class="card-title">{{ card['proj_name'] }}</h4>
-                    <hr class="hr-light">
-                    <!-- Text -->
-                    <p class="card-text new-text mb-4">{{ card['proj_desc'] }}</p>
+                <div class="card-body rounded-bottom project-platforms">
                     <a class="activator waves-effect mr-4"><i class="fab fa-windows fa-sm new-text"></i></a>
                     <a class="activator waves-effect mr-4"><i class="fab fa-apple fa-sm new-text"></i></a>
                     <a class="activator waves-effect mr-4"><i class="fab fa-linux fa-sm new-text"></i></a>
                 </div>
-
             </div>
-            <!-- Card Dark -->
             {% endfor %}
-
             <br>
         </div>
     </div>
 </div>
-    {% endblock %}
+{% endblock %}
