@@ -16,7 +16,7 @@ class GamePageController extends Controller {
 
     function getGamePage($request, $response, $args) {
         $locolizer = Locolizer::getInstance('GamePage');
-        $game_page = new GamePage($args['project_name']);
+        $game_page = new GamePage($args['project_url']);
         $this->context['game_data'] = $locolizer->getLocale(
             $game_page->getGameData()
         );

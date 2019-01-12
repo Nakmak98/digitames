@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br>
+<br>
+<br>
+<br><br><br><br>
+<h3>Результаты по запросу:{{request}}</h3>
+{%if search_results == null%}
+<p>К сожалению, ничего не найдено :(</p>
+{%else%}
+{% for result in search_results %}
+<a href="/game_page/{{result['proj_url']}}">{{result['proj_name']}}</a><br>
+{% endfor %}
+{%endif%}
+{% endblock %}
