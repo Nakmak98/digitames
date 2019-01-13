@@ -21,8 +21,10 @@ class SearchController extends Controller
             $this->context['error'] = $e;
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
-        $this->context['search_results'] = $result;
-        $this->context['request'] = $srch->getRequest();
+        $this->context = array(
+            'search_results'=>$result,
+            'request'=>$srch->getRequest()
+        );
         return $this->container['view']->render($response, 'search_results.html', $this->context);
     }
 

@@ -25,9 +25,7 @@ class Search
         $pattern='%'.$this->request.'%';
         $sql = "SELECT * FROM game_project where proj_name like '$pattern' ";
         $result = $this->db->query($sql);
-        while ($row = $result->fetch_assoc()){
-            array_push($this->results,$row);  //todo Я знаю, что есть fetchAll но меня он не устраивал
-        }
+        $this->results=$result->fetch_all(MYSQLI_ASSOC);
         return $this->results;
     }
 }
