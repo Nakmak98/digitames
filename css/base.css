@@ -538,8 +538,9 @@ nav {
 
 .sign-in {
   height: 70vh; }
-  .sign-in .container {
-    padding-top: 7%; }
+  .sign-in .sign-in-container {
+    padding-top: 6%;
+    padding-bottom: 3%; }
   .sign-in .btn {
     margin: 0; }
   .sign-in form {

@@ -63,6 +63,7 @@ class AuthController extends Controller {
             return $this->container['view']->render($response, 'new_password.html', $this->context);
         }
         $manager = new Manager();
+        $new_password = password_hash($new_password, PASSWORD_DEFAULT);
         $manager->getResult("update users set password = '$new_password' where email = '$email'");
         $manager->getResult("DELETE FROM forget_password WHERE email = '$email';");
         $this->context['success'] = 'Выш пароль успешно изменен.';
@@ -77,7 +78,7 @@ class AuthController extends Controller {
             return $this->container['view']->render($response, 'profile.html', $this->context);
         }
         //TODO redirect to /profile/
-        $this->context['error'] = 'Страница не найдена';
+        $this->context['error'] = 'Произошла ошибка аутентификации. Пожалуйста, убедитесь, что вы ввели верные данные';
         return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
 
