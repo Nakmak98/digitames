@@ -1,6 +1,6 @@
 $primary-color: #4285f4;
 $secondary-color: #6c757d;
-$link-color: #90919e;
+$link-color: #90919e;;
 $menu-background: rgba(25, 30, 58, 0.7);
 $menu-item-hover: azure;
 $submenu-background: #263041;
@@ -29,6 +29,70 @@ a {
 }
 
 
+.cookie-message {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0,67,133,0.7);
+  width: 100%;
+  color: white;
+  padding: 10px 20px 10px 20px;
+
+  .align-right {
+    text-align: right;
+    margin-top: -23px;
+    .cookie-close-btn {
+      outline: none;
+      background-color: white;
+      color: #007bff;
+      border-radius: 20px;
+      height: 30px;
+      width: 30px;
+      transition: 1s;
+      &:hover {
+          outline: none;
+          cursor: pointer;
+          background-color: #007bff;
+          color: white;
+          transform: scale(1.1);
+      }
+    }
+  }
+
+  .cookie-message-text a {
+    transition: 1s;
+    margin-bottom: 10px;
+    text-decoration: underline;
+  }
+
+  .align-center {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+}
+
+.about_cookies {
+  padding-top: 60px;
+  min-height: 100vh;
+  .head_cookies {
+    text-align: center;
+    font-size: 20px;
+  }
+
+  .text_cookies {
+    ul { list-style-type: none; }
+
+    li {
+      padding-top: 20px;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
+
+
 // template classes
 
 %flex-centered-row {
@@ -44,7 +108,7 @@ a {
 }
 
 %clickable-item {
-  color: azure;
+  color: $primary-color;
   cursor: pointer;
 }
 

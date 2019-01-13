@@ -24,49 +24,52 @@
         <img class="icon logo-icon" src="../img/icon.png">
     </a>
     <a href="/blog/">
-        <div class="mbut">{%trans 'Blog' %}</div>
+        <div class="mbut">{%trans 'News' %}</div>
     </a>
 </div>
 <div class="menu-container right-container">
     <input class="search" id="desktop-search-input" type="search">
     <i id="desktop-search-icon" class="far fa-search"></i>
-    {% if user.nickname is null %}
-    <!--<div class="menu-sign-up">-->
-    <!--{% trans 'Log in' %}-->
-    <!--</div>-->
-
+    {% if user.region is null %}
+     <a href="/login/" class="desktop-menu-user">
+         Мой аккаунт
+     </a>
     {% else %}
-    <a href="/profile/">
-        <div class="desktop-menu-user">
-            {{ user.nickname }}
-        </div>
-    </a>
-    {% endif %}
     <div class="delete-label">
         <label class='active_menu' style='cursor: pointer'>
-            <input id='checkbox' type='checkbox'  style='display: none'>
-            Мой аккаунт
+            <input id='checkbox' type='checkbox'  style='display: none'>Мой аккаунт
             <div class="menu">
-                <a href="/login/" ><div class="blue-btn">{% trans 'Log in' %}</div></a>
-                <a href="#" class="login-add"><i class="fas fa-cogs"></i>Настроить аккаунт</a>
-                <a href="#" class="login-add"><i class="far fa-user"></i>Зарегистрироваться</a>
+                <a href="/profile/">
+                    <div class="login-add">
+                        <i class="fas fa-cogs"></i>
+                        {% trans 'Profile' %}
+                    </div>
+                </a>
+                <a href="/logout/" ><div class="blue-btn">{% trans 'Logout' %}</div></a>
             </div>
         </label>
     </div>
+    {% endif %}
 
     <div class="desktop-lang-preferences-submenu">
-        <div class="submenu-item lang_ru"><img src = "../img/icon_russia.png" class = "flag"><label class = "lang">Русский</label></div>
-        <div class="submenu-item lang_en"><img src = "../img/icon_usa.png" class = "flag"><label class = "lang">English</label></div>
+        <div class="submenu-item lang_ru">
+            <img src = "../img/icon_russia.png" class = "flag">
+            <span class = "lang">Русский</span>
+        </div>
+        <div class="submenu-item lang_en">
+            <img src = "../img/icon_usa.png" class = "flag">
+            <span class = "lang">English</span>
+        </div>
     </div>
     <div class="desktop-lang-preferences">
             <span>
                 <i class="fas fa-globe-africa"></i>
                 {% if locale == 'ru_RU' %}
                     <!--<img src = "../img/icon_russia.png" class = "flag">-->
-                    <label class = "lang">Русский</label>
+                    <span class = "lang">Русский</span>
                 {% else %}
                 <!--    <img src = "../img/icon_usa.png" class = "flag">-->
-                    <label class = "lang">English</label>
+                    <span class = "lang">English</span>
                 {% endif %}
                 <i class="fas fa-angle-down"></i>
             </span>

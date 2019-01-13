@@ -2,7 +2,7 @@
   height: 70vh;
 
   .sign-in-container {
-    padding-top: 6%;
+    padding-top: 120px;
     padding-bottom: 3%;
   }
 
@@ -13,8 +13,10 @@
   form {
     margin-bottom: 2%;
   }
+
+  label {
+    color: $secondary-color;
+  }
+
 }
 
-label {
-  color: $secondary-color;
-}

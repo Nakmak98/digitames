@@ -47,7 +47,6 @@
     margin-right: 5px;
     padding: 13px;
     color: $link-color;
-    transition: color ease-in-out .3s;
     &:hover {
       color: $menu-item-hover;
     }
@@ -75,10 +74,10 @@
   }
 
   .desktop-menu-user {
-    @extend %clickable-item;
-
+    color: $secondary-color;
+    margin:0 3%;
     &:hover {
-      color: $primary-color;
+      color: $menu-item-hover;
     }
   }
 
@@ -88,30 +87,14 @@
     margin-left: 15px;
   }
 
-
-
-
-  .submenu-triangle {
-    display: none;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 7px solid #ffffffd4;
-    @include position($top: 43px, $right: 17px);
-  }
-  .submenu-triangle:after {
-    transform: rotate(180deg);
-  }
-
   .desktop-lang-preferences-submenu {
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
-    @include position($top: 50px, $right: 10px);
-    @include size(100px);
+    @include position($top: 50px, $right: 50px);
+    @include size(120px);
     background-color: $submenu-background;
-    color: white;
-    margin-right: 84px;
-    width: 140px;
+    color: $link-color;
     border: 0.5px groove #c6c6c7;
   }
 
@@ -120,12 +103,12 @@
     z-index: 2;
     padding: 5px 0;
     text-align: left;
-    padding-left: 1px;
     transition: 1s;
     &:hover {
-      background-color: $submenu-item-hover;
+      color: white;
       cursor: pointer;
     }
+    border: 0.5px groove #c6c6c7;
   }
 
 }
@@ -255,26 +238,18 @@ nav {
   text-align: center;
 }
 
-
-
 .fa-lock {
   font-size:  12px;
   margin-right: 8px;
 }
 
 .flag {
-  height: 12px;
-  width: 12px;
-  margin-right: 6px;
-  margin-left: 10px;
+  width: 20px;
+  margin: 0 6px 0 10px;
 }
 
 .lang {
-  font-size: 13px;
-  font-weight: 400!important;
-  margin-right: 5px;
   cursor: pointer;
-  transition: 1s;
 }
 
 .right-container .search {
@@ -314,14 +289,11 @@ nav {
 }
 
 .right-container .desktop-lang-preferences {
+  margin:0 3%;
   background: 0;
   color: #90919e;
-  margin-right: 70px;
-  margin-left: 15px;
-  width: 140px;
-  height: 30px;
-  margin-top: -10px;
-  transition: border-color ease-in-out .3s;}
+  @include size(130px);
+}
 
 .right-container .desktop-lang-preferences:hover {
   border-color: #0e86ca;
@@ -342,15 +314,15 @@ nav {
   margin-left: -75px;
   margin-top: 15px;
   width:204px;
-  height: 150px;
-  transition: 1s;
+  height: 100px;
+  transition: 2s;
 }
 .menu a {
   position:relative;
-  display: block;
+  display: flex;
+  justify-content: center;
   height: 50px;
   border: 0.5px groove #c6c6c7;
-  justify-content: center;
   text-align: center;
   vertical-align: baseline;
   padding-top: 10px;
@@ -366,9 +338,8 @@ nav {
 .active_menu {
   margin-right: 21px;
   margin-left: 20px;
-  margin-top: 5px;
+  margin-top: 7px;
   color: #90919e;
-  transition: 1s;
   font-weight: 300;
 }
 
@@ -377,12 +348,10 @@ nav {
 }
 
 .blue-btn {
-  width: 160px;
-  height: 30px;
-  background-color: #0e86ca;
+  @include size(160px,30px);
+  background-color: $primary-color;
   border: solid 1px #00aeff;
   text-align: center;
-  margin-left: 20px;
   color: white;
   font-size: 16px;
   line-height: 1;
@@ -396,29 +365,23 @@ nav {
 }
 .login-add {
   color: #90919e;
-}
 
-.login-add:hover {
-  color: white;
-}
-
-.fa-cogs, .fa-user {
-  padding-right: 5px;
-  transition: 1s;
-  color: #0e86ca;
-}
-.login-add:hover {
   .fa-cogs, .fa-user {
-    color:#00aeff;
+    padding-right: 5px;
+    color: #0e86ca;
+  }
+
+  &:hover {
+    color: white;
+    .fa-cogs,{
+      color:#00aeff;
+    }
   }
 }
 
 .fa-globe-africa{
-  cursor: pointer;
+  @extend %clickable-item;
   margin-right: 5px;
-  font-size:14px;
-  color: #0e86ca;
-  transition: 1s;
 }
 .desktop-lang-preferences:hover  .fa-globe-africa{
   color:#00aeff;
@@ -430,10 +393,8 @@ nav {
 .fa-angle-down {
   cursor: pointer;
   margin-left: 8px;
-  padding-top:10px;
   font-size: 15px;
   color: #90919e;
-  transition: 1s;
 }
 .desktop-lang-preferences:hover .fa-angle-down {
   color: white;

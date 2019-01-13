@@ -15,8 +15,7 @@ $('#desktop-search-input').blur(function () {
 });
 
 $('.desktop-lang-preferences').click(function(){
-    $('.desktop-lang-preferences-submenu').fadeToggle();
-    $('.submenu-triangle').fadeToggle();
+    $('.desktop-lang-preferences-submenu').fadeToggle(10);
 });
 
 $(".lang_ru").click(function(){
