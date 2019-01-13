@@ -12,6 +12,7 @@ $('#desktop-search-input').focus(function () {
 
 $('#desktop-search-input').blur(function () {
     $('#desktop-search-icon').show();
+    $('.search').val('');
 });
 
 $('.desktop-lang-preferences').click(function(){
