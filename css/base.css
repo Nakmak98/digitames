@@ -266,9 +266,9 @@ nav .nav-container, nav .nav-lang-preferences {
   .menu-btn span:after {
     -webkit-transform: translateY(5px);
             transform: translateY(5px); }
-  .menu-btn .menu-btn span,
-  .menu-btn .menu-btn span::before,
-  .menu-btn .menu-btn span::after {
+  .menu-btn span,
+  .menu-btn span::before,
+  .menu-btn span::after {
     position: absolute;
     top: 50%;
     right: auto;

@@ -232,15 +232,16 @@
     &:after { transform: translateY(5px); }
   }
 
-  .menu-btn span,
-  .menu-btn span::before,
-  .menu-btn span::after {
+  span,
+  span::before,
+  span::after {
     @include position($top: 50%, $left: 90%);
     margin: -1px 0 0 -18px;
     @include size(20px, 2px);
     background-color: azure;
   }
 }
+
 
 .menu-btn_active span {
   height: 0;
