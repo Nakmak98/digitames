@@ -30,7 +30,6 @@
   }
 }
 
-
 .left-container {
   justify-items: start;
 
@@ -59,7 +58,7 @@
   .search {
     border: 0;
     border-radius: 22px;
-    @include size(60%, 40px);
+    @include size(30%, 30px);
     padding: 0px 0px 3px 13px;
     outline: none;
     margin-right: 15px;
@@ -69,7 +68,7 @@
 
   a {
     .btn {
-      width: 110px;
+      width: 120px;
     }
   }
 
@@ -81,11 +80,111 @@
     }
   }
 
+
   #desktop-search-icon {
     color: $link-color;
     position: absolute;
     margin-left: 15px;
   }
+
+  .login-add {
+    color: #90919e;
+
+    .fa-cogs, .fa-user {
+      padding-right: 5px;
+      color: #0e86ca;
+    }
+
+    &:hover {
+      color: white;
+      .fa-cogs,{
+        color:#00aeff;
+      }
+    }
+  }
+
+  .fa-globe-africa{
+    @extend %clickable-item;
+    margin-right: 5px;
+  }
+
+  .active_menu {
+    margin: 0px 21px 0 20px;
+    color: #90919e;
+    .menu {
+      display: none;
+      position:absolute;
+      background: #263041;
+      margin: 15px 0px 0px -75px;
+      @include size(204px, 100px);
+      transition: 2s;
+      a {
+        position:relative;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        border: 0.5px groove #c6c6c7;
+        text-align: center;
+        vertical-align: baseline;
+        padding-top: 10px;
+        transition: 1s;
+      }
+
+      .blue-btn {
+        @include size(160px,30px);
+        background-color: $primary-color;
+        border: solid 1px #00aeff;
+        text-align: center;
+        color: white;
+        font-size: 16px;
+        line-height: 1;
+        padding-top: 5px;
+        -webkit-transition-property: background;
+        -webkit-transition-duration: 0.5s;
+        &:hover {
+          background: #00aeff;
+        }
+      }
+    }
+
+    input:checked + .menu {
+      transition: 1s;
+      opacity:1;
+      display: block;
+    }
+    &:hover { color: white; }
+  }
+
+  .desktop-lang-preferences {
+    margin:0 3%;
+    background: 0;
+    color: #90919e;
+
+    .fa-angle-down {
+      cursor: pointer;
+      margin-left: 8px;
+      font-size: 15px;
+      color: #90919e;
+    }
+
+    @include size(130px);
+    &:hover {
+      color: white;
+      border-color: #0e86ca;
+      .fa-globe-africa{
+        color:#00aeff;
+      }
+      .fa-angle-down {
+        color: white;
+      }
+    }
+    &:after {
+      border-color: #4285f4;
+    }
+  }
+
+
+
 
   .desktop-lang-preferences-submenu {
     display: none;
@@ -96,6 +195,14 @@
     background-color: $submenu-background;
     color: $link-color;
     border: 0.5px groove #c6c6c7;
+    .flag {
+      width: 20px;
+      margin: 0 6px 0 10px;
+    }
+
+    .lang {
+      cursor: pointer;
+    }
   }
 
   .submenu-item {
@@ -115,30 +222,24 @@
 
 .menu-btn {
   display: none;
-}
+  span {
+    &:before, &:after {
+      content: '';
+      display: block;
+      transition: 0.2s;
+    }
+    &:before { transform: translateY(-5px); }
+    &:after { transform: translateY(5px); }
+  }
 
-.menu-btn span,
-.menu-btn span::before,
-.menu-btn span::after {
-  @include position($top: 50%, $left: 90%);
-  margin: -1px 0 0 -18px;
-  @include size(20px, 2px);
-  background-color: azure;
-}
-
-.menu-btn span::before,
-.menu-btn span::after {
-  content: '';
-  display: block;
-  transition: 0.2s;
-}
-
-.menu-btn span::before {
-  transform: translateY(-5px);
-}
-
-.menu-btn span::after {
-  transform: translateY(5px);
+  .menu-btn span,
+  .menu-btn span::before,
+  .menu-btn span::after {
+    @include position($top: 50%, $left: 90%);
+    margin: -1px 0 0 -18px;
+    @include size(20px, 2px);
+    background-color: azure;
+  }
 }
 
 .menu-btn_active span {
@@ -243,159 +344,5 @@ nav {
   margin-right: 8px;
 }
 
-.flag {
-  width: 20px;
-  margin: 0 6px 0 10px;
-}
 
-.lang {
-  cursor: pointer;
-}
 
-.right-container .search {
-  border: 0;
-  border-radius: 22px;
-  width: 30%;
-  height: 30px;
-  padding: 0px 0px 3px 13px;
-  outline: none;
-  margin-right: 15px;
-  color: azure;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.menu_back {
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  height: 50px;
-  z-index: 5;
-  transform: translate3d(0, 0, 0);
-  border-bottom: 0.5px groove #c6c6c7;
-}
-.menu_back .menu-container {
-  display: flex;
-  align-items: center; }
-.menu_back a:hover {
-  color: azure; }
-
-.logo-icon {
-  margin-left: 40px;
-}
-
-.right-container a .btn {
-  width: 120px;
-}
-
-.right-container .desktop-lang-preferences {
-  margin:0 3%;
-  background: 0;
-  color: #90919e;
-  @include size(130px);
-}
-
-.right-container .desktop-lang-preferences:hover {
-  border-color: #0e86ca;
-}
-.right-container .desktop-lang-preferences:after {
-  border-color: #4285f4;
-}
-.btn-outline-primary {
-  border: 2px solid red!important;
-  background-color: transparent!important;
-  color: red!important;
-}
-
-.menu {
-  display: none;
-  position:absolute;
-  background: #263041;
-  margin-left: -75px;
-  margin-top: 15px;
-  width:204px;
-  height: 100px;
-  transition: 2s;
-}
-.menu a {
-  position:relative;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  border: 0.5px groove #c6c6c7;
-  text-align: center;
-  vertical-align: baseline;
-  padding-top: 10px;
-  transition: 1s;
-}
-
-.active_menu input:checked + .menu {
-  transition: 1s;
-  opacity:1;
-  display: block;
-}
-
-.active_menu {
-  margin-right: 21px;
-  margin-left: 20px;
-  margin-top: 7px;
-  color: #90919e;
-  font-weight: 300;
-}
-
-.active_menu:hover {
-  color: white;
-}
-
-.blue-btn {
-  @include size(160px,30px);
-  background-color: $primary-color;
-  border: solid 1px #00aeff;
-  text-align: center;
-  color: white;
-  font-size: 16px;
-  line-height: 1;
-  padding-top: 5px;
-  -webkit-transition-property: background;
-  -webkit-transition-duration: 0.5s;
-}
-
-.blue-btn:hover {
-  background: #00aeff;
-}
-.login-add {
-  color: #90919e;
-
-  .fa-cogs, .fa-user {
-    padding-right: 5px;
-    color: #0e86ca;
-  }
-
-  &:hover {
-    color: white;
-    .fa-cogs,{
-      color:#00aeff;
-    }
-  }
-}
-
-.fa-globe-africa{
-  @extend %clickable-item;
-  margin-right: 5px;
-}
-.desktop-lang-preferences:hover  .fa-globe-africa{
-  color:#00aeff;
-}
-.desktop-lang-preferences:hover {
-  color: white;
-}
-
-.fa-angle-down {
-  cursor: pointer;
-  margin-left: 8px;
-  font-size: 15px;
-  color: #90919e;
-}
-.desktop-lang-preferences:hover .fa-angle-down {
-  color: white;
-}
