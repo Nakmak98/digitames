@@ -1,5 +1,7 @@
 .main {
-  background-color: #2220;
+  position: relative;
+  background: linear-gradient(to right, rgba(0,71,153,0.65) 0%,rgba(0,71,153,0.65) 1%,rgba(0,71,153,0.44) 50%,rgba(0,71,153,0.69) 100%);
+
 }
 
 .home-page {
@@ -54,6 +56,10 @@
 
 .content {
   background-image: url(../img/bg.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .project-platforms {

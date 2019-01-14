@@ -461,7 +461,9 @@ nav {
   color: white; }
 
 .main {
-  background-color: #2220; }
+  position: relative;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(0, 71, 153, 0.65)), color-stop(1%, rgba(0, 71, 153, 0.65)), color-stop(50%, rgba(0, 71, 153, 0.44)), to(rgba(0, 71, 153, 0.69)));
+  background: linear-gradient(to right, rgba(0, 71, 153, 0.65) 0%, rgba(0, 71, 153, 0.65) 1%, rgba(0, 71, 153, 0.44) 50%, rgba(0, 71, 153, 0.69) 100%); }
 
 .card:last-of-type {
   grid-column: 1 / 3; }
@@ -515,7 +517,11 @@ nav {
   top: 70%; }
 
 .content {
-  background-image: url(../img/bg.jpg); }
+  background-image: url(../img/bg.jpg);
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
 .project-platforms {
   display: -webkit-box;
@@ -550,7 +556,7 @@ label {
   color: #6c757d; }
 
 footer {
-  background-image: url("../img/bg-footer.jpg"); }
+  background-color: #0A246A; }
 
 @media (min-width: 1200px) {
   .home-page {
