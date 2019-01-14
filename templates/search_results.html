@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<br>
-<br>
-<br>
-<br><br><br><br>
-<h3>Результаты по запросу:{{request}}</h3>
-{%if search_results == null%}
-<p>К сожалению, ничего не найдено :(</p>
-{%else%}
-{% for result in search_results %}
-<a href="/game_page/{{result['proj_url']}}">{{result['proj_name']}}</a><br>
-{% endfor %}
-{%endif%}
+<div class="search_results">
+    <h4>Результаты по запросу:{{request}}</h4>
+    {%if search_results == null%}
+    <p>К сожалению, ничего не найдено :(</p>
+    {%else%}
+    {% for result in search_results %}
+    <a href="/game_page/{{result['proj_url']}}">
+        <img src="../{{result['proj_img']}}">
+        <div>
+            <p>{{result['proj_name']}}</p>
+            <p>{{result['proj_desc']}}</p>
+        </div>
+    </a>
+    {% endfor %}
+    {%endif%}
+</div>
+
 {% endblock %}
