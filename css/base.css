@@ -69,7 +69,7 @@ nav .nav-container, nav .nav-lang-preferences {
       -ms-flex-pack: center;
           justify-content: center; }
 
-.right-container .fa-globe-africa {
+.sub-container .fa-globe-africa {
   color: #4285f4;
   cursor: pointer; }
 
@@ -88,20 +88,29 @@ nav .nav-container, nav .nav-lang-preferences {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0); }
   .menu_back .menu-container {
+    height: 50px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
   .menu_back a:hover {
     color: azure; }
 
-.left-container {
-  justify-items: start; }
-  .left-container .icon {
+.sub-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .sub-container .icon {
     height: 50px; }
-  .left-container .mbut {
+  .sub-container .mbut {
     font-size: 20px;
     line-height: 60px;
     font-weight: bolder;
@@ -109,14 +118,10 @@ nav .nav-container, nav .nav-lang-preferences {
     width: 100px;
     height: auto;
     margin-right: 5px;
-    padding: 13px;
     color: #90919e; }
-    .left-container .mbut:hover {
+    .sub-container .mbut:hover {
       color: azure; }
-
-.right-container {
-  justify-items: end; }
-  .right-container .search {
+  .sub-container .search {
     border: 0;
     border-radius: 22px;
     width: 30%;
@@ -126,32 +131,32 @@ nav .nav-container, nav .nav-lang-preferences {
     margin-right: 15px;
     color: #90919e;
     background-color: rgba(0, 0, 0, 0.3); }
-  .right-container a .btn {
+  .sub-container a .btn {
     width: 120px; }
-  .right-container .desktop-menu-user {
+  .sub-container .desktop-menu-user {
     color: #6c757d;
     margin: 0 3%; }
-    .right-container .desktop-menu-user:hover {
+    .sub-container .desktop-menu-user:hover {
       color: azure; }
-  .right-container #desktop-search-icon {
+  .sub-container #desktop-search-icon {
     color: #90919e;
     position: absolute;
     margin-left: 15px; }
-  .right-container .login-add {
+  .sub-container .login-add {
     color: #90919e; }
-    .right-container .login-add .fa-cogs, .right-container .login-add .fa-user {
+    .sub-container .login-add .fa-cogs, .sub-container .login-add .fa-user {
       padding-right: 5px;
       color: #0e86ca; }
-    .right-container .login-add:hover {
+    .sub-container .login-add:hover {
       color: white; }
-      .right-container .login-add:hover .fa-cogs {
+      .sub-container .login-add:hover .fa-cogs {
         color: #00aeff; }
-  .right-container .fa-globe-africa {
+  .sub-container .fa-globe-africa {
     margin-right: 5px; }
-  .right-container .active_menu {
+  .sub-container .active_menu {
     margin: 0px 21px 0 20px;
     color: #90919e; }
-    .right-container .active_menu .menu {
+    .sub-container .active_menu .menu {
       display: none;
       position: absolute;
       background: #263041;
@@ -160,7 +165,7 @@ nav .nav-container, nav .nav-lang-preferences {
       height: 100px;
       -webkit-transition: 2s;
       transition: 2s; }
-      .right-container .active_menu .menu a {
+      .sub-container .active_menu .menu a {
         position: relative;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -175,7 +180,7 @@ nav .nav-container, nav .nav-lang-preferences {
         padding-top: 10px;
         -webkit-transition: 1s;
         transition: 1s; }
-      .right-container .active_menu .menu .blue-btn {
+      .sub-container .active_menu .menu .blue-btn {
         width: 160px;
         height: 30px;
         background-color: #4285f4;
@@ -187,36 +192,36 @@ nav .nav-container, nav .nav-lang-preferences {
         padding-top: 5px;
         -webkit-transition-property: background;
         -webkit-transition-duration: 0.5s; }
-        .right-container .active_menu .menu .blue-btn:hover {
+        .sub-container .active_menu .menu .blue-btn:hover {
           background: #00aeff; }
-    .right-container .active_menu input:checked + .menu {
+    .sub-container .active_menu input:checked + .menu {
       -webkit-transition: 1s;
       transition: 1s;
       opacity: 1;
       display: block; }
-    .right-container .active_menu:hover {
+    .sub-container .active_menu:hover {
       color: white; }
-  .right-container .desktop-lang-preferences {
+  .sub-container .desktop-lang-preferences {
     margin: 0 3%;
     background: 0;
     color: #90919e;
     width: 130px;
     height: auto; }
-    .right-container .desktop-lang-preferences .fa-angle-down {
+    .sub-container .desktop-lang-preferences .fa-angle-down {
       cursor: pointer;
       margin-left: 8px;
       font-size: 15px;
       color: #90919e; }
-    .right-container .desktop-lang-preferences:hover {
+    .sub-container .desktop-lang-preferences:hover {
       color: white;
       border-color: #0e86ca; }
-      .right-container .desktop-lang-preferences:hover .fa-globe-africa {
+      .sub-container .desktop-lang-preferences:hover .fa-globe-africa {
         color: #00aeff; }
-      .right-container .desktop-lang-preferences:hover .fa-angle-down {
+      .sub-container .desktop-lang-preferences:hover .fa-angle-down {
         color: white; }
-    .right-container .desktop-lang-preferences:after {
+    .sub-container .desktop-lang-preferences:after {
       border-color: #4285f4; }
-  .right-container .desktop-lang-preferences-submenu {
+  .sub-container .desktop-lang-preferences-submenu {
     display: none;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -235,12 +240,12 @@ nav .nav-container, nav .nav-lang-preferences {
     background-color: #263041;
     color: #90919e;
     border: 0.5px groove #c6c6c7; }
-    .right-container .desktop-lang-preferences-submenu .flag {
+    .sub-container .desktop-lang-preferences-submenu .flag {
       width: 20px;
       margin: 0 6px 0 10px; }
-    .right-container .desktop-lang-preferences-submenu .lang {
+    .sub-container .desktop-lang-preferences-submenu .lang {
       cursor: pointer; }
-  .right-container .submenu-item {
+  .sub-container .submenu-item {
     width: 100%;
     height: 100%;
     z-index: 2;
@@ -249,7 +254,7 @@ nav .nav-container, nav .nav-lang-preferences {
     -webkit-transition: 1s;
     transition: 1s;
     border: 0.5px groove #c6c6c7; }
-    .right-container .submenu-item:hover {
+    .sub-container .submenu-item:hover {
       color: white;
       cursor: pointer; }
 

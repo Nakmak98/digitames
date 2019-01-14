@@ -21,7 +21,9 @@
   transform: translate3d(0, 0, 0);
 
   .menu-container {
+    height: 50px;
     display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -30,8 +32,9 @@
   }
 }
 
-.left-container {
-  justify-items: start;
+.sub-container {
+  display: flex;
+  align-items: center;
 
   .icon {
     height: 50px;
@@ -44,16 +47,11 @@
     text-align: center;
     @include size(100px);
     margin-right: 5px;
-    padding: 13px;
     color: $link-color;
     &:hover {
       color: $menu-item-hover;
     }
   }
-}
-
-.right-container {
-  justify-items: end;
 
   .search {
     border: 0;
@@ -79,7 +77,6 @@
       color: $menu-item-hover;
     }
   }
-
 
   #desktop-search-icon {
     color: $link-color;
@@ -183,9 +180,6 @@
     }
   }
 
-
-
-
   .desktop-lang-preferences-submenu {
     display: none;
     flex-direction: column;
@@ -217,7 +211,6 @@
     }
     border: 0.5px groove #c6c6c7;
   }
-
 }
 
 .menu-btn {
