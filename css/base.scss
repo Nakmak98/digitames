@@ -17,6 +17,7 @@ html, body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
+
 }
 
 a {
@@ -28,6 +29,7 @@ a {
   }
 }
 
+.carousel .carousel-control-next-icon, .carousel .carousel-control-prev-icon { height: 50px; width: 50px}
 
 // template classes
 
@@ -53,8 +55,6 @@ a {
 @import 'home';
 
 @import 'sign_in';
-
-@import 'search_results';
 
 @import 'footer';
 
@@ -130,5 +130,4 @@ a {
       display: none;
     }
   }
-
 
