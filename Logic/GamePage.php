@@ -16,9 +16,9 @@ class GamePage {
     protected $gameData;
     protected $carousel;
 
-    function __construct(string $proj_name) {
+    function __construct(string $proj_url) {
         $manager = new GamePageManager();
-        $this->gameData = $manager->getData($proj_name);
+        $this->gameData = $manager->getData($proj_url);
         $this->carousel = $manager->getCarousel($this->gameData['proj_id']);
     }
 

@@ -19,14 +19,17 @@
 <body>
 
 <div class="menu_back" id="container">
-    <div class="menu-container left-container"
+    <div class="menu-container left-container">
     <a href="/"><img class="icon logo-icon" src="../img/icon.png"></a>
     <a href="/blog/">
         <div class="mbut">{%trans 'Blog' %}</div>
     </a>
 </div>
 <div class="menu-container right-container">
-    <input class="search" id="desktop-search-input" type="search">
+    <form action="/search/" method="get">
+        <input class="search" id="desktop-search-input" name="search" type="search">
+    </form>
+
     <i id="desktop-search-icon" class="far fa-search"></i>
     {% if user.nickname is null %}
     <!--<div class="menu-sign-up">-->

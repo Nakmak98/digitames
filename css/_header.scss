@@ -64,6 +64,7 @@
     @include size(60%, 40px);
     padding: 0px 0px 3px 13px;
     outline: none;
+    width: 90%;
     margin-right: 15px;
     color: $link-color;
     background-color: rgba(0, 0, 0, .3);
@@ -281,7 +282,7 @@ nav {
 .right-container .search {
   border: 0;
   border-radius: 22px;
-  width: 30%;
+  width: 60%;
   height: 30px;
   padding: 0px 0px 3px 13px;
   outline: none;
