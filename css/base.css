@@ -10,6 +10,10 @@ a {
   a:hover {
     text-decoration: none; }
 
+.carousel .carousel-control-next-icon, .carousel .carousel-control-prev-icon {
+  height: 50px;
+  width: 50px; }
+
 nav .nav-container, nav .nav-lang-preferences {
   display: -webkit-box;
   display: -ms-flexbox;
