@@ -104,3 +104,8 @@ msgstr "Запомнить меня"
 msgid "Here is terms of user. We won't share your date. We will only collecting it for our personal statistic and so you will be enable to get some additional featured on our website."
 msgstr "Это условия пользовательского соглашения. Мы не будем распространять ваши данные. Мы собираем их только для нашей персональной статистики. Вам также станут доступны дополнительные действия на нашем сайте."
 
+msgid "Search results:"
+msgstr "Результаты поиска:"
+
+msgid "Sorry, results not found"
+msgstr "К сожалению, ничего не найдено"

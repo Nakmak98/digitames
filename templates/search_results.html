@@ -2,9 +2,9 @@
 
 {% block content %}
 <div class="search_results">
-    <h4>Результаты по запросу:{{request}}</h4>
+    <h4> {% trans 'Search results:' %} {{request}}</h4>
     {%if search_results == null%}
-    <p>К сожалению, ничего не найдено :(</p>
+    <p>{% trans 'Sorry, results not found' %} :(</p>
     {%else%}
     {% for result in search_results %}
     <a href="/game_page/{{result['proj_url']}}">
