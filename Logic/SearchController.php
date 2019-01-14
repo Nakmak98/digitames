@@ -7,12 +7,15 @@
  */
 
 namespace Logic;
+use Logic\Locolizer\Locolizer;
 
 require_once "Search.php";
+require_once 'Locolizer/HomePageLocolizer.php';
 
 class SearchController extends Controller
 {
     function search($request, $response, $args){
+        $locolizer = Locolizer::getInstance('HomePage');
         $srch = new Search($_GET);
         try{
             $srch->find();
@@ -21,6 +24,7 @@ class SearchController extends Controller
             $this->context['error'] = $e;
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
+        $result=$locolizer->getLocale($result);
         $this->context = array(
             'search_results'=>$result,
             'request'=>$srch->getRequest()
