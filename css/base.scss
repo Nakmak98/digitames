@@ -17,7 +17,7 @@ html, body {
   padding: 0;
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
-
+  height: 100vh;
 }
 
 a {
@@ -30,6 +30,13 @@ a {
 }
 
 .carousel .carousel-control-next-icon, .carousel .carousel-control-prev-icon { height: 50px; width: 50px}
+
+@mixin grid-template($columns: auto, $rows: auto) {
+  display: grid;
+  grid-template-columns: #{$columns};
+  grid-template-rows: $rows;
+  grid-gap: 20px 20px;
+}
 
 // template classes
 
@@ -50,42 +57,53 @@ a {
   cursor: pointer;
 }
 
+
 @import 'header';
 
 @import 'home';
 
 @import 'sign_in';
 
-@import 'footer';
-
 @import "search_results";
 
+@import 'footer';
+
+
 @media (min-width: 1920px)  {
-  .main {
-    //background: linear-gradient(to right, rgba(0,71,153,1) 0%,rgba(0,71,153,1) 15%,rgba(0,71,153,0.7) 20%,rgba(0,71,153,0.2) 25%,rgba(0,71,153,0) 30%,rgba(0,71,153,0) 70%,rgba(0,71,153,0.2) 75%,rgba(0,71,153,0.71) 80%,rgba(0,71,153,1) 85%,rgba(0,71,153,1) 100%);
+  @for $i from 1 through 9 {
+    .card:nth-child(#{$i}) {
+      grid-area: c#{$i};
+    }
+  }
+
+  .home-page {
+    @include grid-template($columns: repeat(4, 1fr)!important);
+    grid-template-areas: "c1 c2 c3 c4"
+                         "c5 c5 c6 c7"
+                         "c5 c5 c8 c9";
   }
 }
 
 
 @media (min-width: 1200px)  {
   .home-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px 20px;
+    @include grid-template($columns: repeat(3, 1fr));
   }
 }
+
 @media (max-width: 1200px) and (min-width: 770px) {
   .home-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px 20px;
+    @include grid-template($columns: repeat(3, 1fr));
   }
 }
+
 @media (max-width: 770px) and (min-width: 550px) {
   .home-page {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px 20px;
+    @include grid-template($columns: repeat(2, 1fr));
+  }
+
+  .card:last-of-type {
+    grid-column: 1 / 3;
   }
 }
 

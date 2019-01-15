@@ -1,21 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="search_results">
-    <h4> {% trans 'Search results:' %} {{request}}</h4>
-    {%if search_results == null%}
-    <p>{% trans 'Sorry, results not found' %} :(</p>
-    {%else%}
-    {% for result in search_results %}
-    <a href="/game_page/{{result['proj_url']}}">
-        <img src="{{result['proj_img']}}">
-        <div>
-            <p>{{result['proj_name']}}</p>
-            <p>{{result['proj_desc']}}</p>
-        </div>
-    </a>
-    {% endfor %}
-    {%endif%}
+
+<div class="search_results main">
+    <div class="container">
+        <h4> {% trans 'Search results:' %} {{request}}</h4>
+        {%if search_results == null%}
+        <p>{% trans 'Sorry, results not found' %} :(</p>
+        {%else%}
+        {% for result in search_results %}
+        <a href="/game_page/{{result['proj_url']}}">
+            <img src="{{result['proj_img']}}">
+            <div>
+                <p>{{result['proj_name']}}</p>
+                <p>{{result['proj_desc']}}</p>
+            </div>
+        </a>
+        {% endfor %}
+        {%endif%}
+    </div>
+
 </div>
 
 {% endblock %}
