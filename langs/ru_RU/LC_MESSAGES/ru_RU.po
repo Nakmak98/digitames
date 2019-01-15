@@ -11,11 +11,8 @@ msgstr ""
 "Language: ru_RU\n"
 "X-Generator: Poedit 2.2\n"
 
-msgid "Blog"
-msgstr "Блог"
-
-msgid "Log in"
-msgstr "Войти"
+msgid "News"
+msgstr "Новости"
 
 msgid "Search"
 msgstr "Поиск"
@@ -50,20 +47,17 @@ msgstr "О"
 msgid "Sign up"
 msgstr "Зарегистрироваться"
 
-msgid "Sign in with your account"
-msgstr "Войти в учетную запись"
-
 msgid "Sign in"
 msgstr "Войти"
+
+msgid "Logout"
+msgstr "Выйти"
 
 msgid "Email"
 msgstr "Электронная почта"
 
 msgid "Password"
 msgstr "Пароль"
-
-msgid "Don't have an account? Create now!"
-msgstr "Нет аккаунта? Создай сейчас!"
 
 msgid "Create account"
 msgstr "Создать аккаунт"
@@ -101,8 +95,17 @@ msgstr "Уже есть учётная запись?"
 msgid "Remember me"
 msgstr "Запомнить меня"
 
-msgid "Here is terms of user. We won't share your date. We will only collecting it for our personal statistic and so you will be enable to get some additional featured on our website."
-msgstr "Это условия пользовательского соглашения. Мы не будем распространять ваши данные. Мы собираем их только для нашей персональной статистики. Вам также станут доступны дополнительные действия на нашем сайте."
+msgid "New password"
+msgstr "Новый пароль"
+
+msgid "Repeat password"
+msgstr "Повторите пароль"
+
+msgid "My account"
+msgstr "Мой аккаунт"
+
+msgid "Profile"
+msgstr "Профиль"
 
 msgid "Search results:"
 msgstr "Результаты поиска:"

@@ -7,7 +7,7 @@
             <div class="col-sm-1"></div>
             <div class="col-sm-4">
                 <form method="POST" action="/signup/">
-                    <h2 class="text-center">{% trans 'Sign up' %}</h2>
+                    <h2 class="text-center text-dark">{% trans 'Sign up' %}</h2>
                     <div class="alert alert-error">{{error}}</div>
                     <div class="form-row">
                         <div class="form-group col">
@@ -48,9 +48,6 @@
                             </select>
                         </div>
                     </div>
-                    <br><br>
-                    <div class="g-recaptcha" data-sitekey="your_site_key" data-theme="dark"></div>
-                    <br><br>
                     <input type="submit" class="btn btn-primary " value={% trans 'Create account' %} id="reg_btn" name="register">
                     <br><br>
                 </form>
@@ -58,13 +55,9 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-4 rt-col">
                 <div class="signup_bot">
-                    <br><br>
-                    <p>{% trans 'Already have account?' %}</p>
                     <a href="/login/">
-                        <button class="btn btn-primary">{% trans 'Sign in with your account' %}</button>
+                        <button class="btn btn-primary">{% trans 'Already have account?' %}</button>
                     </a>
-                    <br><br>
-                    <p>{% trans "Here is terms of user. We won't share your date. We will only collecting it for our personal statistic and so you will be enable to get some additional featured on our website." %}</p>
                 </div>
             </div>
         </div>

@@ -35,10 +35,10 @@ define('BASE_PATH', realpath(dirname(__FILE__)));
 define('LANGUAGES_PATH', BASE_PATH . '/langs');
 
 if (isset($_COOKIE['locale']))
-    $locale = $_COOKIE['locale'];
+   $locale = $_COOKIE['locale'];
 else {
-    $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
-    setcookie('locale', $locale);
+   $locale = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
+    setcookie('locale', $locale, -1, "/");
 }
 putenv("LC_ALL=" . $locale);
 putenv(("LANG=" . $locale));

@@ -25,13 +25,8 @@ class SearchController extends Controller
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
         $result=$locolizer->getLocale($result);
-        $this->context = array(
-            'search_results'=>$result,
-            'request'=>$srch->getRequest()
-        );
+        $this->context['search_results'] = $result;
+        $this->context['request'] = $srch->getRequest();
         return $this->container['view']->render($response, 'search_results.html', $this->context);
     }
-
-
-
 }
