@@ -191,7 +191,7 @@
     display: none;
     flex-direction: column;
     justify-content: space-evenly;
-    @include position($top: 52px, $right: 117px);
+    @include position($top: 52px, $right: 246px);
     @include size(120px);
     background-color: $submenu-background;
     color: $link-color;
