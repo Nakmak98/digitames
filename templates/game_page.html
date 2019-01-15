@@ -2,42 +2,43 @@
 
 {% block content %}
 <div class="game-page" style="background-color: #1a1a1a;">
-    <div class="conteiner">
-        <div class="hide-box">
-            <div class="image">
-                <img class="game_page_img" src="{{ game_data['img']}}">
-                <div class="row text-center store-row" id="shadows">
-                    <div class="col">
-                        <a href=""><img src="../img/google-play-badge.png" alt=""></a>
-                    </div>
-                    <div class="col">
-                        <a href=""><img src="../img/steam.png" alt=""></a>
-                    </div>
-                    <div class="col">
-                        <a href=""><img src="../img/app-store-logo.png" alt=""></a>
-                    </div>
+    <div class="image">
+        <img class="game_page_img" src="{{ game_data['img']}}">
+    </div>
+    <div class="main">
+        <div class="container">
+            <div class="row text-center store-row" id="shadows">
+                <div class="col">
+                    <a href=""><img src="../img/google-play-badge.png" alt=""></a>
+                </div>
+                <div class="col">
+                    <a href=""><img src="../img/steam.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <div class="video container">
+            <iframe src={{ game_data['video'] }} frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+        <div class="game-description">
+            <div class="row text-center" id="shadows">
+                <div class="col text-center text-white">
+                    <h1>{% trans 'About'%} {{ game_data['proj_name'] }}</h1>
+                    <p>{{ game_data['about'] }}</p>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col">
+                    <button type="button" class="btn btn-primary subscribe-btn">{% trans "Subscribe on" %} {{
+                        game_data['proj_name'] }}
+                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="video container">
-            <iframe width="560px" height="315px" src={{ game_data['video'] }} frameborder="0"
-                    allow="autoplay; encrypted-media" allowfullscreen></iframe>
-        </div>
-        <div class="hide-box" id="shadows">
-            <div class="text-center text-white">
-                <h1>{% trans 'About'%} {{ game_data['proj_name'] }}</h1>
-               <p>{{ game_data['about'] }}</p>
-            </div>
-        </div>
-        <div class="row text-center">
-            <div class="col">
-                <button type="button" class="btn btn-primary subscribe-btn">{% trans "Subscribe on" %} {{ game_data['proj_name'] }}</button>
-            </div>
-        </div>
-        <div class="hide-box">
-            {% include 'carousel.html' %}
-        </div>
+    </div>
+    <div class="hide-box">
+        {% include 'carousel.html' %}
     </div>
 </div>
 </div>

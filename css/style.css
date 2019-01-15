@@ -996,58 +996,7 @@ label {
 /*Sign up*/
 
 /*Game page*/
-.hide-box:empty {
-    display: none;
-}
 
-#sub-btn {
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-}
-
-#sub-btn:hover {
-    background-color: #936c4c; /* Green */
-    color: white;
-}
-
-.profile {
-    background-color: #375f84;
-}
-
-.subscribe-btn {
-    margin-bottom: 5vw;
-}
-
-.myButton:hover {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ffab23), color-stop(1, #ffec64));
-    background: -moz-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-    background: -webkit-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-    background: -o-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-    background: -ms-linear-gradient(top, #ffab23 5%, #ffec64 100%);
-    background: linear-gradient(to bottom, #ffab23 5%, #ffec64 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffab23', endColorstr='#ffec64', GradientType=0);
-    background-color: #ffab23;
-}
-
-.myButton:active {
-    position: relative;
-    top: 1px;
-}
-
-.video {
-    width: 80vw;
-    height: 0;
-    padding-bottom: 62.25%;
-    position: relative;
-    margin: 0 auto;
-}
-
-.video iframe {
-    position: absolute;
-    width: 72vw;
-    height: 80%;
-    margin-top: 5vw;
-}
 =======
 a {
     text-decoration: none;

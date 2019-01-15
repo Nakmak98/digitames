@@ -18,6 +18,7 @@ html, body {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   height: 100vh;
+  overflow-x: hidden;
 }
 
 a {
@@ -129,6 +130,8 @@ a {
 
 @import 'sign_in';
 
+@import 'game_page';
+
 @import "search_results";
 
 @import 'footer';
@@ -146,6 +149,10 @@ a {
     grid-template-areas: "c1 c2 c3 c4"
                          "c5 c5 c6 c7"
                          "c5 c5 c8 c9";
+  }
+
+  .video {
+    padding-bottom: 38%;
   }
 }
 
