@@ -62,6 +62,9 @@ a {
     padding-top: 20px;
     margin-top: 10px; }
 
+.carousel-indicators {
+  margin-left: 16%; }
+
 nav .nav-container, nav .nav-lang-preferences {
   display: -webkit-box;
   display: -ms-flexbox;

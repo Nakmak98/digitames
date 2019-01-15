@@ -90,12 +90,18 @@ a {
     }
   }
 }
+
+.carousel-indicators {
+  margin-left: 16%;
+}
+
 @mixin grid-template($columns: auto, $rows: auto) {
   display: grid;
   grid-template-columns: #{$columns};
   grid-template-rows: $rows;
   grid-gap: 20px 20px;
 }
+
 
 // template classes
 
