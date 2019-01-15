@@ -108,6 +108,12 @@ a {
 }
 
 @media screen and (max-width: 550px) {
+
+  .home-page {
+    @include grid-template($columns: 1fr);
+    padding-top: 12%;
+  }
+
     .menu-btn {
       display: block;
     }
@@ -144,9 +150,10 @@ a {
     .desktop-menu-user,
     .delete-label,
     .more-carousel,
+    .carousel,
     #menu-sign-up,
     #desktop-search-input,
-    #desktop-search-icon{
+    #desktop-search-icon,{
       display: none;
     }
   }
