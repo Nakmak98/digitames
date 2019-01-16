@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="sign-in">
+<div class="sign-in main">
     <div class="container sign-in-container text-white">
         <div class="row">
             <div class="col-sm-3"></div>
             <div class="col-sm-6 rt-col">
                 <form method="POST" action="/login/">
+                    <h5>{% trans 'Sign in' %}</h5>
                     {% if error %}
                     <div class="alert alert-danger">{{error}}</div>
                     {% endif %}

@@ -18,7 +18,6 @@ html, body {
   font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   height: 100vh;
-  overflow-x: hidden;
 }
 
 a {
@@ -130,12 +129,15 @@ a {
 
 @import 'sign_in';
 
+@import 'sign_up';
+
+@import 'profile';
+
 @import 'game_page';
 
-@import "search_results";
+@import 'search_results';
 
 @import 'footer';
-
 
 @media (min-width: 1920px)  {
   @for $i from 1 through 9 {
@@ -219,7 +221,7 @@ a {
   .more-carousel,
   #menu-sign-up,
   #desktop-search-input,
-  #desktop-search-icon,{
+  #desktop-search-icon{
     display: none;
   }
 

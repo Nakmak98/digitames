@@ -11,6 +11,7 @@ require_once 'Logic/AuthController.php';
 require_once 'Logic/GamePageController.php';
 require_once 'Logic/SignUpController.php';
 require_once 'Logic/SearchController.php';
+require_once 'Logic/ProfileController.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -58,6 +59,7 @@ $app->post('/login/', Logic\AuthController::class . ':signIn');
 $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
 $app->post('/signup/', Logic\SignUpController::class . ':signUp');
 $app->get('/search/', Logic\SearchController::class . ':search');
+$app->get('/profile/', Logic\ProfileController::class . ':getProfile');
 $app->get('/game_page/{project_url}', Logic\GamePageController::class . ':getGamePage');
 $app->get('/blog/', function (Request $request, Response $response, array $args) {
     require 'blog/index.php';

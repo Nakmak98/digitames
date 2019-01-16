@@ -9,7 +9,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ru_RU\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 
 msgid "News"
 msgstr "Новости"
@@ -112,3 +112,12 @@ msgstr "Результаты поиска:"
 
 msgid "Sorry, results not found"
 msgstr "К сожалению, ничего не найдено"
+
+msgid "Account Settings"
+msgstr "Настройка аккаунта"
+
+msgid "Games"
+msgstr "Игры"
+
+msgid "Subscriptions"
+msgstr "Подписки"

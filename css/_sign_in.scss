@@ -1,8 +1,9 @@
 .sign-in {
-  height: 70vh;
+  min-height: 70vh;
+  color: white;
 
   .sign-in-container {
-    padding-top: 120px;
+    padding-top: 90px;
     padding-bottom: 3%;
   }
 
@@ -10,12 +11,20 @@
     margin: 0;
   }
 
+  h5{
+    margin-bottom: 15px;
+  }
+
+  a{
+    color: white;
+  }
+
   form {
     margin-bottom: 2%;
   }
 
   label {
-    color: $secondary-color;
+    color: white;
   }
 
 }

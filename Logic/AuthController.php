@@ -75,7 +75,8 @@ class AuthController extends Controller {
         $user = $auth->authenticate();
         if ($user) {
             $auth->login();
-            return $this->container['view']->render($response, 'profile.html', $this->context);
+            $url = '/profile/';
+            return $response->withRedirect($url);
         }
         //TODO redirect to /profile/
         $this->context['error'] = 'Произошла ошибка аутентификации. Пожалуйста, убедитесь, что вы ввели верные данные';
