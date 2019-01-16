@@ -17,114 +17,128 @@
     <script src="/js/cookie.js" defer></script>
 </head>
 <body>
-
-    <div class="menu_back" id="container">
-        <div class="container">
-            <div class="row menu-container">
-                <div class="sub-container">
-                    <a href="/">
-                        <img class="icon logo-icon" src="../img/icon.png">
-                    </a>
-                    <a href="/blog/">
-                        <div class="mbut">{%trans 'News' %}</div>
-                    </a>
-                </div>
-                <div class="sub-container">
-                    <form action="/search/" method="get">
-                        <input class="search" id="desktop-search-input" name="search" type="search">
-                    </form>
-                    <i id="desktop-search-icon" class="far fa-search"></i>
-                    {% if user.region is null %}
-                    <a href="/login/" class="desktop-menu-user">
+<div class="menu_back" id="container">
+    <div class="container">
+        <div class="row menu-container">
+            <div class="sub-container">
+                <a href="/">
+                    <img class="icon logo-icon" src="../img/icon.png">
+                </a>
+                <a href="/blog/">
+                    <div class="mbut">{%trans 'News' %}</div>
+                </a>
+            </div>
+            <div class="sub-container">
+                <form action="/search/" method="get">
+                    <input class="search" id="desktop-search-input" name="search" type="search">
+                </form>
+                <i id="desktop-search-icon" class="far fa-search"></i>
+                {% if user.region is null %}
+                <a href="/login/" class="desktop-menu-user">
+                    {% trans 'My account' %}
+                </a>
+                {% else %}
+                <div class="delete-label">
+                    <label class='active_menu' style='cursor: pointer'>
+                        <input id='checkbox' type='checkbox' style='display: none'>
                         {% trans 'My account' %}
-                    </a>
-                    {% else %}
-                    <div class="delete-label">
-                        <label class='active_menu' style='cursor: pointer'>
-                            <input id='checkbox' type='checkbox'  style='display: none'>
-                            {% trans 'My account' %}
-                            <div class="menu">
-                                <a href="/profile/">
-                                    <div class="login-add">
-                                        <i class="fas fa-cogs"></i>
-                                        {% trans 'Profile' %}
-                                    </div>
-                                </a>
-                                <a href="/logout/" ><div class="blue-btn">{% trans 'Logout' %}</div></a>
-                            </div>
-                        </label>
-                    </div>
-                    {% endif %}
-
-                    <div class="desktop-lang-preferences-submenu">
+                        <div class="menu">
+                            <a href="/profile/">
+                                <div class="login-add">
+                                    <i class="fas fa-cogs"></i>
+                                    {% trans 'Profile' %}
+                                </div>
+                            </a>
+                            <a href="/logout/">
+                                <div class="blue-btn">{% trans 'Logout' %}</div>
+                            </a>
+                        </div>
+                    </label>
+                </div>
+                {% endif %}
+                <div class="desktop-menu lang-preferences">
+                    <span>
+                        <i class="fas fa-globe-africa"></i>
+                        {% if locale == 'ru_RU' %}
+                            <span class="lang">Русский</span>
+                        {% else %}
+                            <span class="lang">English</span>
+                        {% endif %}
+                        <i class="fas fa-angle-down"></i>
+                    </span>
+                    <div class="lang-preferences-submenu">
                         <div class="submenu-item lang_ru">
-                            <img src = "../img/icon_russia.png" class = "flag">
-                            <span class = "lang">Русский</span>
+                            <img src="../img/icon_russia.png" class="flag">
+                            <span class="lang">Русский</span>
                         </div>
                         <div class="submenu-item lang_en">
-                            <img src = "../img/icon_usa.png" class = "flag">
-                            <span class = "lang">English</span>
+                            <img src="../img/icon_usa.png" class="flag">
+                            <span class="lang">English</span>
                         </div>
                     </div>
-                    <div class="desktop-lang-preferences">
+                </div>
+                <a href="" class="menu-btn">
+                    <span></span>
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
+<nav id="navbar">
+    <div class="navbar-item">
+        <i class="far fa-search"></i>
+        <form action="/search/" method="get">
+            <input class="search" id="nav-search-input" name="search" type="search">
+        </form>
+    </div>
+    <a class="navbar-item" href="/blog/">
+        <div class="nav-btn">{%trans 'News' %}</div>
+    </a>
+    {% if user.nickname is null %}
+    <a class="navbar-item" href="/login/">
+        <div class="nav-btn">{% trans 'My account' %}</div>
+    </a>
+    {% else %}
+    <div class="navbar-item nav-user">
+        <i class="fas fa-user"></i>
+        <a href="/profile/">{{ user.nickname }}</a>
+    </div>
+    {% endif %}
+
+    <div class="lang-preferences">
             <span>
                 <i class="fas fa-globe-africa"></i>
                 {% if locale == 'ru_RU' %}
-                    <span class = "lang">Русский</span>
+                    <span class="lang">Русский</span>
                 {% else %}
-                    <span class = "lang">English</span>
+                    <span class="lang">English</span>
                 {% endif %}
                 <i class="fas fa-angle-down"></i>
             </span>
-                    </div>
-
-                    <a href="#" class="menu-btn">
-                        <span></span>
-                    </a>
-                </div>
+        <div class="lang-preferences-submenu">
+            <div class="submenu-item lang_ru">
+                <img src="../img/icon_russia.png" class="flag">
+                <span class="lang">Русский</span>
             </div>
-            <nav id="navbar">
-                <div class="nav-container">
-                    <a href="/blog/">
-                        <div class="nav-btn blue-btn">{%trans 'Blog' %}</div>
-                    </a>
-                </div>
-
-                <div class="nav-lang-preferences">
-                    <div class="nav-lang-preferences-title"><p>{% trans 'Language Preferences'%}</p></div>
-                    <div class="nav-lang-preferences-inputs">
-                        <p><input class="lang_ru" type="radio"> Русский</p>
-                        <p><input class="lang_en" type="radio"> English</p>
-                    </div>
-                </div>
-
-                <input id="nav-search-input" class="search" type="search">
-                <i id="nav-search-icon" class="far fa-search"></i>
-                {% if user.nickname is null %}
-                <a href="/login/">
-                    <div class="nav-sign blue-btn">
-                        {% trans 'Log in' %}
-                    </div>
-                </a>
-                {% else %}
-                <div class="nav-user">
-                    <i class="fas fa-user"></i>
-                    <a href="/profile/">{{ user.nickname }}</a>
-                </div>
-                {% endif %}
-            </nav>
+            <div class="submenu-item lang_en">
+                <img src="../img/icon_usa.png" class="flag">
+                <span class="lang">English</span>
+            </div>
         </div>
     </div>
+</nav>
 {% block content %}{% endblock %}
-<div class = "cookie-message" id = "cookie-message">
-    <div class="align-right" id = "closing">
-        <button  class = "cookie-close-btn">X</button>
+<div class="cookie-message" id="cookie-message">
+    <div class="align-right" id="closing">
+        <button class="cookie-close-btn">X</button>
     </div>
-    <div class = "cookie-message-text">
-        Сайт использует cookies. Оставаясь на сайте, вы соглашаетесь с <a href = "/cookies_rules/">политикой использования файлов cookie.</a>
+    <div class="cookie-message-text">
+        Сайт использует cookies. Оставаясь на сайте, вы соглашаетесь с <a href="/cookies_rules/">политикой использования
+        файлов cookie.</a>
     </div>
-    <div class = "align-center" >
-        <button type="button" id = "accept" class="btn btn-primary">Принять и закрыть</button>
+    <div class="align-center">
+        <button type="button" id="accept" class="btn btn-primary">Принять и закрыть</button>
     </div>
 </div>
 <footer class="page-footer font-small darken-3">
