@@ -49,6 +49,7 @@
     @include size(100px);
     margin-right: 5px;
     color: $link-color;
+
     &:hover {
       color: $menu-item-hover;
     }
@@ -56,6 +57,7 @@
 
   form {
     display: contents;
+
     .search {
       border: 0;
       border-radius: 22px;
@@ -78,7 +80,8 @@
 
   .desktop-menu-user {
     color: $secondary-color;
-    margin:0 3%;
+    margin: 0 3%;
+
     &:hover {
       color: $menu-item-hover;
     }
@@ -100,30 +103,27 @@
 
     &:hover {
       color: white;
-      .fa-cogs,{
-        color:#00aeff;
+
+      .fa-cogs, {
+        color: #00aeff;
       }
     }
-  }
-
-  .fa-globe-africa{
-    cursor: pointer;
-    color: #4285ee;
-    margin-right: 5px;
   }
 
   .active_menu {
     margin: 0px 21px 0 20px;
     color: #90919e;
+
     .menu {
       display: none;
-      position:absolute;
+      position: absolute;
       background: #263041;
       margin: 15px 0px 0px -75px;
       @include size(204px, 100px);
       transition: 2s;
+
       a {
-        position:relative;
+        position: relative;
         display: flex;
         justify-content: center;
         height: 50px;
@@ -135,7 +135,7 @@
       }
 
       .blue-btn {
-        @include size(160px,30px);
+        @include size(160px, 30px);
         background-color: $primary-color;
         border: solid 1px #00aeff;
         text-align: center;
@@ -145,6 +145,7 @@
         padding-top: 5px;
         -webkit-transition-property: background;
         -webkit-transition-duration: 0.5s;
+
         &:hover {
           background: #00aeff;
         }
@@ -153,198 +154,186 @@
 
     input:checked + .menu {
       transition: 1s;
-      opacity:1;
+      opacity: 1;
       display: block;
     }
-    &:hover { color: white; }
-  }
 
-  .desktop-lang-preferences {
-    @extend %clickable-item;
-    margin:0 3%;
-    background: 0;
-    color: #90919e;
-    .fa-angle-down {
-      cursor: pointer;
-      margin-left: 8px;
-      font-size: 15px;
-      color: #90919e;
-    }
-
-    @include size(130px);
     &:hover {
       color: white;
-      border-color: #0e86ca;
-      .fa-globe-africa{
-        color:#00aeff;
-      }
-      .fa-angle-down {
-        color: white;
-      }
-    }
-    &:after {
-      border-color: #4285f4;
     }
   }
 
-  .desktop-lang-preferences-submenu {
+  .lang-preferences-submenu {
+    @include position($top: 52px);
+  }
+
+  .menu-btn {
     display: none;
-    flex-direction: column;
-    justify-content: space-evenly;
-    @include position($top: 52px, $right: 246px);
-    @include size(120px);
-    background-color: $submenu-background;
-    color: $link-color;
-    border: 0.5px groove #c6c6c7;
-    .flag {
-      width: 20px;
-      margin: 0 6px 0 10px;
+    @include size(50px, 50px);
+
+    span {
+      &:before, &:after {
+        content: '';
+        display: block;
+        transition: 0.2s;
+      }
+
+      &:before {
+        transform: translateY(-5px);
+      }
+
+      &:after {
+        transform: translateY(5px);
+      }
     }
 
-    .lang {
-      cursor: pointer;
+    span,
+    span::before,
+    span::after {
+      @include position($top: 50%, $left: 90%);
+      margin: -1px 0 0 -18px;
+      @include size(20px, 2px);
+      background-color: azure;
     }
   }
 
-  .submenu-item {
-    @include size(100%, 100%);
-    z-index: 2;
-    padding: 5px 0;
-    text-align: left;
-    transition: 1s;
-    &:hover {
+
+  .menu-btn_active span {
+    height: 0;
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.lang-preferences {
+  @extend %clickable-item;
+  margin: 0 3%;
+  background: 0;
+  color: #90919e;
+
+  .fa-angle-down {
+    cursor: pointer;
+    margin-left: 8px;
+    font-size: 15px;
+    color: #90919e;
+  }
+
+  .fa-globe-africa {
+    cursor: pointer;
+    color: #4285ee;
+    margin-right: 5px;
+  }
+
+  @include size(130px);
+
+  &:hover {
+    color: white;
+    border-color: #0e86ca;
+
+    .fa-globe-africa {
+      color: #00aeff;
+    }
+
+    .fa-angle-down {
       color: white;
-      cursor: pointer;
     }
-    border: 0.5px groove #c6c6c7;
-  }
-}
-
-.menu-btn {
-  display: none;
-  @include size(50px,50px);
-  span {
-    &:before, &:after {
-      content: '';
-      display: block;
-      transition: 0.2s;
-    }
-    &:before { transform: translateY(-5px); }
-    &:after { transform: translateY(5px); }
-  }
-
-  span,
-  span::before,
-  span::after {
-    @include position($top: 50%, $left: 90%);
-    margin: -1px 0 0 -18px;
-    @include size(20px, 2px);
-    background-color: azure;
-  }
-}
-
-
-.menu-btn_active span {
-  height: 0;
-
-  &:before {
-    transform: rotate(45deg);
   }
 
   &:after {
-    transform: rotate(-45deg);
+    border-color: #4285f4;
   }
+}
+
+.lang-preferences-submenu {
+  display: none;
+  flex-direction: column;
+  justify-content: space-evenly;
+  @include size(120px);
+  background-color: $submenu-background;
+  color: $link-color;
+  border: 0.5px groove #c6c6c7;
+
+  .flag {
+    width: 20px;
+    margin: 0 6px 0 10px;
+  }
+
+  .lang {
+    cursor: pointer;
+  }
+}
+
+.submenu-item {
+  @include size(100%, 100%);
+  z-index: 2;
+  padding: 5px 0;
+  text-align: left;
+  transition: 1s;
+
+  &:hover {
+    color: white;
+    cursor: pointer;
+  }
+
+  border: 0.5px groove #c6c6c7;
 }
 
 nav {
   display: none;
-  z-index: 1;
-  @include size(100%, 100vh);
-  transform: translateX(130%);
+  z-index: 16;
+  @include size(50%, 100vh);
+  transform: translateX(100vw);
   background-color: $mobile-menu-background;
-  padding-top: 15%;
   position: fixed;
   align-items: center;
   flex-direction: column;
   transition: 0.5s;
+  margin-top: 50px;
 
-  .nav-container {
+  .navbar-item {
+    width: 100%;
+    @extend %flex-centered-row;
+    padding: 5%;
+
+    .fa-search {
+      position: relative;
+      left: 24px;
+      color: $link-color;
+    }
+
+    .nav-btn {
+      text-align: center;
+      width: 100%;
+      padding: 3% 5%;
+      border: 1px solid $link-color;
+    }
+
+    form {
+      display: contents;
+
+      .search {
+        border: 0;
+        border-radius: 22px;
+        @include size(80%, 30px);
+        padding: 0px 0px 3px 13px;
+        outline: none;
+        margin-right: 15px;
+        color: $link-color;
+        background-color: rgba(97, 91, 91, 0.64);
+      }
+    }
+  }
+  .lang-preferences {
     @extend %flex-centered-column;
-    @include size(88vw);
-    margin-top: 25px;
-    text-align: center;
-  }
-
-  .nav-but {
-    color: $link-color;
-    border: 1px solid $link-color;
-    padding: 10px;
-    background-color: $mobile-menu-btn-background;
-  }
-
-  .nav-user {
-    @include position(relative, $top: 50%);
-    color: $link-color;
-    font-size: 18px;
-  }
-
-  #nav-search-input {
-    @include position($bottom: 71px);
-    background-color: rgba(248, 245, 245, 0.3);
-    border: 0;
-    border-radius: 22px;
+    align-items: center;
     padding: 5px;
   }
 
-  #nav-search-icon {
-    @include position($bottom: 80px, $left: 25%);
-    color: $link-color;
-  }
-
-  .nav-lang-preferences {
-    @extend %flex-centered-column;
-    @include position($top: 170px);
-    background-color: $secondary-color;
-    color: $link-color;
-    border-radius: 7%;
-
-    .nav-lang-preferences-title {
-      @include size(54vw);
-      background-color: $menu-background;
-      border-top-left-radius: 10px;
-      border-top-right-radius: 10px;
-      padding: 6% 5% 0%;
-      text-align: center;
-    }
-
-    .nav-lang-preferences-inputs {
-      padding: 5% 7%;
-    }
-  }
 
 }
-
-.nav-lang-preferences-inputs input {
-  @include size(19px, 19px);
-  @include position(relative, $top: 1vw);
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.nav-sign-up {
-  @include position(relative, $top: 265px);
-  @include size(120px);
-  color: $link-color;
-  border: 1px solid azure;
-  border-radius: 20px;
-  padding: 6px;
-  text-align: center;
-}
-
-.fa-lock {
-  font-size:  12px;
-  margin-right: 8px;
-}
-
-
-
