@@ -140,17 +140,14 @@ a {
 @import 'footer';
 
 @media (min-width: 1920px)  {
-  @for $i from 1 through 9 {
-    .card:nth-child(#{$i}) {
-      grid-area: c#{$i};
-    }
-  }
 
   .home-page {
     @include grid-template($columns: repeat(4, 1fr)!important);
-    grid-template-areas: "c1 c2 c3 c4"
-                         "c5 c5 c6 c7"
-                         "c5 c5 c8 c9";
+    .card:last-of-type {
+      width: 25%;
+      grid-column: 1 / 5;
+      justify-self: center;
+    }
   }
 
   .video {
