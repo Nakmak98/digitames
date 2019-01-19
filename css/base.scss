@@ -1,6 +1,6 @@
 $primary-color: #4285f4;
-$secondary-color: #6c757d;
-$link-color: #90919e;
+$secondary-color: rgba(255,255,255,0.7);
+$link-color: rgba(255,255,255,0.7);
 $menu-background: rgba(25, 30, 58, 0.7);
 $menu-item-hover: azure;
 $submenu-background: #263041;
@@ -11,6 +11,14 @@ $content-background: #011c4b;
 $footer-background: #212121;
 
 ///https://colorscheme.ru/#3.11T--pIw0w0
+
+
+@mixin bg($url:url(../img/bg2.jpg), $bp: top, $br:no-repeat,$bs:cover) {
+  background-image: $url;
+  background-position: $bp;
+  background-repeat: $br;
+  background-size: $bs;
+}
 
 html, body {
   margin: 0;
@@ -91,8 +99,22 @@ a {
   }
 }
 
+.content {
+  background-color: black;
+}
+
+.full-bg{
+  @include bg(url(../img/full_bg.jpg),$bs: cover);
+}
+
 .carousel-indicators {
   margin-left: 16%;
+  z-index: 1;
+  li {
+    width: 30px!important;
+    height: 6px!important;
+    border-radius: 0!important;
+  }
 }
 
 @mixin grid-template($columns: auto, $rows: auto) {
@@ -169,6 +191,7 @@ a {
 }
 
 @media (max-width: 770px) and (min-width: 550px) {
+
   .home-page {
     @include grid-template($columns: repeat(2, 1fr));
   }
@@ -186,6 +209,9 @@ a {
     }
   }
 
+  .main {
+    @include bg(url(../img/home_page_bg.jpg),$bs: contain);
+  }
 
   nav {
     display: flex;

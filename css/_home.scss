@@ -1,9 +1,7 @@
 .main {
-  background-image: url(../img/bg.jpg);
-  //height: 100%;
-  background-position: top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  max-width: 1600px;
+  margin: 0 auto;
+  @include bg(url(../img/home_page_bg.jpg),$bs: 100% 50%);
 }
 
 .card-body-top,
@@ -60,5 +58,8 @@
 }
 .card {
   background: transparent;
-
+  border: 1px solid #3c3838;
+  .activator {
+    cursor: default ;
+  }
 }

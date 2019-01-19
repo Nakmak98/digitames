@@ -7,7 +7,7 @@ html, body {
 
 a {
   text-decoration: none;
-  color: #90919e; }
+  color: rgba(255, 255, 255, 0.7); }
   a:hover {
     text-decoration: none; }
 
@@ -62,8 +62,22 @@ a {
     padding-top: 20px;
     margin-top: 10px; }
 
+.content {
+  background-color: black; }
+
+.full-bg {
+  background-image: url(../img/full_bg.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 .carousel-indicators {
-  margin-left: 16%; }
+  margin-left: 16%;
+  z-index: 1; }
+  .carousel-indicators li {
+    width: 30px !important;
+    height: 6px !important;
+    border-radius: 0 !important; }
 
 nav .navbar-item {
   display: -webkit-box;
@@ -89,7 +103,7 @@ nav .lang-preferences {
           justify-content: center; }
 
 .lang-preferences {
-  color: #90919e;
+  color: rgba(255, 255, 255, 0.7);
   cursor: pointer; }
 
 .menu_back {
@@ -105,7 +119,8 @@ nav .lang-preferences {
   background: rgba(25, 30, 58, 0.7);
   z-index: 5;
   -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0); }
+          transform: translate3d(0, 0, 0);
+  font-weight: normal; }
   .menu_back .menu-container {
     height: 50px;
     display: -webkit-box;
@@ -120,6 +135,9 @@ nav .lang-preferences {
   .menu_back a:hover {
     color: azure; }
 
+.sub-container:first-of-type {
+  text-transform: uppercase; }
+
 .sub-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -133,12 +151,11 @@ nav .lang-preferences {
   .sub-container .mbut {
     font-size: 20px;
     line-height: 60px;
-    font-weight: bolder;
     text-align: center;
     width: 100px;
     height: auto;
-    margin-right: 5px;
-    color: #90919e; }
+    margin: 0 15px;
+    color: rgba(255, 255, 255, 0.7); }
     .sub-container .mbut:hover {
       color: azure; }
   .sub-container form {
@@ -151,17 +168,17 @@ nav .lang-preferences {
       padding: 0px 0px 3px 13px;
       outline: none;
       margin-right: 15px;
-      color: #90919e;
+      color: rgba(255, 255, 255, 0.7);
       background-color: rgba(0, 0, 0, 0.3); }
   .sub-container a .btn {
     width: 120px; }
   .sub-container .desktop-menu-user {
-    color: #6c757d;
+    color: rgba(255, 255, 255, 0.7);
     margin: 0 3%; }
     .sub-container .desktop-menu-user:hover {
       color: azure; }
   .sub-container #desktop-search-icon {
-    color: #90919e;
+    color: rgba(255, 255, 255, 0.7);
     position: absolute;
     margin-left: 15px; }
   .sub-container .login-add {
@@ -266,14 +283,14 @@ nav .lang-preferences {
 .lang-preferences {
   margin: 0 3%;
   background: 0;
-  color: #90919e;
+  color: rgba(255, 255, 255, 0.7);
   width: 130px;
   height: auto; }
   .lang-preferences .fa-angle-down {
     cursor: pointer;
     margin-left: 8px;
     font-size: 15px;
-    color: #90919e; }
+    color: rgba(255, 255, 255, 0.7); }
   .lang-preferences .fa-globe-africa {
     cursor: pointer;
     color: #4285ee;
@@ -300,7 +317,7 @@ nav .lang-preferences {
   width: 120px;
   height: auto;
   background-color: #263041;
-  color: #90919e;
+  color: rgba(255, 255, 255, 0.7);
   border: 0.5px groove #c6c6c7; }
   .lang-preferences-submenu .flag {
     width: 20px;
@@ -346,12 +363,12 @@ nav {
     nav .navbar-item .fa-search {
       position: relative;
       left: 24px;
-      color: #90919e; }
+      color: rgba(255, 255, 255, 0.7); }
     nav .navbar-item .nav-btn {
       text-align: center;
       width: 100%;
       padding: 3% 5%;
-      border: 1px solid #90919e; }
+      border: 1px solid rgba(255, 255, 255, 0.7); }
     nav .navbar-item .fa-user {
       color: #4285f4; }
     nav .navbar-item form {
@@ -364,7 +381,7 @@ nav {
         padding: 0px 0px 3px 13px;
         outline: none;
         margin-right: 15px;
-        color: #90919e;
+        color: rgba(255, 255, 255, 0.7);
         background-color: rgba(97, 91, 91, 0.64); }
   nav .lang-preferences {
     -webkit-box-align: center;
@@ -373,10 +390,12 @@ nav {
     padding: 5px; }
 
 .main {
-  background-image: url(../img/bg.jpg);
+  max-width: 1600px;
+  margin: 0 auto;
+  background-image: url(../img/home_page_bg.jpg);
   background-position: top;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 50%; }
 
 .card-body-top,
 .card-body-bottom {
@@ -443,7 +462,10 @@ nav {
   color: #00aeff; }
 
 .card {
-  background: transparent; }
+  background: transparent;
+  border: 1px solid #3c3838; }
+  .card .activator {
+    cursor: default; }
 
 .sign-in {
   min-height: 70vh;
@@ -540,7 +562,9 @@ nav {
       color: white; }
 
 footer {
-  background-color: #0A246A; }
+  background-color: #0A246A;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: normal; }
 
 @media (min-width: 1920px) {
   .home-page {
@@ -579,6 +603,12 @@ footer {
 @media screen and (max-width: 770px) {
   .sub-container .menu-btn {
     display: block; }
+
+  .main {
+    background-image: url(../img/home_page_bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain; }
 
   nav {
     display: -webkit-box;
