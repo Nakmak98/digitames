@@ -7,11 +7,13 @@
 }
 
 .main {
+  max-width: 1600px;
+  margin: 0 auto;
   @include bg(url(../img/home_page_bg.jpg),$bs: 100% 50%);
 }
 
 .content {
-  background: linear-gradient(to bottom, rgba(10,2,4,0) 1%,rgba(10,2,4,1) 21%,rgba(10,2,4,1) 50%,rgba(0,0,0,1) 58%);
+  background-color: black;
 }
 
 .card-body-top,
