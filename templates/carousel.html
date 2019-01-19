@@ -12,7 +12,7 @@
         <div class="carousel-item active">
             <a href=game_page/{{featured[0]['proj_url']}}>
                 <a class="info" name="game_page" href="game_page/{{featured[0]['proj_url']}}">
-                    <img class="d-block w-100" src={{ featured[0]['proj_img'] }} alt = {{ featured[0]['proj_name'] }}>
+                    <img class="d-block w-100" src={{ featured[0]['carousel_img'] }} alt = {{ featured[0]['proj_name'] }}>
                 </a>
         </div>
         {% if feature_num_rows > 1 %}
@@ -20,7 +20,7 @@
         {% if not loop.first %}
         <div class="carousel-item">
             <a class="info" name="game_page" href=game_page/{{ value['proj_url'] }}>
-            <img class="d-block w-100" src={{ value['proj_img'] }} alt={{ value['proj_name'] }}></a>
+            <img class="d-block w-100" src={{ value['carousel_img'] }} alt={{ value['proj_name'] }}></a>
         </div>
         {% endif %}
         {% endfor %}
