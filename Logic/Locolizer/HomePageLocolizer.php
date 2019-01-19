@@ -11,6 +11,7 @@ namespace Logic\Locolizer;
 
 class HomePageLocolizer extends Locolizer {
     function getLocale(array $arrays){
+ //TODO проверять массив на пустоту, иначе падает
         foreach ($arrays as $array){
             foreach ($array as  $key => $value){
                 $array[$key] = gettext($value);
