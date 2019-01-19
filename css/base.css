@@ -62,6 +62,15 @@ a {
     padding-top: 20px;
     margin-top: 10px; }
 
+.content {
+  background-color: black; }
+
+.full-bg {
+  background-image: url(../img/full_bg.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 .carousel-indicators {
   margin-left: 16%;
   z-index: 1; }
@@ -384,9 +393,6 @@ nav {
   background-position: top;
   background-repeat: no-repeat;
   background-size: 100% 50%; }
-
-.content {
-  background-color: black; }
 
 .card-body-top,
 .card-body-bottom {

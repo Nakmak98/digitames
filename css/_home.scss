@@ -1,19 +1,10 @@
 
-@mixin bg($url:url(../img/bg2.jpg), $bp: top, $br:no-repeat,$bs:cover) {
-  background-image: $url;
-  background-position: $bp;
-  background-repeat: $br;
-  background-size: $bs;
-}
+
 
 .main {
   max-width: 1600px;
   margin: 0 auto;
   @include bg(url(../img/home_page_bg.jpg),$bs: 100% 50%);
-}
-
-.content {
-  background-color: black;
 }
 
 .card-body-top,

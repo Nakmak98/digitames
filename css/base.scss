@@ -12,6 +12,14 @@ $footer-background: #212121;
 
 ///https://colorscheme.ru/#3.11T--pIw0w0
 
+
+@mixin bg($url:url(../img/bg2.jpg), $bp: top, $br:no-repeat,$bs:cover) {
+  background-image: $url;
+  background-position: $bp;
+  background-repeat: $br;
+  background-size: $bs;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -89,6 +97,14 @@ a {
       margin-top: 10px;
     }
   }
+}
+
+.content {
+  background-color: black;
+}
+
+.full-bg{
+  @include bg(url(../img/full_bg.jpg),$bs: cover);
 }
 
 .carousel-indicators {
