@@ -64,6 +64,10 @@ a {
 
 .carousel-indicators {
   margin-left: 16%; }
+  .carousel-indicators li {
+    width: 30px !important;
+    height: 6px !important;
+    border-radius: 0 !important; }
 
 nav .navbar-item {
   display: -webkit-box;

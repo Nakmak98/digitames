@@ -93,6 +93,11 @@ a {
 
 .carousel-indicators {
   margin-left: 16%;
+  li {
+    width: 30px!important;
+    height: 6px!important;
+    border-radius: 0!important;
+  }
 }
 
 @mixin grid-template($columns: auto, $rows: auto) {
