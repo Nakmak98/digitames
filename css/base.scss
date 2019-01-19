@@ -146,6 +146,11 @@ a {
 
 @media (min-width: 1920px)  {
 
+  .content {
+    .container {
+    }
+  }
+
   .home-page {
     @include grid-template($columns: repeat(4, 1fr)!important);
     .card:last-of-type {

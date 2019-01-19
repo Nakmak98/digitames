@@ -377,10 +377,14 @@ nav {
     padding: 5px; }
 
 .main {
-  background-image: url(../img/bg.jpg);
+  background-image: url(../img/home_page_bg.jpg);
   background-position: top;
   background-repeat: no-repeat;
-  background-size: cover; }
+  background-size: 100% 50%; }
+
+.content {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, rgba(10, 2, 4, 0)), color-stop(21%, #0a0204), color-stop(50%, #0a0204), color-stop(58%, black));
+  background: linear-gradient(to bottom, rgba(10, 2, 4, 0) 1%, #0a0204 21%, #0a0204 50%, black 58%); }
 
 .card-body-top,
 .card-body-bottom {
@@ -614,5 +618,4 @@ footer {
 
   .carousel {
     display: none; } }
-
 /*# sourceMappingURL=base.css.map */
