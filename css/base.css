@@ -462,7 +462,8 @@ nav {
   color: #00aeff; }
 
 .card {
-  background: transparent; }
+  background: transparent;
+  border: 1px solid #3c3838; }
   .card .activator {
     cursor: default; }
 
