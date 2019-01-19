@@ -70,5 +70,7 @@
 }
 .card {
   background: transparent;
-
+  .activator {
+    cursor: default ;
+  }
 }

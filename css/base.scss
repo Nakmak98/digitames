@@ -93,6 +93,7 @@ a {
 
 .carousel-indicators {
   margin-left: 16%;
+  z-index: 1;
   li {
     width: 30px!important;
     height: 6px!important;
@@ -146,11 +147,6 @@ a {
 
 @media (min-width: 1920px)  {
 
-  .content {
-    .container {
-    }
-  }
-
   .home-page {
     @include grid-template($columns: repeat(4, 1fr)!important);
     .card:last-of-type {
@@ -179,6 +175,7 @@ a {
 }
 
 @media (max-width: 770px) and (min-width: 550px) {
+
   .home-page {
     @include grid-template($columns: repeat(2, 1fr));
   }
@@ -196,6 +193,9 @@ a {
     }
   }
 
+  .main {
+    @include bg(url(../img/home_page_bg.jpg),$bs: contain);
+  }
 
   nav {
     display: flex;

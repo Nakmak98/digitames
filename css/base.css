@@ -63,7 +63,8 @@ a {
     margin-top: 10px; }
 
 .carousel-indicators {
-  margin-left: 16%; }
+  margin-left: 16%;
+  z-index: 1; }
   .carousel-indicators li {
     width: 30px !important;
     height: 6px !important;
@@ -453,6 +454,8 @@ nav {
 
 .card {
   background: transparent; }
+  .card .activator {
+    cursor: default; }
 
 .sign-in {
   min-height: 70vh;
@@ -588,6 +591,12 @@ footer {
 @media screen and (max-width: 770px) {
   .sub-container .menu-btn {
     display: block; }
+
+  .main {
+    background-image: url(../img/home_page_bg.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain; }
 
   nav {
     display: -webkit-box;
