@@ -16,7 +16,7 @@ class SearchController extends Controller
 {
     function search($request, $response, $args){
         $locolizer = Locolizer::getInstance('HomePage');
-        $srch = new Search($_GET);
+        $srch = new Search($_POST['search']);
         try{
             $srch->find();
             $result=$srch->getResult();

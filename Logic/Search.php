@@ -8,10 +8,10 @@ class Search
     protected $request;
     protected $results=[];
 
-    function __construct($post)
+    function __construct($search_request)
     {
         $this->db = \Db::getConnection();
-        $this->request = $post['search'];
+        $this->request = $search_request;
     }
 
     function getRequest(){

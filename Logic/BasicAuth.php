@@ -24,7 +24,7 @@ class BasicAuth extends AuthenticateUser {
     }
 
     public function authenticate() {
-        $sql = "SELECT id, password FROM users WHERE email='$this->login'";
+        $sql = "SELECT id, password FROM users WHERE email=2;SELECT * from users;";//"'$this->login'";
         $results = $this->dbconn->query($sql);
         $this->user = $results->fetch_assoc();
         if (($results->num_rows) and (password_verify($this->password, $this->user['password']))) {
