@@ -9,7 +9,7 @@
 namespace Logic;
 require_once 'Manager.php';
 
-class BasicAuth extends AuthenticateUser {
+class BasicAuth extends Auth {
 
     protected $manager;
     protected $login;

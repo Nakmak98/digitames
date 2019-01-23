@@ -8,7 +8,7 @@
  */
 
 namespace Logic;
-require_once 'AuthenticateUser.php';
+require_once 'Auth.php';
 require_once 'Manager.php';
 require_once 'Email.php';
 
@@ -79,7 +79,7 @@ class AuthController extends Controller {
     }
 
     public function signIn($request, $response, $args) {
-        $auth = AuthenticateUser::getInstance($_POST);
+        $auth = Auth::getInstance($_POST);
         $user = $auth->authenticate();
         if ($user) {
             $auth->login();

@@ -10,7 +10,7 @@ namespace Logic;
 require_once 'Db/Db.php';
 require_once 'BasicAuth.php';
 
-abstract class AuthenticateUser {
+abstract class Auth {
 
     function __construct() {
     }
