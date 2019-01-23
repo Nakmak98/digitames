@@ -8,7 +8,7 @@
 namespace Logic;
 require_once 'Manager.php';
 
-class Registration
+class SignUp
 {
     protected $manager;
     protected $email;

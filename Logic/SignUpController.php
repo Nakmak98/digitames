@@ -7,7 +7,7 @@
  */
 
 namespace Logic;
-require_once "Registration.php";
+require_once "SignUp.php";
 
 class SignUpController extends Controller {
 
@@ -15,7 +15,7 @@ class SignUpController extends Controller {
         return $this->container['view']->render($response, 'sign_up.html', $this->context);
     }
     function signUp($request, $response, $args){
-        $reg = new Registration($_POST);
+        $reg = new SignUp($_POST);
         try{
             $reg->sign_up();
             $reg->insert_user_data();
