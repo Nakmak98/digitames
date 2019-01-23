@@ -9,9 +9,6 @@
 namespace Logic;
 require_once 'GamePageManager.php';
 
-
-use Logic\Db\GamePageManager;
-
 class GamePage {
     public $gameData;
     public $carousel;

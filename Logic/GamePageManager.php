@@ -7,7 +7,7 @@
  */
 
 namespace Logic;
-
+require_once "Manager.php";
 
 class GamePageManager extends Manager {
 

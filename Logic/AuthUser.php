@@ -7,9 +7,15 @@
  */
 
 namespace Logic;
-require_once 'Db/Db.php';
+require_once 'Manager.php';
 
 class AuthUser extends User {
+    protected $sessid;
+    protected $user_id;
+    public $nickname;
+    public $age;
+    public $region;
+    public $role;
 
     function __construct() {
         $this->sessid = $_COOKIE['sessid'];
@@ -21,9 +27,11 @@ class AuthUser extends User {
     }
 
     private function getUserData() {
-        $dbconn = \Db::getConnection();
-        $result = $dbconn->query("SELECT * FROM gamesite.user_data WHERE session_id='$this->sessid'");
-        return $result->fetch_assoc();
+        $manager = new Manager();
+        $sql = "SELECT * FROM gamesite.user_data WHERE session_id=?";
+        $param_arr[] = "s";
+        $param_arr[] = &$this->sessid;
+        return $manager->getPreparedAssocResult($sql,$param_arr);
     }
 
     function shortName() {
@@ -32,17 +40,19 @@ class AuthUser extends User {
 
     public function logout() {
         session_abort();
-        $dbconn = \Db::getConnection();
+        $manager = new Manager();
         $sql = "UPDATE gamesite.user_data SET gamesite.user_data.session_id = ''
-                WHERE gamesite.user_data.session_id = '$this->sessid'";
-        $dbconn->query($sql);
+                WHERE gamesite.user_data.session_id = ?";
+        $param_arr[] = "s";
+        $param_arr[] = &$this->sessid;
+        $manager->getPreparedResult($sql, $param_arr);
         if (isset($_COOKIE['sessid'])) {
             unset($_COOKIE['sessid']);
-            setcookie('sessid', '', time() - 3600, '/'); // empty value and old timestamp
+            setcookie('sessid', '', time() - 3600, '/');
         }
         if (isset($_COOKIE['PHPSESSID'])) {
             unset($_COOKIE['PHPSESSID']);
-            setcookie('PHPSESSID', '', time() - 3600, '/'); // empty value and old timestamp
+            setcookie('PHPSESSID', '', time() - 3600, '/');
         }
     }
 }

@@ -11,12 +11,6 @@ require_once 'AnonymousUser.php';
 require_once 'AuthUser.php';
 
 abstract class User {
-    protected $sessid;
-    protected $user_id;
-    public $nickname;
-    public $age;
-    public $region;
-    public $role;
 
     static function getInstance($userIsAuth) {
         if ($userIsAuth) {
