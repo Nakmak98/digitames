@@ -14,7 +14,7 @@ class DbTest extends TestCase
 
     public function test_constuct()
     {
-        $db = new Db();
-        self::assertEquals("gamesite", $db->db);
+        $db = Db::getConnection();
+        self::assertNotNull($db);
     }
 }
