@@ -6,7 +6,7 @@
  * Time: 16:45
  */
 
-include "Db.php";
+include "../Db/Db.php";
 use PHPUnit\Framework\TestCase;
 
 class DbTest extends TestCase
@@ -17,13 +17,4 @@ class DbTest extends TestCase
         $db = new Db();
         self::assertEquals("gamesite", $db->db);
     }
-
-    public function test_GetQuery()
-    {
-        $db = new Db();
-        $sql = "SELECT id FROM gamesite.game_project t WHERE proj_name='Game 5'";
-        $result = $db->getQuery($sql);
-        self::assertEquals(24, $result['id']);
-    }
-
 }
