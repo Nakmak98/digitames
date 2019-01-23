@@ -64,8 +64,16 @@ class AuthController extends Controller {
         }
         $manager = new Manager();
         $new_password = password_hash($new_password, PASSWORD_DEFAULT);
-        $manager->getResult("update users set password = '$new_password' where email = '$email'");
-        $manager->getResult("DELETE FROM forget_password WHERE email = '$email';");
+        $sql = "update users set password = ? where email = ?";
+        $param_arr[] = "ss";
+        $param_arr[] = &$new_password;
+        $param_arr[] = &$email;
+        $manager->getPreparedResult($sql, $param_arr);
+        unset($param_arr);
+        $sql = "DELETE FROM forget_password WHERE email=?";
+        $param_arr[] = "s";
+        $param_arr[] = &$email;
+        $manager->getPreparedResult($sql, $param_arr);
         $this->context['success'] = 'Выш пароль успешно изменен.';
         return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
@@ -78,7 +86,6 @@ class AuthController extends Controller {
             $url = '/profile/';
             return $response->withRedirect($url);
         }
-        //TODO redirect to /profile/
         $this->context['error'] = 'Произошла ошибка аутентификации. Пожалуйста, убедитесь, что вы ввели верные данные';
         return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
@@ -90,8 +97,10 @@ class AuthController extends Controller {
 
 
     protected function isEmailExist($manager, $email) {
-        $sql = "select email from users where email = '$email'";
-        return $manager->getAssocResult($sql);
+        $sql = "select email from users where email = ?";
+        $param_arr[] = "s";
+        $param_arr[] = &$email;
+        return $manager->getPreparedAssocResult($sql, $param_arr);
     }
 
     /**
@@ -102,8 +111,12 @@ class AuthController extends Controller {
     protected function saveEncryptedKey($email, Manager $manager): string {
         $md5email = md5($email); // encrypted email is a unique user key
         $ttl = date("Y-m-d H:i:s");
-        $sql = "insert into forget_password(email,md5email, TTL) values ('$email','$md5email', '$ttl')";
-        $manager->getResult($sql);
+        $sql = "insert into forget_password(email,md5email, TTL) values (?,?,?)";
+        $param_arr[] = "sss";
+        $param_arr[] = &$email;
+        $param_arr[] = &$md5email;
+        $param_arr[] = &$ttl;
+        $manager->getPreparedResult($sql, $param_arr);
         return $md5email;
     }
 
@@ -113,19 +126,21 @@ class AuthController extends Controller {
      * @return array|null
      */
     protected function getForgetPasswordToken($user_md5email, Manager $manager) {
-        $sql = "select email, TTL from forget_password where md5email = '$user_md5email'";
-        $forget_password = $manager->getAssocResult($sql);
+        $sql = "select email, TTL from forget_password where md5email = ?";
+        $param_arr[] = "s";
+        $param_arr[] = &$user_md5email;
+        $forget_password = $manager->getPreparedAssocResult($sql, $param_arr);
         return $forget_password;
     }
 
     /**
      * @param $forget_password_token
-     * @throws Exception is ttl has expired
+     * @throws Exception when is param not valid
      */
     protected function checkForgetPasswordToken($forget_password_token) {
         $ttl = strtotime($forget_password_token['TTL']);
         $real_time = strtotime(date("Y-m-d H:i:s"));
-        if ($ttl - $real_time > 24 * 3600) {
+        if (($ttl - $real_time > 24 * 3600) or (is_null($forget_password_token))) {
             throw new \Exception('ttl of forget password token has expired');
         }
     }

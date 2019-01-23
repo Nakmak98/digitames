@@ -27,7 +27,7 @@ class AuthUser extends User {
     }
 
     function shortName() {
-        // TODO: Implement shortName() method.
+        //  TODO: Implement shortName() method.
     }
 
     public function logout() {

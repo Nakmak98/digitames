@@ -6,21 +6,20 @@
  * Time: 22:59
  */
 namespace Logic;
+require_once 'Manager.php';
 
-require_once 'Db/Db.php';
 class Registration
 {
-    protected $db;
+    protected $manager;
     protected $email;
     protected $password;
     protected $age;
     protected $region;
     public $registration_error = "This user already exist";
 
-    //TODO метод валидации приходящих данных на всякие атаки
     function __construct($post)
     {
-        $this->db = \Db::getConnection();
+        $this->manager = new Manager();
         $this->email = $post['new_email'];
         $this->password = $post['new_password'];
         $this->age = $post['age'];
@@ -34,8 +33,11 @@ class Registration
         }
         $this->password = password_hash($this->password, PASSWORD_DEFAULT);
         $sql = "INSERT INTO users (email, password)
-                VALUES ('$this->email', '$this->password')";
-        $this->db->query($sql);
+                VALUES (?, ?)";
+        $param_arr[] = "ss";
+        $param_arr[] = &$this->email;
+        $param_arr[] = &$this->password;
+        $this->manager->getPreparedResult($sql, $param_arr);
     }
 
     function insert_user_data()
@@ -45,15 +47,17 @@ class Registration
             throw new \Exception("Data Base connection failure");
         }
         $sql = "INSERT INTO user_data (user_id, age, region) VALUES ('$id', '$this->age ', '$this->region')";
-        $this->db->query($sql);
+        $this->manager->getResult($sql);
         $sql = "INSERT INTO user_role (user_id, role) VALUES ('$id', 'subscriber')";
-        $this->db->query($sql);
+        $this->manager->getResult($sql);
     }
 
     protected function email_exist()
     {
-        $sql = "SELECT id FROM users WHERE email='$this->email'";
-        $results = $this->db->query($sql);
+        $sql = "SELECT id FROM users WHERE email=?";
+        $param_arr[] = "s";
+        $param_arr[] = &$this->email;
+        $results = $this->manager->getPreparedResult($sql, $param_arr);
         if ($results->num_rows) {
             return true;
         }
@@ -62,14 +66,13 @@ class Registration
     protected function get_user_id()
     {
         $sql = "SELECT id FROM users WHERE email='$this->email'";
-        $results = $this->db->query($sql);
-        $results = $results->fetch_assoc();
+        $results = $this->manager->getAssocResult($sql);
         return $results['id'];
     }
 
     protected function user_data_exist($id){
         $sql = "SELECT id FROM user_data WHERE user_id='$id'";
-        $this->db->query($sql) ? True : False;
+        $this->manager->getResult($sql) ? True : False;
     }
 
 }

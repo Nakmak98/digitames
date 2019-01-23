@@ -16,17 +16,16 @@ class SearchController extends Controller
 {
     function search($request, $response, $args){
         $locolizer = Locolizer::getInstance('HomePage');
-        $srch = new Search($_POST['search']);
+        $search = new Search($_POST['search']);
         try{
-            $srch->find();
-            $result=$srch->getResult();
+            $result = $search->find();
         }catch (\Exception $e){
             $this->context['error'] = $e;
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
         $result=$locolizer->getLocale($result);
         $this->context['search_results'] = $result;
-        $this->context['request'] = $srch->getRequest();
+        $this->context['request'] = $search->request;
         return $this->container['view']->render($response, 'search_results.html', $this->context);
     }
 }

@@ -23,6 +23,6 @@ class SignUpController extends Controller {
             $this->context['error'] = $e;
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
-        return $this->container['view']->render($response, 'welcome.html', $this->context);
+        return $response->withStatus(302)->withHeader('Location', '/');
     }
 }
