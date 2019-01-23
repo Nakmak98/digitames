@@ -53,7 +53,7 @@ $app->get('/login/', Logic\AuthController::class . ':getLoginForm');
 $app->get('/forget_password/', Logic\AuthController::class . ':getForgetPasswordForm');
 $app->post('/forget_password/', Logic\AuthController::class . ':forgetPasswordHandler');
 $app->get('/request/{md5email}', Logic\AuthController::class . ':getNewPasswordForm');
-$app->post('/new_password/', Logic\AuthController::class . ':CreateNewPassword');
+$app->post('/new_password/', Logic\AuthController::class . ':changePassword');
 $app->get('/logout/', Logic\AuthController::class . ':logout');
 $app->post('/login/', Logic\AuthController::class . ':signIn');
 $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');

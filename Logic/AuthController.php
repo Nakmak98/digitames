@@ -11,6 +11,7 @@ namespace Logic;
 require_once 'Auth.php';
 require_once 'Manager.php';
 require_once 'Email.php';
+require_once 'PasswordRecovery.php';
 
 class AuthController extends Controller {
     protected $login;
@@ -26,11 +27,10 @@ class AuthController extends Controller {
 
     public function forgetPasswordHandler($request, $response, $args) {
         $email = $_POST['email'];
-        $manager = new Manager();
-        if ($this->isEmailExist($manager, $email)) {
-            $md5email = $this->saveEncryptedKey($email, $manager);
-            $forget_password_email = new Email();
-            $forget_password_email->SendForgetPasswordEmail($email, $md5email);
+        $recover = new PasswordRecovery();
+        if ($recover->isEmailExist($email)) {
+            $recover->createEncryptedKey();
+            $recover->sendEmail();
             $this->context['success'] = 'На вашу почту было выслано сообщение. Зайдите на вашу почту и следуйте инструкции.';
             return $this->container['view']->render($response, 'sign_in.html', $this->context);
         } else {
@@ -41,39 +41,24 @@ class AuthController extends Controller {
     }
 
     public function getNewPasswordForm($request, $response, $args) {
-        $user_md5email = $args['md5email'];
-        $manager = new Manager();
+        $recover = new PasswordRecovery();
         try {
-            $forget_password_token = $this->getForgetPasswordToken($user_md5email, $manager);
-            $this->checkForgetPasswordToken($forget_password_token);
+            $recover->checkForgetPasswordToken($args['md5email']);
         } catch (\Exception $e) {
             $this->context['error'] = 'Страница не найдена';
             return $this->container['view']->render($response, 'error.html', $this->context);
         }
-        $this->context['email'] = $forget_password_token['email'];
+        $this->context['email'] = $recover->recoveryToken['email'];
         return $this->container['view']->render($response, 'new_password.html', $this->context);
     }
 
-    public function CreateNewPassword($request, $response, $args) {
-        $email = $_POST['email'];
-        $new_password = $_POST['new_password'];
-        $repeat_password = $_POST['repeat_password'];
-        if ($new_password != $repeat_password) {
+    public function changePassword($request, $response, $args) {
+        if ($_POST['new_password'] != $_POST['repeat_password']) {
             $this->context['error'] = 'Пароли не совпадают';
             return $this->container['view']->render($response, 'new_password.html', $this->context);
         }
-        $manager = new Manager();
-        $new_password = password_hash($new_password, PASSWORD_DEFAULT);
-        $sql = "update users set password = ? where email = ?";
-        $param_arr[] = "ss";
-        $param_arr[] = &$new_password;
-        $param_arr[] = &$email;
-        $manager->getPreparedResult($sql, $param_arr);
-        unset($param_arr);
-        $sql = "DELETE FROM forget_password WHERE email=?";
-        $param_arr[] = "s";
-        $param_arr[] = &$email;
-        $manager->getPreparedResult($sql, $param_arr);
+        $recover = new PasswordRecovery();
+        $recover->changePassword($_POST['email'], $_POST['new_password']);
         $this->context['success'] = 'Выш пароль успешно изменен.';
         return $this->container['view']->render($response, 'sign_in.html', $this->context);
     }
@@ -96,52 +81,6 @@ class AuthController extends Controller {
     }
 
 
-    protected function isEmailExist($manager, $email) {
-        $sql = "select email from users where email = ?";
-        $param_arr[] = "s";
-        $param_arr[] = &$email;
-        return $manager->getPreparedAssocResult($sql, $param_arr);
-    }
 
-    /**
-     * @param $email
-     * @param Manager $manager
-     * @return string
-     */
-    protected function saveEncryptedKey($email, Manager $manager): string {
-        $md5email = md5($email); // encrypted email is a unique user key
-        $ttl = date("Y-m-d H:i:s");
-        $sql = "insert into forget_password(email,md5email, TTL) values (?,?,?)";
-        $param_arr[] = "sss";
-        $param_arr[] = &$email;
-        $param_arr[] = &$md5email;
-        $param_arr[] = &$ttl;
-        $manager->getPreparedResult($sql, $param_arr);
-        return $md5email;
-    }
 
-    /**
-     * @param $user_md5email
-     * @param Manager $manager
-     * @return array|null
-     */
-    protected function getForgetPasswordToken($user_md5email, Manager $manager) {
-        $sql = "select email, TTL from forget_password where md5email = ?";
-        $param_arr[] = "s";
-        $param_arr[] = &$user_md5email;
-        $forget_password = $manager->getPreparedAssocResult($sql, $param_arr);
-        return $forget_password;
-    }
-
-    /**
-     * @param $forget_password_token
-     * @throws Exception when is param not valid
-     */
-    protected function checkForgetPasswordToken($forget_password_token) {
-        $ttl = strtotime($forget_password_token['TTL']);
-        $real_time = strtotime(date("Y-m-d H:i:s"));
-        if (($ttl - $real_time > 24 * 3600) or (is_null($forget_password_token))) {
-            throw new \Exception('ttl of forget password token has expired');
-        }
-    }
 }
