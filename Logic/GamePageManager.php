@@ -6,10 +6,8 @@
  * Time: 23:26
  */
 
-namespace Logic\Db;
+namespace Logic;
 
-
-use Logic\Manager;
 
 class GamePageManager extends Manager {
 
