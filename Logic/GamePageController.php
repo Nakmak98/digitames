@@ -18,9 +18,9 @@ class GamePageController extends Controller {
         $locolizer = Locolizer::getInstance('GamePage');
         $game_page = new GamePage($args['project_url']);
         $this->context['game_data'] = $locolizer->getLocale(
-            $game_page->getGameData()
+            $game_page->gameData
         );
-        if(!is_null($carousel = $game_page->getCarousel()))
+        if(!is_null($carousel = $game_page->carousel))
             $this->context['featured'] = $carousel;
         $this->context['feature_num_rows'] = $game_page->getNumRows();
         return $this->container['view']->render($response, 'game_page.html', $this->context);
