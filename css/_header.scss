@@ -13,6 +13,7 @@
 
 .menu_back {
   display: flex;
+  transition: 0.4s;
   justify-content: space-between;
   position: fixed;
   @include size(100%, 50px);

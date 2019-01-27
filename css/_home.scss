@@ -2,6 +2,12 @@
   max-width: 1600px;
   margin: 0 auto;
   @include bg(url(../img/home_page_bg.jpg),$bs: 100% 50%);
+  .container{
+    h3{
+      padding-top: 20px;
+      color: white;
+    }
+  }
 }
 
 .card-body-top,
