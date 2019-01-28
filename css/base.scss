@@ -20,6 +20,33 @@ $footer-background: #212121;
   background-size: $bs;
 }
 
+@mixin grid-template($columns: auto, $rows: auto) {
+  display: grid;
+  grid-template-columns: #{$columns};
+  grid-template-rows: $rows;
+  grid-gap: 20px 20px;
+}
+
+// template classes
+
+%flex-centered-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%flex-centered-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+%clickable-item {
+  color: $link-color;
+  cursor: pointer;
+}
+
+
 html, body {
   background-color: black;
   margin: 0;
@@ -116,33 +143,6 @@ a {
     height: 6px!important;
     border-radius: 0!important;
   }
-}
-
-@mixin grid-template($columns: auto, $rows: auto) {
-  display: grid;
-  grid-template-columns: #{$columns};
-  grid-template-rows: $rows;
-  grid-gap: 20px 20px;
-}
-
-
-// template classes
-
-%flex-centered-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-%flex-centered-column {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-%clickable-item {
-  color: $link-color;
-  cursor: pointer;
 }
 
 
