@@ -12,6 +12,7 @@ require_once 'Logic/GamePageController.php';
 require_once 'Logic/SignUpController.php';
 require_once 'Logic/SearchController.php';
 require_once 'Logic/ProfileController.php';
+require_once  'Logic/MailingController.php';
 
 $config['displayErrorDetails'] = true;
 $config['addContentLengthHeader'] = false;
@@ -60,7 +61,8 @@ $app->get('/signup/', Logic\SignUpController::class . ':getSignUpForm');
 $app->post('/signup/', Logic\SignUpController::class . ':signUp');
 $app->post('/search/', Logic\SearchController::class . ':search');
 $app->get('/profile/', Logic\ProfileController::class . ':getProfile');
-$app->post('/profile/', Logic\MailingController::class . ':acceptMailing');
+$app->get('/mailing/', Logic\MailingController::class . ':acceptMailing');
+$app->get('/mailing_list/', Logic\MailingController::class . ':updateMailingList');
 $app->get('/game_page/{project_url}', Logic\GamePageController::class . ':getGamePage');
 $app->get('/blog/', function (Request $request, Response $response, array $args) {
     require 'blog/index.php';
