@@ -121,3 +121,15 @@ msgstr "Игры"
 
 msgid "Subscriptions"
 msgstr "Подписки"
+
+msgid "Subscribe to Digitames news"
+msgstr "Подписаться на новости Digitames"
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Update file with e-mail list"
+msgstr "Обновить файл со списком почт подписчиков"
+
+msgid "Download subscriber's e-mail list"
+msgstr "Скачать список почт подписчиков"
