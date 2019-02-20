@@ -11,7 +11,7 @@ require_once 'Manager.php';
 
 class AuthUser extends User {
     protected $sessid;
-    protected $user_id;
+    public $user_id;
     public $nickname;
     public $age;
     public $region;

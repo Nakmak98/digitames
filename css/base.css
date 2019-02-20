@@ -428,6 +428,15 @@ nav {
   padding-top: 80px;
   color: white; }
 
+.custom-control {
+  margin-top: 30px; }
+
+.custom-control-label {
+  cursor: pointer; }
+
+.download {
+  width: 400px; }
+
 .game-page .game-description .row {
   position: relative;
   top: auto;

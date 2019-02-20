@@ -16,6 +16,20 @@
         <div class="tab-content" id="v-pills-tabContent">
             <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                 <h2>{% trans 'Account Settings' %}</h2>
+                {% if role == "admin" %}
+                <form method="GET" action="/mailing_list/">
+                    <button type="submit" class="btn btn-primary">{% trans 'Update file with e-mail list' %}</button>
+                </form>
+                <div class = "btn btn-outline-primary waves-effect download"><a href = "../email_list.csv">{% trans 'Download subscriber\'s e-mail list' %}</a></div>
+
+                {% endif %}
+                <form method="GET" action="/mailing/">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" name = "mailing_checkbox" {% if mailing == 1 %} checked {% endif %} id = "defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">{% trans 'Subscribe to Digitames news' %}</label>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary">{% trans 'Save' %}</button>
+                </form>
             </div>
             <div class="tab-pane fade" id="v-pills-games" role="tabpanel" aria-labelledby="v-pills-games-tab">
                 <h2>{% trans 'Games' %}</h2>

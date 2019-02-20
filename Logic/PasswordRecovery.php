@@ -77,9 +77,4 @@ class PasswordRecovery {
         $param_arr[] = &$md5email;
         $this->recoveryToken = $this->manager->getPreparedAssocResult($sql, $param_arr);
     }
-
-
-
-
-
 }
