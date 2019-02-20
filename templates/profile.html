@@ -20,7 +20,7 @@
                 <form method="GET" action="/mailing_list/">
                     <button type="submit" class="btn btn-primary">{% trans 'Update file with e-mail list' %}</button>
                 </form>
-                <a href = "../email_list.csv">{% trans 'Download subscriber\'s e-mail list' %}</a>
+                <div class = "btn btn-outline-primary waves-effect download"><a href = "../email_list.csv">{% trans 'Download subscriber\'s e-mail list' %}</a></div>
 
                 {% endif %}
                 <form method="GET" action="/mailing/">
