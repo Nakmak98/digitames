@@ -24,8 +24,17 @@ class SignUp
         $this->password = $post['new_password'];
         $this->age = $post['age'];
         $this->region = $post['region'];
+        $this->mailing = $this->convert_mailing_checkbox_to_int($post['mailing_checkbox']);
     }
-
+    function convert_mailing_checkbox_to_int($checkbox){
+        if(isset($checkbox)){
+            $mailing_checkbox = 1;
+        }
+        else {
+            $mailing_checkbox = 0;
+        }
+        return $mailing_checkbox;
+    }
     function sign_up()
     {
         if($this->email_exist()){
@@ -46,7 +55,7 @@ class SignUp
         if($this->user_data_exist($id)){
             throw new \Exception("Data Base connection failure");
         }
-        $sql = "INSERT INTO user_data (user_id, age, region) VALUES ('$id', '$this->age ', '$this->region')";
+        $sql = "INSERT INTO user_data (user_id, age, region, mailing) VALUES ('$id', '$this->age ', '$this->region', '$this->mailing')";
         $this->manager->getResult($sql);
         $sql = "INSERT INTO user_role (user_id, role) VALUES ('$id', 'subscriber')";
         $this->manager->getResult($sql);

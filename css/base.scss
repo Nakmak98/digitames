@@ -12,7 +12,6 @@ $footer-background: #212121;
 
 ///https://colorscheme.ru/#3.11T--pIw0w0
 
-
 @mixin bg($url:url(../img/bg2.jpg), $bp: top, $br:no-repeat,$bs:cover) {
   background-image: $url;
   background-position: $bp;
