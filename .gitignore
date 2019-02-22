@@ -8,4 +8,5 @@ phpDocumentor.phar
 composer.phar
 access.log
 phpDocumentor.phar
+*.csv
 
