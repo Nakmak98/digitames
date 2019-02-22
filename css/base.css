@@ -17,8 +17,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
-  font-weight: lighter;
-  height: 100vh; }
+  font-weight: lighter; }
 
 a {
   text-decoration: none;
@@ -423,9 +422,18 @@ nav {
     margin-bottom: 15px; }
 
 .messages {
-  min-height: 70vh;
+  min-height: 79vh;
   padding-top: 80px;
   color: white; }
+
+.custom-control {
+  margin-top: 30px; }
+
+.custom-control-label {
+  cursor: pointer; }
+
+.download {
+  width: 400px; }
 
 .game-page .game-description .row {
   position: relative;
@@ -463,7 +471,7 @@ nav {
 
 .search_results {
   padding: 60px 100px 10px;
-  min-height: 600px; }
+  min-height: 759px; }
   .search_results h4 {
     color: white; }
   .search_results p {
