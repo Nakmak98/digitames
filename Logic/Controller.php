@@ -28,5 +28,6 @@ class Controller {
         else {
             $this->context['locale'] = locale_accept_from_http($_SERVER['HTTP_ACCEPT_LANGUAGE']);
         }
+        $this->context['url'] = $_SERVER['REQUEST_URI'];
     }
 }

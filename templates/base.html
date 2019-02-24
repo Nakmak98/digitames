@@ -24,7 +24,7 @@
                 <a href="/">
                     <img class="icon logo-icon" src="../img/icon.png">
                 </a>
-                <a href="#games">
+                <a href= "{% if url == '/' %}#games{% else %} / {% endif %}" >
                     <div class="mbut">{%trans 'Games' %}</div>
                 </a>
                 <a href="/blog/">
